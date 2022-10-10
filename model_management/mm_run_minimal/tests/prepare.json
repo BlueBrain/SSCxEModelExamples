@@ -1,0 +1,14 @@
+{
+    "version": "1.0",
+    "recipe_path": "../cell_composition.yaml",
+    "morph_path": "morphologies",
+    "rep_morph_path": "morphologies",
+    "unrep_morph_path": "morphologies",
+    "emodels_dir": "../emodels_dir/singlecell-optimization",
+    "emodel_etype_map_path": "emodel_etype_map.json",
+    "final_json_path": "final.json",
+    "tmp_dir": "./tmp",
+    "output_dir": "output/",
+    "emodels_hoc_dir": "output/emodels_hoc",
+    "scores_db": "output/scores.sqlite"
+}

@@ -1,0 +1,14 @@
+{
+    "version": "1.0",
+    "meg_output": "input/mecombo_emodel.tsv",
+    "morphs_path": "input/morphologies",
+    "apical_points": "input/apical_points_isec.json",
+    "emodels_path": "../optimisation/opt_module/",
+    "emodel_hash": "a6e707a",
+    "emodel": "cADpyr_L5TPC",
+    "emodel_seed": 1,
+    "mtype_morph": "L5_TPC",
+    "only_morph": null,
+    "n_morph": 1,
+    "output": "tests/output/results.json"
+}

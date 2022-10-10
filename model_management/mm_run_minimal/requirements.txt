@@ -1,0 +1,3 @@
+bluepymm
+numpy
+NEURON>=7.8.0,<8.0.0

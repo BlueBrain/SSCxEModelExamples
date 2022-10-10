@@ -1,0 +1,108 @@
+{
+  "mechanisms": {
+    "all": {
+      "mech": ["pas"]
+    }, 
+    "allact": {
+      "mech": ["CaDynamics_DC0", "Ca_HVA2", "Ca_LVAst"]
+    }, 
+    "somaxon": {
+      "mech": ["SKv3_1", "SK_E2", "K_Pst", "K_Tst"]
+    }, 
+    "axonal": {
+      "mech": ["NaTg", "Nap_Et2"]
+    }, 
+    "somatic": {
+      "mech": ["NaTg"]
+    }, 
+    "apical": {
+      "mech": ["NaTg", "SKv3_1"]
+    }, 
+    "somadend": {
+      "mech": ["Ih"]
+    }
+  }, 
+  "distributions": {
+    "exp": {
+      "fun": "(-0.8696 + 2.087*math.exp(({distance})*0.0031))*{value}",
+      "__comment": "distribution based on Kole et al. 2006"
+    }, 
+    "decay": {
+      "fun": "math.exp({distance}*{constant})*{value}",
+      "parameters": ["constant"]
+    }
+  }, 
+  "parameters": {
+    "__comment": "define constants as single values and params to optimize as tuples of bounds: [lower, upper]", 
+    "global": [
+      {"name": "v_init", "val": -80},
+      {"name": "celsius", "val": 34}
+    ], 
+    "distribution_decay": [
+      {"name": "constant", "val": -0.0045325248607678403}
+    ], 
+    "myelinated": [
+      {"name": "cm", "val": 0.02}
+    ], 
+    "all": [
+      {"name": "Ra", "val": 100},
+      {"name": "g_pas", "val": 4.7051946481499811e-05},
+      {"name": "e_pas", "val": -79.603749561469684}
+    ], 
+    "somadend": [
+      {"name": "gIhbar_Ih", "val": 2.6113487420290699e-05, "dist": "exp", "__comment": "distribution starts in soma (uniform) and spreads exponentially to dendrites"}
+    ], 
+    "axonal": [
+      {"name": "cm", "val": 1},
+      {"name": "ena", "val": 50},
+      {"name": "ek", "val": -90},
+      {"name": "vshifth_NaTg", "val": 10},
+      {"name": "slopem_NaTg", "val": 9},
+      {"name": "gNaTgbar_NaTg", "val": 0.33556102181366648},
+      {"name": "gNap_Et2bar_Nap_Et2", "val": 0.0050542837974557036},
+      {"name": "gK_Pstbar_K_Pst", "val": 0.99801140749927841},
+      {"name": "gK_Tstbar_K_Tst", "val": 0.064027490811985444},
+      {"name": "gSKv3_1bar_SKv3_1", "val": 0.21965904565617991},
+      {"name": "gCa_HVAbar_Ca_HVA2", "val": 0.00050971480143243212},
+      {"name": "gCa_LVAstbar_Ca_LVAst", "val": 0.0009394854482623271},
+      {"name": "gSK_E2bar_SK_E2", "val": 0.096808660670667457},
+      {"name": "decay_CaDynamics_DC0", "val": 285.46128321068517},
+      {"name": "gamma_CaDynamics_DC0", "val": 0.012752321129750291}
+    ], 
+    "somatic": [
+      {"name": "cm", "val": 1},
+      {"name": "ena", "val": 50},
+      {"name": "ek", "val": -90},
+      {"name": "vshiftm_NaTg", "val": 13},
+      {"name": "vshifth_NaTg", "val": 15},
+      {"name": "slopem_NaTg", "val": 7},
+      {"name": "gNaTgbar_NaTg", "val": 0.28992456437225478},
+      {"name": "gK_Pstbar_K_Pst", "val": 0.10031922891367806},
+      {"name": "gK_Tstbar_K_Tst", "val": 0.013153142654420691},
+      {"name": "gSKv3_1bar_SKv3_1", "val": 0.38829177538605941},
+      {"name": "gCa_HVAbar_Ca_HVA2", "val": 0.00083534595739915185},
+      {"name": "gCa_LVAstbar_Ca_LVAst", "val": 0.00021537640631977598},
+      {"name": "gSK_E2bar_SK_E2", "val": 0.020239349931865241},
+      {"name": "decay_CaDynamics_DC0", "val": 282.09663415587323},
+      {"name": "gamma_CaDynamics_DC0", "val": 0.022091065777470664}
+    ], 
+    "apical": [
+      {"name": "cm", "val": 2},
+      {"name": "ena", "val": 50},
+      {"name": "ek", "val": -90},
+      {"name": "gamma_CaDynamics_DC0", "val": 0.04517010601950254},
+      {"name": "vshiftm_NaTg", "val": 6},
+      {"name": "vshifth_NaTg", "val": 6},
+      {"name": "gNaTgbar_NaTg", "val": 0.081013620392016858, "dist": "decay"},
+      {"name": "gSKv3_1bar_SKv3_1", "val": 0.0018178286052065377},
+      {"name": "gCa_HVAbar_Ca_HVA2", "val": 3.4636229677800608e-06},
+      {"name": "gCa_LVAstbar_Ca_LVAst", "val": 0.00098549473641638421}
+    ], 
+    "basal": [
+      {"name": "cm", "val": 2},
+      {"name": "gamma_CaDynamics_DC0", "val": 0.048834292167029961},
+      {"name": "gCa_HVAbar_Ca_HVA2", "val": 7.4498164370347347e-05},
+      {"name": "gCa_LVAstbar_Ca_LVAst", "val": 0.00074352999455036864}
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+    "cADpyr_L5TPC": {
+        "morph_path": "/project_directory/cells/hybrid-output-2016-12-23/04_ZeroDiameterFix-ASC/",
+        "morphology": [["L5TPCa","C060114A5.asc"]],
+        "params": "config/params/pyr.json",
+        "protocol": "config/protocols/cADpyr_L5PC.json",
+        "features": "config/features/cADpyr_L5PC.json",
+        "use_powertransform": false
+    },
+    "cADpyr_L5TPCb": {
+        "morph_path": "/project_directory/cells/hybrid-output-2016-12-23/04_ZeroDiameterFix-ASC/",
+        "morphology": [["L5TPCb","rp110119_L5-1_idA.asc"]],
+        "params": "config/params/pyr.json",
+        "protocol": "config/protocols/cADpyr_L5PC.json",
+        "features": "config/features/cADpyr_L5PC.json"
+    },
+    "cADpyr_L5TPC_multi": {
+        "morph_path": "/project_directory/cells/hybrid-output-2016-12-23/04_ZeroDiameterFix-ASC/",
+        "morphology": [ ["L5TPCa","C060114A5.asc"],
+                        ["L5TPCb","rp110119_L5-1_idA.asc"],
+                        ["L5TPCc","vd110315_idE.asc"]
+                      ],
+        "params": "config/params/pyr.json",
+        "protocol": "config/protocols/cADpyr_L5TPC.json",
+        "features": "config/features/cADpyr_L5TPC.json"
+    }
+}

@@ -1,0 +1,74 @@
+// $Id: interpxyz.hoc,v 1.2 2005/09/10 23:02:15 ted Exp $
+/* Computes xyz coords of nodes in a model cell
+   whose topology & geometry are defined by pt3d data.
+   Expects sections to already exist, and that the xtra mechanism has been inserted
+
+   Modified 2014/10/05 Christian Roessert
+ */
+
+// original data, irregularly spaced
+objref xx, yy, zz, length, diams3d
+// interpolated data, spaced at regular intervals
+objref xint, yint, zint, range, diamsint, diams
+
+proc grindaway() { local i, ii, nn, kk, xr
+	  strdef tstr
+
+    print $s1
+    sprint(tstr,"access %s",$s1)
+    execute(tstr)
+
+		// get the data for the section
+		nn = n3d()
+		xx = new Vector(nn)
+		yy = new Vector(nn)
+		zz = new Vector(nn)
+		length = new Vector(nn)
+        diams3d = new Vector(nn)
+
+    //print nn
+    //print nseg
+
+		for ii = 0,nn-1 {
+			xx.x[ii] = x3d(ii)
+			yy.x[ii] = y3d(ii)
+			zz.x[ii] = z3d(ii)
+			length.x[ii] = arc3d(ii)
+            diams3d.x[ii] = diam3d(ii)
+		}
+
+		// to use Vector class's .interpolate()
+		// must first scale the independent variable
+		// i.e. normalize length along centroid
+		length.div(length.x[nn-1])
+
+		// initialize the destination "independent" vector
+		range = new Vector(nseg+2)
+		range.indgen(1/nseg)
+		range.sub(1/(2*nseg))
+		range.x[0]=0
+		range.x[nseg+1]=1
+
+        diams = new Vector(nseg+2)
+        for ii = 0,nseg+1 {
+            i = range.x[ii]
+            diams.x[ii] = diam(i)
+        }
+
+		// length contains the normalized distances of the pt3d points
+		// along the centroid of the section.  These are spaced at
+		// irregular intervals.
+		// range contains the normalized distances of the nodes along the
+		// centroid of the section.  These are spaced at regular intervals.
+		// Ready to interpolate.
+
+		xint = new Vector(nseg+2)
+		yint = new Vector(nseg+2)
+		zint = new Vector(nseg+2)
+        diamsint = new Vector(nseg+2)
+		xint.interpolate(range, length, xx)
+		yint.interpolate(range, length, yy)
+		zint.interpolate(range, length, zz)
+        diamsint.interpolate(range, length, diams3d)
+
+}

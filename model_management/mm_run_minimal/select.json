@@ -1,0 +1,12 @@
+{
+    "version": "1.0",
+    "scores_db": "./output/scores.sqlite",
+    "emodels_hoc_dir": "./output/emodels_hoc",
+    "to_skip_features": [".*bAP.*", ".*bpo_.*", ".*decay_time_constant_after_stim", ".*AP2_amp"],
+    "pdf_filename": "output_select/megating.pdf",
+    "output_dir": "output_select",
+    "check_opt_scores": false,
+	"megate_thresholds": [
+        {"emodel": [".*"], "fullmtype": [".*"], "etype": [".*"], "features": [".*"], "megate_threshold": 5}
+    ]
+}

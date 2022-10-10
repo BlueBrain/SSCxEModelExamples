@@ -1,0 +1,126 @@
+{
+    "constant.distribution_decay": [
+        -0.1,
+        0.0
+    ],
+    "g_pas.all": [
+        1e-05,
+        6e-05
+    ],
+    "e_pas.all": [
+        -95,
+        -60
+    ],
+    "gIhbar_Ih.somadend": [
+        0,
+        0.0002
+    ],
+    "gNaTgbar_NaTg.axonal": [
+        0,
+        1.5
+    ],
+    "gNap_Et2bar_Nap_Et2.axonal": [
+        0,
+        0.02
+    ],
+    "gK_Pstbar_K_Pst.axonal": [
+        0,
+        1
+    ],
+    "gK_Tstbar_K_Tst.axonal": [
+        0,
+        0.2
+    ],
+    "gSKv3_1bar_SKv3_1.axonal": [
+        0,
+        1
+    ],
+    "gCa_HVAbar_Ca_HVA2.axonal": [
+        0,
+        0.001
+    ],
+    "gCa_LVAstbar_Ca_LVAst.axonal": [
+        0,
+        0.01
+    ],
+    "gSK_E2bar_SK_E2.axonal": [
+        0,
+        0.1
+    ],
+    "decay_CaDynamics_DC0.axonal": [
+        20,
+        300
+    ],
+    "gamma_CaDynamics_DC0.axonal": [
+        0.005,
+        0.05
+    ],
+    "gNaTgbar_NaTg.somatic": [
+        0,
+        0.3
+    ],
+    "gK_Pstbar_K_Pst.somatic": [
+        0,
+        0.2
+    ],
+    "gK_Tstbar_K_Tst.somatic": [
+        0,
+        0.1
+    ],
+    "gSKv3_1bar_SKv3_1.somatic": [
+        0,
+        1
+    ],
+    "gCa_HVAbar_Ca_HVA2.somatic": [
+        0,
+        0.001
+    ],
+    "gCa_LVAstbar_Ca_LVAst.somatic": [
+        0,
+        0.01
+    ],
+    "gSK_E2bar_SK_E2.somatic": [
+        0,
+        0.1
+    ],
+    "decay_CaDynamics_DC0.somatic": [
+        20,
+        300
+    ],
+    "gamma_CaDynamics_DC0.somatic": [
+        0.005,
+        0.05
+    ],
+    "gamma_CaDynamics_DC0.apical": [
+        0.005,
+        0.05
+    ],
+    "gNaTgbar_NaTg.apical": [
+        0,
+        0.1
+    ],
+    "gSKv3_1bar_SKv3_1.apical": [
+        0,
+        0.003
+    ],
+    "gCa_HVAbar_Ca_HVA2.apical": [
+        0,
+        0.0001
+    ],
+    "gCa_LVAstbar_Ca_LVAst.apical": [
+        0,
+        0.001
+    ],
+    "gamma_CaDynamics_DC0.basal": [
+        0.005,
+        0.05
+    ],
+    "gCa_HVAbar_Ca_HVA2.basal": [
+        0,
+        0.0001
+    ],
+    "gCa_LVAstbar_Ca_LVAst.basal": [
+        0,
+        0.001
+    ]
+}

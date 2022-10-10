@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neurondb>
+   <listing>
+      <morphology>
+         <name>C060110A2</name>
+         <mtype>L5_TPC</mtype>
+         <msubtype>A</msubtype>
+         <layer>5</layer>
+         <repair>
+            <axon_repair>true</axon_repair>
+            <basal_dendrite_repair>true</basal_dendrite_repair>
+            <tuft_dendrite_repair>true</tuft_dendrite_repair>
+            <oblique_dendrite_repair>true</oblique_dendrite_repair>
+            <dendrite_repair>true</dendrite_repair>
+            <unravel>true</unravel>
+            <use_for_stats>true</use_for_stats>
+            <use_axon>true</use_axon>
+         </repair>
+      </morphology>
+      <morphology>
+         <name>rat_20140925_RH1_Exp1_cell2</name>
+         <mtype>L5_TPC</mtype>
+         <msubtype>A</msubtype>
+         <layer>5</layer>
+         <repair>
+            <axon_repair>false</axon_repair>
+            <dendrite_repair>false</dendrite_repair>
+            <unravel>true</unravel>
+            <use_for_stats>true</use_for_stats>
+            <use_axon>true</use_axon>
+         </repair>
+      </morphology>
+      <morphology>
+         <name>rat_20160316_E2_LH3_cell1</name>
+         <mtype>L5_TPC</mtype>
+         <msubtype>A</msubtype>
+         <layer>5</layer>
+         <repair>
+            <axon_repair>false</axon_repair>
+            <dendrite_repair>false</dendrite_repair>
+            <unravel>true</unravel>
+            <use_for_stats>true</use_for_stats>
+            <use_axon>true</use_axon>
+         </repair>
+      </morphology>
+      <morphology>
+         <name>rp110616_C1_idB</name>
+         <mtype>L5_TPC</mtype>
+         <msubtype>A</msubtype>
+         <layer>5</layer>
+         <repair>
+            <axon_repair>true</axon_repair>
+            <basal_dendrite_repair />
+            <tuft_dendrite_repair />
+            <oblique_dendrite_repair />
+            <dendrite_repair>true</dendrite_repair>
+            <unravel>true</unravel>
+            <use_for_stats>false</use_for_stats>
+            <use_axon>false</use_axon>
+         </repair>
+      </morphology>
+      <morphology>
+         <name>rp110630_P1_idC</name>
+         <mtype>L5_TPC</mtype>
+         <msubtype>A</msubtype>
+         <layer>5</layer>
+         <repair>
+            <axon_repair>true</axon_repair>
+            <basal_dendrite_repair />
+            <tuft_dendrite_repair />
+            <oblique_dendrite_repair />
+            <dendrite_repair>true</dendrite_repair>
+            <unravel>true</unravel>
+            <use_for_stats>false</use_for_stats>
+            <use_axon>false</use_axon>
+         </repair>
+      </morphology>
+       <morphology>
+      <name>C060114A5</name>
+      <mtype>L5_TPC</mtype>
+      <msubtype>A</msubtype>
+      <layer>5</layer>
+      <repair>
+        <axon_repair>true</axon_repair>
+        <basal_dendrite_repair>true</basal_dendrite_repair>
+        <tuft_dendrite_repair>true</tuft_dendrite_repair>
+        <oblique_dendrite_repair>true</oblique_dendrite_repair>
+        <dendrite_repair>true</dendrite_repair>
+        <unravel>true</unravel>
+        <use_for_stats>true</use_for_stats>
+        <use_axon>true</use_axon>
+      </repair>
+    </morphology>
+   </listing>
+   <overview>
+      <count>6</count>
+   </overview>
+</neurondb>

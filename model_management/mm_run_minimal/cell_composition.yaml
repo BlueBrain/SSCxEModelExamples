@@ -1,0 +1,20 @@
+neurons:
+- density: '{[cell_density]L5_TPC:C}'
+  region: '@;L5'
+  traits:
+    etype: {cADpyr: 1.0}
+    layer: 5
+    mtype: L5_TPC:C
+- density: '{[cell_density]L5_TPC:B}'
+  region: '@;L5'
+  traits:
+    etype: {cADpyr: 1.0}
+    layer: 5
+    mtype: L5_TPC:B
+- density: '{[cell_density]L5_TPC:A}'
+  region: '@;L5'
+  traits:
+    etype: {cADpyr: 1.0}
+    layer: 5
+    mtype: L5_TPC:A
+version: v2.0

@@ -1,0 +1,85 @@
+{
+  "Step_180": {
+    "type": "StepProtocol", 
+    "stimuli": {
+      "step": {"delay": 700.0, "amp": 0.120775, "thresh_perc": 177.1596, "duration": 2000.0, "totduration": 3021.0},
+      "holding": {"delay": 0.0, "amp": -0.060706, "duration": 3021.0, "totduration": 3021.0}
+    }, 
+    "stage": [
+      1
+    ]
+  }, 
+  "Step_240": {
+    "type": "StepProtocol", 
+    "stimuli": {
+      "step": {"delay": 700.0, "amp": 0.155578, "thresh_perc": 239.8533, "duration": 2000.0, "totduration": 3021.0},
+      "holding": {"delay": 0.0, "amp": -0.061486, "duration": 3021.0, "totduration": 3021.0}
+    }, 
+    "stage": [
+      1
+    ]
+  }, 
+  "Step_280": {
+    "type": "StepProtocol", 
+    "stimuli": {
+      "step": {"delay": 700.0, "amp": 0.185602, "thresh_perc": 275.4482, "duration": 2000.0, "totduration": 3021.0},
+      "holding": {"delay": 0.0, "amp": -0.038068, "duration": 3021.0, "totduration": 3021.0}
+    }, 
+    "stage": [
+      1
+    ]
+  }, 
+  "Step_140": {
+    "type": "StepProtocol", 
+    "stimuli": {
+      "step": {"delay": 700.0, "amp": 0.101833, "thresh_perc": 140.4902, "duration": 2000.0, "totduration": 3021.0, "stochkv_det": false},
+      "holding": {"delay": 0.0, "amp": -0.053159, "duration": 3021.0, "totduration": 3021.0}
+    }, 
+    "stage": [
+      2
+    ]
+  }, 
+  "Step_200": {
+    "type": "StepProtocol", 
+    "stimuli": {
+      "step": {"delay": 700.0, "amp": 0.14823, "thresh_perc": 206.2991, "duration": 2000.0, "totduration": 3021.0, "stochkv_det": false},
+      "holding": {"delay": 0.0, "amp": -0.053665, "duration": 3021.0, "totduration": 3021.0}
+    }, 
+    "stage": [
+      2
+    ]
+  }, 
+  "APWaveform_300": {
+    "type": "StepProtocol", 
+    "stimuli": {
+      "step": {"delay": 700.0, "amp": 0.203064, "thresh_perc": 298.7002, "duration": 50.0, "totduration": 755.0},
+      "holding": {"delay": 0.0, "amp": -0.041847, "duration": 755.0, "totduration": 755.0}
+    }, 
+    "stage": [
+      1
+    ]
+  }, 
+  "Rin": {
+    "type": "StepProtocol", 
+    "stimuli": {
+      "step": {"delay": 700.0, "amp": -0.027695, "thresh_perc": -38.799, "duration": 1000.0, "totduration": 1900.0},
+      "holding": {"delay": 0.0, "amp": -0.056696, "duration": 1900.0, "totduration": 1900.0}
+    }
+  }, 
+  "RMP": {
+    "type": "StepProtocol", 
+    "stimuli": {
+      "step": {"delay": 700, "amp": 0, "duration": 1000, "totduration": 1700}
+    }
+  }, 
+  "IV_-100": {
+    "type": "StepProtocol", 
+    "stimuli": {
+      "step": {"delay": 700.0, "amp": -0.070322, "thresh_perc": -97.9448, "duration": 1000.0, "totduration": 1900.0},
+      "holding": {"delay": 0.0, "amp": -0.056481, "duration": 1900.0, "totduration": 1900.0}
+    }, 
+    "stage": [
+      1
+    ]
+  }
+}
