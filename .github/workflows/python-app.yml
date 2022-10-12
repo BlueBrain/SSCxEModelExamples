@@ -15,7 +15,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: manylinux2014_x86_64
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
