@@ -42,6 +42,8 @@ jobs:
     - name: Test optimisation
       run: |
         gcc --version
+        sudo apt install gcc-11
+        gcc --version
         pip install -r requirements.txt
         pip install -r test-requirements.txt
         cd optimisation
