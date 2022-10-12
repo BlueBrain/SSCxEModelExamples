@@ -30,7 +30,8 @@ jobs:
         pytest -sx tests
 
   optimisation:
-    runs-on: ubuntu-latest
+    - name: CentOS 7 - Build an RPM
+      uses: ianabc/github-action-rpmbuild@v0.1.1
 
     steps:
     - uses: actions/checkout@v3
