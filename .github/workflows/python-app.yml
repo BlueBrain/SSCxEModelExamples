@@ -31,7 +31,8 @@ jobs:
         pytest -sx tests
 
   optimisation:
-    runs-on: ubuntu-latest
+    - name: CentOS 7 - Build an RPM
+      uses: ianabc/github-action-rpmbuild@v0.1.1
 
     steps:
     - uses: actions/checkout@v3
@@ -41,10 +42,6 @@ jobs:
         python-version: "3.9"
     - name: Test optimisation
       run: |
-        gcc --version
-        sudo apt install gcc-11
-        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 11
-        gcc --version
         pip install -r requirements.txt
         pip install -r test-requirements.txt
         cd optimisation
