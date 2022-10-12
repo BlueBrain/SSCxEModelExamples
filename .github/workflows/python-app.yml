@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  feature-extraction:
 
     runs-on: ubuntu-latest
 
@@ -29,6 +29,16 @@ jobs:
         pip install -r test-requirements.txt
         cd feature_extraction
         pytest -sx tests
+
+  optimisation:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.9"
     - name: Test optimisation
       run: |
         pip install -r requirements.txt
@@ -36,12 +46,33 @@ jobs:
         cd optimisation
         nrnivmodl opt_module/mechanisms
         pytest -sx tests
+
+  model-management:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.9"
     - name: Test model management
       run: |
         pip install -r requirements.txt
         pip install -r test-requirements.txt
         cd model_management/mm_run_minimal
         pytest -sx tests
+
+  validation:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.9"
+
     - name: Test validation
       run: |
         pip install -r requirements.txt
