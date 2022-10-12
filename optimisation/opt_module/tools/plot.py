@@ -40,7 +40,6 @@ def diversity(checkpoint, evaluator, color='b', figs={}, reportname=''):
 
     best_params = checkpoint['halloffame'][0]
 
-    param_count = len(param_names)
     for i, name in enumerate(param_names):
 
         ax = axs[i]
