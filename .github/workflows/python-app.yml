@@ -30,8 +30,15 @@ jobs:
         pytest -sx tests
 
   optimisation:
-    - name: CentOS 7 - Build an RPM
-      uses: ianabc/github-action-rpmbuild@v0.1.1
+    strategy:
+      matrix:
+        container:
+        - 'debian:7'
+        - 'centos:5'
+        - 'centos:6'
+        - 'centos:latest'
+    runs-on: ubuntu-latest
+    container: ${{ matrix.container }}
 
     steps:
     - uses: actions/checkout@v3
