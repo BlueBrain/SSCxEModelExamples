@@ -43,6 +43,7 @@ jobs:
       run: |
         gcc --version
         sudo apt install gcc-11
+        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 11
         gcc --version
         pip install -r requirements.txt
         pip install -r test-requirements.txt
