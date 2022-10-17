@@ -56,7 +56,6 @@ class Analyse(object):
             altmorph=None,
             stage=None,
             parameters=False,
-            apical_points_file="morphologies/apical_points_isec.json"
             ):
 
         self.githash = githash
@@ -79,8 +78,6 @@ class Analyse(object):
 
         self.altmorph = altmorph
         self.stage = stage
-
-        self.apical_points_file = apical_points_file
 
         # switch to run dir and load modules
         path = os.path.join(main_path, rundir)
@@ -158,7 +155,6 @@ class Analyse(object):
             if self.has_etest:
                 self.evaluator = self.setup.evaluator.create(etype=self.etype,
                                         altmorph=self.altmorph,
-                                        etypetest=self.etypetest,
                                         stochkv_det=self.stochdet,
                                         usethreshold=self.usethreshold,
                                         do_simplify_morph=self.simpmorph)
@@ -170,16 +166,13 @@ class Analyse(object):
         else:
             if self.has_etest:
                 self.evaluator = self.setup.evaluator.create(etype=self.etype,
-                                        apical_points_file=self.apical_points_file,
                                         altmorph=self.altmorph,
-                                        etypetest=self.etypetest,
                                         stochkv_det=self.stochdet,
                                         usethreshold=self.usethreshold,
                                         stage=self.stage, past_params=self.past_params,
                                         do_simplify_morph=self.simpmorph)
             else:
                 self.evaluator = self.setup.evaluator.create(etype=self.etype,
-                                        apical_points_file=self.apical_points_file,
                                         altmorph=self.altmorph,
                                         stochkv_det=self.stochdet,
                                         usethreshold=self.usethreshold,

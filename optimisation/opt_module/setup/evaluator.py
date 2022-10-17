@@ -29,6 +29,7 @@ from . import protocols
 import logging
 logger = logging.getLogger(__name__)
 import os
+from pathlib import Path
 import bluepyopt as bpopt
 
 soma_loc = ephys.locations.NrnSeclistCompLocation(
@@ -801,14 +802,15 @@ class MultiEvaluator(bpopt.evaluators.Evaluator):
         return content
 
 
-def create(etype, apical_points_file, stochkv_det=None, usethreshold=False,
+def create(etype, stochkv_det=None, usethreshold=False,
             runopt=False, altmorph=None, etypetest=None,
             stage=None, past_params=[], do_simplify_morph=False):
     """Setup"""
 
     cell_evals = []
 
-    with open(os.path.join(os.path.dirname(__file__), '..', 'config/recipes/recipes.json')) as f:
+    parent_dir = Path(__file__).resolve().parent.parent
+    with open(parent_dir / 'config' / 'recipes' / 'recipes.json') as f:
         recipes = json.load(f)
 
     recipe = recipes[etype]
@@ -859,7 +861,9 @@ def create(etype, apical_points_file, stochkv_det=None, usethreshold=False,
             basename = os.path.basename(morph)
             filename = os.path.splitext(basename)[0]
             morph = os.path.join(morph_path, basename)
-            apical_points_isecs = json.load(open(apical_points_file))
+
+            with open(parent_dir / 'morphologies' / 'apical_points_isec.json') as f:
+                apical_points_isecs = json.load(f)
             if filename in apical_points_isecs:
                 apical_point_isec = int(apical_points_isecs[filename])
             else:
