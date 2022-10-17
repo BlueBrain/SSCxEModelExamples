@@ -21,7 +21,6 @@ Copyright (c) 2016, EPFL/Blue Brain Project
  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 """
 
-import sys
 import os
 
 
@@ -45,7 +44,7 @@ def get_filename(etype, seed, stage):
 class Analyse(object):
 
     # build cell
-    def __init__(self, rundir, githash,
+    def __init__(self, githash,
             seed="1", rank=0,
             etype=None, # use this to evaluate model
             hoc=False, oldhoc=False,
@@ -77,12 +76,8 @@ class Analyse(object):
         self.altmorph = altmorph
         self.stage = stage
 
-        # switch to run dir and load modules
-        path = os.path.join(main_path, rundir)
-
-        sys.path.insert(0, path)
-        os.chdir(path)
-        logger.info('Path %s', path)
+        os.chdir("opt_module")
+        logger.info('Path %s', os.getcwd())
 
         from .. import setup
         self.setup = setup

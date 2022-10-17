@@ -102,7 +102,6 @@ class TestOptimisationNotebook:
 
     def test_responses(self):
         maindir = os.path.join(".", "opt_module")
-        rundir = "."
 
         rank = 0
         seed = 1
@@ -112,7 +111,6 @@ class TestOptimisationNotebook:
         compilation_output = subprocess.run(["nrnivmodl", "opt_module/mechanisms"], capture_output=True, check=True)
 
         analysis_obj = Analyse(
-            rundir=rundir,
             githash="a6e707a",
             seed=seed,
             rank=rank,
