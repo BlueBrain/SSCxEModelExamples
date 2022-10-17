@@ -22,12 +22,8 @@ Copyright (c) 2016, EPFL/Blue Brain Project
 """
 
 import sys
-import bluepyopt.ephys as ephys
-
 import os
 
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_pdf import PdfPages
 
 import logging
 logger = logging.getLogger(__name__)
@@ -37,21 +33,7 @@ json.encoder.FLOAT_REPR = lambda x: format(x, '.17g')
 
 from collections import OrderedDict
 import pickle
-import time
-from . import plot
 
-
-def makedirs(filename): # also accepts filename
-    try:
-        os.makedirs(os.path.dirname(filename))
-    except:
-        pass
-
-def makedir(directory):
-    try:
-        os.makedirs(directory)
-    except:
-        pass
 
 def get_filename(etype, seed, stage):
     if stage > 1:
@@ -71,7 +53,6 @@ class Analyse(object):
             main_path=None,
             recipes_path='config/recipes/recipes.json',
             grouping=['etype', 'githash', 'seed', 'rank', 'altmorph'],
-            figpath='figures',
             altmorph=None,
             stage=None,
             parameters=False,
@@ -121,9 +102,6 @@ class Analyse(object):
         self.path_final = os.path.join(main_path, "final.json")
         self.main_path = main_path
 
-        self.figpath = os.path.join(self.main_path, figpath)
-        makedir(self.figpath)
-
         self.recipes = json.load(open(recipes_path))
         self.hof_fitness_sum = False
 
@@ -134,15 +112,6 @@ class Analyse(object):
 
             cp_filename = os.path.join(
                 self.checkpoints_dir, f'{self.etype}_{int(self.seed)}.pkl')
-
-            if os.path.isfile(cp_filename): # check if old checkpoint exists
-                pass
-            else: # checkpoint based on etype and stage
-                filename = get_filename(self.etype, self.seed, self.stage)
-                cp_filename = os.path.join(self.checkpoints_dir, filename + '.pkl')
-                if os.path.isfile(cp_filename) is False:
-                    print('No checkpoint file available, run optimization first')
-                    exit(1)
 
             with open(cp_filename, "rb") as file_handle:
                 cp = pickle.load(file_handle, encoding="latin1")
