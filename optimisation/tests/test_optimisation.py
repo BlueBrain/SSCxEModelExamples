@@ -1,5 +1,6 @@
 """Test covering the optimisation notebook's functionality."""
 
+from contextlib import contextmanager
 import os
 from pathlib import Path
 import pickle
@@ -12,6 +13,16 @@ import pytest
 from opt_module.tools.plot import diversity
 from opt_module.setup.evaluator import create as create_evaluator
 from opt_module.tools.analyse import Analyse
+
+
+@contextmanager
+def cwd(path):
+    oldpwd = os.getcwd()
+    os.chdir(path)
+    try:
+        yield
+    finally:
+        os.chdir(oldpwd)
 
 
 def get_responses(cell_evaluator, top_individual):
@@ -110,23 +121,23 @@ class TestOptimisationNotebook:
 
         compilation_output = subprocess.run(["nrnivmodl", "opt_module/mechanisms"], capture_output=True, check=True)
 
-        analysis_obj = Analyse(
-            githash="a6e707a",
-            seed=seed,
-            rank=rank,
-            etype=etype,
-            main_path=maindir,
-            recipes_path="./config/recipes/recipes.json",
-            stage=stage,
-        )
+        with cwd("opt_module"):
 
-        hof = self.cp["halloffame"]
-        top_individual = hof[0]
-        analysis_obj.set_evaluator()
+            analysis_obj = Analyse(
+                githash="a6e707a",
+                seed=seed,
+                rank=rank,
+                etype=etype,
+                main_path=maindir,
+                recipes_path="./config/recipes/recipes.json",
+                stage=stage,
+            )
 
-        responses = get_responses(analysis_obj.evaluator.evaluators[0], top_individual)
+            hof = self.cp["halloffame"]
+            top_individual = hof[0]
+            analysis_obj.set_evaluator()
 
-        os.chdir("..")
+            responses = get_responses(analysis_obj.evaluator.evaluators[0], top_individual)
 
         assert responses.keys() == {'L5TPCa.RMP.soma.v', 'L5TPCa.Rin.soma.v',
          'L5TPCa.bpo_holding_current', 'L5TPCa.bpo_threshold_current',

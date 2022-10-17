@@ -76,14 +76,8 @@ class Analyse(object):
         self.altmorph = altmorph
         self.stage = stage
 
-        os.chdir("opt_module")
-        logger.info('Path %s', os.getcwd())
-
         from .. import setup
         self.setup = setup
-
-        logger.info('Loading %s modules from %s', etype, setup.__file__)
-        #self.currentdir = currentdir
 
         self.path_final = os.path.join(main_path, "final.json")
         self.main_path = main_path
