@@ -33,6 +33,8 @@ json.encoder.FLOAT_REPR = lambda x: format(x, '.17g')
 from collections import OrderedDict
 import pickle
 
+from .. import setup
+
 
 def get_filename(etype, seed, stage):
     if stage > 1:
@@ -75,9 +77,6 @@ class Analyse(object):
 
         self.altmorph = altmorph
         self.stage = stage
-
-        from .. import setup
-        self.setup = setup
 
         self.path_final = os.path.join(main_path, "final.json")
         self.main_path = main_path
@@ -133,14 +132,12 @@ class Analyse(object):
 
 
     def set_evaluator(self):
-
         if (self.stage is None) or (self.githash is None): # just go on as before
-            self.evaluator = self.setup.evaluator.create(etype=self.etype,
+            self.evaluator = setup.evaluator.create(etype=self.etype,
                                         altmorph=self.altmorph,
                                         do_simplify_morph=self.simpmorph)
-
         else:
-            self.evaluator = self.setup.evaluator.create(etype=self.etype,
+            self.evaluator = setup.evaluator.create(etype=self.etype,
                                     altmorph=self.altmorph,
                                     stochkv_det=self.stochdet,
                                     usethreshold=self.usethreshold,
