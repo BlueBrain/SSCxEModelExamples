@@ -48,7 +48,6 @@ class Analyse(object):
     def __init__(self, rundir, githash,
             seed="1", rank=0,
             etype=None, # use this to evaluate model
-            etypetest=None, # also a test model can be given to evaluate against the model given in etype
             hoc=False, oldhoc=False,
             main_path=None,
             recipes_path='config/recipes/recipes.json',
@@ -61,7 +60,6 @@ class Analyse(object):
         self.githash = githash
         self.seed = seed
         self.rank = rank
-        self.etypetest = etypetest
         self.etype = etype
 
         # options that can be used later:
@@ -88,10 +86,6 @@ class Analyse(object):
 
         from .. import setup
         self.setup = setup
-
-        import inspect
-        argspec = inspect.getargspec(self.setup.evaluator.create)
-        self.has_etest = ('etypetest' in argspec.args)
 
         logger.info('Loading %s modules from %s', etype, setup.__file__)
         #self.currentdir = currentdir
@@ -152,30 +146,15 @@ class Analyse(object):
     def set_evaluator(self):
 
         if (self.stage is None) or (self.githash is None): # just go on as before
-            if self.has_etest:
-                self.evaluator = self.setup.evaluator.create(etype=self.etype,
-                                        altmorph=self.altmorph,
-                                        stochkv_det=self.stochdet,
-                                        usethreshold=self.usethreshold,
-                                        do_simplify_morph=self.simpmorph)
-            else:
-                self.evaluator = self.setup.evaluator.create(etype=self.etype,
+            self.evaluator = self.setup.evaluator.create(etype=self.etype,
                                         altmorph=self.altmorph,
                                         do_simplify_morph=self.simpmorph)
 
         else:
-            if self.has_etest:
-                self.evaluator = self.setup.evaluator.create(etype=self.etype,
-                                        altmorph=self.altmorph,
-                                        stochkv_det=self.stochdet,
-                                        usethreshold=self.usethreshold,
-                                        stage=self.stage, past_params=self.past_params,
-                                        do_simplify_morph=self.simpmorph)
-            else:
-                self.evaluator = self.setup.evaluator.create(etype=self.etype,
-                                        altmorph=self.altmorph,
-                                        stochkv_det=self.stochdet,
-                                        usethreshold=self.usethreshold,
-                                        stage=self.stage, past_params=self.past_params,
-                                        do_simplify_morph=self.simpmorph
-                                        )
+            self.evaluator = self.setup.evaluator.create(etype=self.etype,
+                                    altmorph=self.altmorph,
+                                    stochkv_det=self.stochdet,
+                                    usethreshold=self.usethreshold,
+                                    stage=self.stage, past_params=self.past_params,
+                                    do_simplify_morph=self.simpmorph
+                                    )
