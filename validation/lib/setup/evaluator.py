@@ -587,7 +587,6 @@ def create(
     usethreshold=False,
     runopt=False,
     altmorph=None,
-    etypetest=None,
     stage=None,
     past_params=[],
     do_simplify_morph=False,
