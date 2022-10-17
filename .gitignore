@@ -3,7 +3,7 @@ __pycache__
 *.ipynb_checkpoints
 x86_64
 *.pdf
-.coverage
+.coverage*
 coverage.xml
 *.pyc
 feature_extraction/cADpyr
