@@ -8,6 +8,7 @@ import copy
 import bluepyopt.ephys as ephys
 
 import logging
+
 logger = logging.getLogger(__name__)
 
 

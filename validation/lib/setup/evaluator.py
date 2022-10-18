@@ -157,6 +157,7 @@ class NrnSomaDistanceCompLocationApical(ephys.locations.NrnSomaDistanceCompLocat
         self.apical_point_isec = apical_point_isec
         self.do_simplify_morph = do_simplify_morph
 
+
 def define_protocols(
     protocols_filename,
     stochkv_det=None,
@@ -330,7 +331,6 @@ def define_protocols(
 
 
 from bluepyopt.ephys.efeatures import eFELFeature
-
 
 
 class eFELFeatureExtra(eFELFeature):

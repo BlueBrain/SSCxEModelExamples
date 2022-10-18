@@ -213,9 +213,10 @@ def run_emodel_morph(
         cp = pickle.load(open(cp_filename, "rb"), encoding="latin1")
         hof = cp["halloffame"]
 
-    evaluator = setup.evaluator.create(etype=f"{emodel}", altmorph=[["alt", morph_path, apical_point_isec]])
+    evaluator = setup.evaluator.create(
+        etype=f"{emodel}", altmorph=[["alt", morph_path, apical_point_isec]]
+    )
     evaluator = evaluator.evaluators[0]  # only one evaluator
-
 
     emodel_params = evaluator.param_dict(hof[0])
     evaluator.cell_model.freeze(emodel_params)

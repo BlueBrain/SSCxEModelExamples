@@ -25,10 +25,12 @@ import os
 
 
 import logging
+
 logger = logging.getLogger(__name__)
 
 import json
-json.encoder.FLOAT_REPR = lambda x: format(x, '.17g')
+
+json.encoder.FLOAT_REPR = lambda x: format(x, ".17g")
 
 from collections import OrderedDict
 import pickle
@@ -38,25 +40,29 @@ from .. import setup
 
 def get_filename(etype, seed, stage):
     if stage > 1:
-        return '%s_%d_s%d' % (etype, int(seed), int(abs(stage)))
+        return "%s_%d_s%d" % (etype, int(seed), int(abs(stage)))
     else:
-        return '%s_%d' % (etype, int(seed))
+        return "%s_%d" % (etype, int(seed))
 
 
 class Analyse(object):
 
     # build cell
-    def __init__(self, githash,
-            seed="1", rank=0,
-            etype=None, # use this to evaluate model
-            hoc=False, oldhoc=False,
-            main_path=None,
-            recipes_path='config/recipes/recipes.json',
-            grouping=['etype', 'githash', 'seed', 'rank', 'altmorph'],
-            altmorph=None,
-            stage=None,
-            parameters=False,
-            ):
+    def __init__(
+        self,
+        githash,
+        seed="1",
+        rank=0,
+        etype=None,  # use this to evaluate model
+        hoc=False,
+        oldhoc=False,
+        main_path=None,
+        recipes_path="config/recipes/recipes.json",
+        grouping=["etype", "githash", "seed", "rank", "altmorph"],
+        altmorph=None,
+        stage=None,
+        parameters=False,
+    ):
 
         self.githash = githash
         self.seed = seed
@@ -87,15 +93,16 @@ class Analyse(object):
         # load from checkpoint, get parameters
         if self.githash is not None:
 
-            self.checkpoints_dir = 'checkpoints/run.%s' % self.githash
+            self.checkpoints_dir = "checkpoints/run.%s" % self.githash
 
             cp_filename = os.path.join(
-                self.checkpoints_dir, f'{self.etype}_{int(self.seed)}.pkl')
+                self.checkpoints_dir, f"{self.etype}_{int(self.seed)}.pkl"
+            )
 
             with open(cp_filename, "rb") as file_handle:
                 cp = pickle.load(file_handle, encoding="latin1")
 
-            hof = cp['halloffame']
+            hof = cp["halloffame"]
 
         self.set_pasts()
         self.set_evaluator()
@@ -105,42 +112,52 @@ class Analyse(object):
                 self.parameters = self.evaluator.param_dict(hof[rank])
             self.cp = cp
             self.hof_fitness_sum = sum(hof[rank].fitness.values)
-            #self.hof_objectives = evaluator.objective_dict(hof[rank].fitness.values)
+            # self.hof_objectives = evaluator.objective_dict(hof[rank].fitness.values)
 
-        print (self.parameters)
+        print(self.parameters)
 
     def set_pasts(self):
 
-        if (self.stage is not None) and (self.githash is not None): # just go on as before
+        if (self.stage is not None) and (
+            self.githash is not None
+        ):  # just go on as before
             # get params from previous optimizations
-            pasts = int(abs(self.stage))-1
+            pasts = int(abs(self.stage)) - 1
             self.past_params = OrderedDict()
 
             if pasts > 0:
-                rank = 0 # hardcoded, use best model
+                rank = 0  # hardcoded, use best model
 
-                for past in range(1,pasts+1): # loop over all previous stages
+                for past in range(1, pasts + 1):  # loop over all previous stages
                     past_filename = get_filename(self.etype, self.seed, past)
-                    past_path = os.path.join(self.checkpoints_dir, past_filename + '_hof.json')
-                    past_param = json.load(open(past_path),
-                                    object_pairs_hook=OrderedDict)[rank]
-                    self.past_params.update(past_param) # values from later stages overwrite previous ones
+                    past_path = os.path.join(
+                        self.checkpoints_dir, past_filename + "_hof.json"
+                    )
+                    past_param = json.load(
+                        open(past_path), object_pairs_hook=OrderedDict
+                    )[rank]
+                    self.past_params.update(
+                        past_param
+                    )  # values from later stages overwrite previous ones
 
             if self.stage < 0:
                 self.parameters = self.past_params
-                self.stage = None # Now set to None
-
+                self.stage = None  # Now set to None
 
     def set_evaluator(self):
-        if (self.stage is None) or (self.githash is None): # just go on as before
-            self.evaluator = setup.evaluator.create(etype=self.etype,
-                                        altmorph=self.altmorph,
-                                        do_simplify_morph=self.simpmorph)
+        if (self.stage is None) or (self.githash is None):  # just go on as before
+            self.evaluator = setup.evaluator.create(
+                etype=self.etype,
+                altmorph=self.altmorph,
+                do_simplify_morph=self.simpmorph,
+            )
         else:
-            self.evaluator = setup.evaluator.create(etype=self.etype,
-                                    altmorph=self.altmorph,
-                                    stochkv_det=self.stochdet,
-                                    usethreshold=self.usethreshold,
-                                    stage=self.stage, past_params=self.past_params,
-                                    do_simplify_morph=self.simpmorph
-                                    )
+            self.evaluator = setup.evaluator.create(
+                etype=self.etype,
+                altmorph=self.altmorph,
+                stochkv_det=self.stochdet,
+                usethreshold=self.usethreshold,
+                stage=self.stage,
+                past_params=self.past_params,
+                do_simplify_morph=self.simpmorph,
+            )

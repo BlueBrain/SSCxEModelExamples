@@ -33,6 +33,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 def multi_locations(sectionlist):
     """Define mechanisms"""
 

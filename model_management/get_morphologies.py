@@ -11,6 +11,8 @@ if __name__ == "__main__":
     local_morph_path.mkdir(exist_ok=True)
 
     df = MorphDB.from_neurondb(path / "neuronDB.xml", morphology_folder=path).df
-    cells = df[df.mtype == "L5_TPC:A"].sample(n_morphs, random_state=42)["path"].to_list()
+    cells = (
+        df[df.mtype == "L5_TPC:A"].sample(n_morphs, random_state=42)["path"].to_list()
+    )
     for cell in cells:
         shutil.copy(cell, local_morph_path / Path(cell).name)

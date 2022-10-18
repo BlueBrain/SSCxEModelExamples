@@ -67,7 +67,7 @@ def plot_results(
     plotwhat=["EPSP", "bAP"],
     fitwhat=["EPSP", "bAP", "EPSP_data", "bAP_data"],
     use_diams=True,
-    legend_fontsize=6
+    legend_fontsize=6,
 ):
 
     all_points = {
@@ -390,9 +390,7 @@ def plot_results(
             sa1.set_rasterized(True)
 
             if "EPSP" in fitwhat:
-                x, y_fit, _, _, p, p_std = fit(
-                    distances, EPSP_att, max_dist=max_dist
-                )
+                x, y_fit, _, _, p, p_std = fit(distances, EPSP_att, max_dist=max_dist)
                 ax.plot(
                     x,
                     y_fit,
@@ -420,9 +418,7 @@ def plot_results(
         )
 
         if "EPSP_data" in fitwhat:
-            x, y_fit, _, _, p, p_std = fit(
-                distances, data, max_dist=max_dist
-            )
+            x, y_fit, _, _, p, p_std = fit(distances, data, max_dist=max_dist)
             ax.plot(
                 x,
                 y_fit,
@@ -489,9 +485,7 @@ def plot_results(
         )
 
         if "EPSP_data" in fitwhat:
-            x, y_fit, _, _, p, p_std = fit(
-                distances, data, max_dist=max_dist
-            )
+            x, y_fit, _, _, p, p_std = fit(distances, data, max_dist=max_dist)
             ax.plot(
                 x,
                 y_fit,

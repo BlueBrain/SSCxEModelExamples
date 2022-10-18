@@ -30,14 +30,16 @@ def get_responses(cell_evaluator, top_individual):
     """Get voltage, calcium recording, threshold and holding currents from the individual."""
     individual_dict = cell_evaluator.param_dict(top_individual)
     responses = cell_evaluator.run_protocols(
-            cell_evaluator.fitness_protocols.values(), param_values=individual_dict)
+        cell_evaluator.fitness_protocols.values(), param_values=individual_dict
+    )
 
     return responses
+
 
 class TestOptimisationNotebook:
     @classmethod
     def setup_class(cls):
-        """ setup any state specific to the execution of the given class (which
+        """setup any state specific to the execution of the given class (which
         usually contains tests).
         """
         checkpoint_file = (
@@ -49,20 +51,29 @@ class TestOptimisationNotebook:
         )
         cls.metype = "cADpyr_L5TPC"
 
-        apical_points_file = os.path.join(".","opt_module", "morphologies", "apical_points_isec.json")
+        apical_points_file = os.path.join(
+            ".", "opt_module", "morphologies", "apical_points_isec.json"
+        )
         cls.evaluator = create_evaluator(cls.metype, apical_points_file)
 
-
-        with open(checkpoint_file, 'rb') as file_handle:
+        with open(checkpoint_file, "rb") as file_handle:
             cls.cp = pickle.load(file_handle, encoding="latin1")
 
     def test_checkpoint_keys(self):
-        assert self.cp.keys() == {'history', 'parents', 'generation', 'logbook', 'rndstate', 'halloffame', 'population'}
+        assert self.cp.keys() == {
+            "history",
+            "parents",
+            "generation",
+            "logbook",
+            "rndstate",
+            "halloffame",
+            "population",
+        }
 
     def test_checkpoint_logbook(self):
         logbook = self.cp["logbook"]
         gen_numbers = logbook.select("gen")
-        assert gen_numbers == [x for x in range(1,101)]
+        assert gen_numbers == [x for x in range(1, 101)]
 
         mean = np.array(logbook.select("avg"))
         mean_gt = np.loadtxt("tests/logbook_mean.dat")
@@ -76,7 +87,7 @@ class TestOptimisationNotebook:
         minimum_gt = np.loadtxt("tests/logbook_min.dat")
         assert np.array_equal(minimum, minimum_gt)
         minmin = min(minimum)
-        assert minmin==61.593137593478396
+        assert minmin == 61.593137593478396
 
     def test_evaluator_params(self):
         evaluator_params = {param.name: param.bounds for param in self.evaluator.params}
@@ -103,8 +114,8 @@ class TestOptimisationNotebook:
         n_params = len(param_names)
         assert n_params == 31
 
-        hof = self.cp['halloffame']
-        fitness_cut_off = 2.*sum(hof[0].fitness.values)
+        hof = self.cp["halloffame"]
+        fitness_cut_off = 2.0 * sum(hof[0].fitness.values)
         fitness_cut_off_on_notebook = 123.18627518695679
         assert fitness_cut_off == pytest.approx(fitness_cut_off_on_notebook)
 
@@ -120,7 +131,9 @@ class TestOptimisationNotebook:
         stage = 2
         etype = self.metype
 
-        compilation_output = subprocess.run(["nrnivmodl", "opt_module/mechanisms"], capture_output=True, check=True)
+        compilation_output = subprocess.run(
+            ["nrnivmodl", "opt_module/mechanisms"], capture_output=True, check=True
+        )
 
         with cwd("opt_module"):
 
@@ -138,25 +151,45 @@ class TestOptimisationNotebook:
             top_individual = hof[0]
             analysis_obj.set_evaluator()
 
-            responses = get_responses(analysis_obj.evaluator.evaluators[0], top_individual)
+            responses = get_responses(
+                analysis_obj.evaluator.evaluators[0], top_individual
+            )
 
-        assert responses.keys() == {'L5TPCa.RMP.soma.v', 'L5TPCa.Rin.soma.v',
-         'L5TPCa.bpo_holding_current', 'L5TPCa.bpo_threshold_current',
-         'L5TPCa.bAP.soma.v', 'L5TPCa.bAP.dend1.v', 'L5TPCa.bAP.dend2.v',
-         'L5TPCa.bAP.ca_prox_apic.cai', 'L5TPCa.bAP.ca_prox_basal.cai',
-         'L5TPCa.bAP.ca_soma.cai', 'L5TPCa.bAP.ca_ais.cai', 'L5TPCa.Step_150.soma.v',
-         'L5TPCa.Step_200.soma.v', 'L5TPCa.Step_280.soma.v', 'L5TPCa.APWaveform_320.soma.v',
-         'L5TPCa.IV_-100.soma.v', 'L5TPCa.SpikeRec_600.soma.v'}
+        assert responses.keys() == {
+            "L5TPCa.RMP.soma.v",
+            "L5TPCa.Rin.soma.v",
+            "L5TPCa.bpo_holding_current",
+            "L5TPCa.bpo_threshold_current",
+            "L5TPCa.bAP.soma.v",
+            "L5TPCa.bAP.dend1.v",
+            "L5TPCa.bAP.dend2.v",
+            "L5TPCa.bAP.ca_prox_apic.cai",
+            "L5TPCa.bAP.ca_prox_basal.cai",
+            "L5TPCa.bAP.ca_soma.cai",
+            "L5TPCa.bAP.ca_ais.cai",
+            "L5TPCa.Step_150.soma.v",
+            "L5TPCa.Step_200.soma.v",
+            "L5TPCa.Step_280.soma.v",
+            "L5TPCa.APWaveform_320.soma.v",
+            "L5TPCa.IV_-100.soma.v",
+            "L5TPCa.SpikeRec_600.soma.v",
+        }
 
         currents = {k: v for k, v in responses.items() if k.endswith("current")}
 
-        assert currents["L5TPCa.bpo_holding_current"] == pytest.approx(-0.14824624653402146)
-        assert currents["L5TPCa.bpo_threshold_current"] == pytest.approx(0.4762841614252752)
+        assert currents["L5TPCa.bpo_holding_current"] == pytest.approx(
+            -0.14824624653402146
+        )
+        assert currents["L5TPCa.bpo_threshold_current"] == pytest.approx(
+            0.4762841614252752
+        )
 
         voltage_responses = {k: v for k, v in responses.items() if k.endswith(".v")}
 
         # use the step voltage to make sure there are spikes, thus features can be extracted
-        step_voltage_responses = {k: v for k, v in voltage_responses.items() if k.startswith("L5TPCa.Step")}
+        step_voltage_responses = {
+            k: v for k, v in voltage_responses.items() if k.startswith("L5TPCa.Step")
+        }
 
         for v_key, v_value in step_voltage_responses.items():
             result = v_value.response
@@ -176,23 +209,58 @@ class TestOptimisationNotebook:
 
             traces = [result_trace, gt_trace]
 
-            traces_results = efel.getFeatureValues(traces,
-                                           ['minimum_voltage', 'maximum_voltage', 'Spikecount',
-                                            'min_voltage_between_spikes', 'AP_duration',
-                                            'peak_indices', 'peak_time', 'peak_voltage'])
+            traces_results = efel.getFeatureValues(
+                traces,
+                [
+                    "minimum_voltage",
+                    "maximum_voltage",
+                    "Spikecount",
+                    "min_voltage_between_spikes",
+                    "AP_duration",
+                    "peak_indices",
+                    "peak_time",
+                    "peak_voltage",
+                ],
+            )
 
-
-            assert np.allclose(traces_results[0]["minimum_voltage"], traces_results[1]["minimum_voltage"], atol=1e-2)
-            assert np.allclose(traces_results[0]["maximum_voltage"], traces_results[1]["maximum_voltage"])
-            assert np.allclose(traces_results[0]["Spikecount"], traces_results[1]["Spikecount"])
-            assert np.allclose(traces_results[0]["min_voltage_between_spikes"], traces_results[1]["min_voltage_between_spikes"], atol=1e-1)
-            assert np.allclose(traces_results[0]["AP_duration"], traces_results[1]["AP_duration"], atol=1e-1)
-            assert np.allclose(traces_results[0]["peak_indices"], traces_results[1]["peak_indices"], atol=5)
-            assert np.allclose(traces_results[0]["peak_time"], traces_results[1]["peak_time"], atol=1)
-            assert np.allclose(traces_results[0]["peak_voltage"], traces_results[1]["peak_voltage"], atol=2)
+            assert np.allclose(
+                traces_results[0]["minimum_voltage"],
+                traces_results[1]["minimum_voltage"],
+                atol=1e-2,
+            )
+            assert np.allclose(
+                traces_results[0]["maximum_voltage"],
+                traces_results[1]["maximum_voltage"],
+            )
+            assert np.allclose(
+                traces_results[0]["Spikecount"], traces_results[1]["Spikecount"]
+            )
+            assert np.allclose(
+                traces_results[0]["min_voltage_between_spikes"],
+                traces_results[1]["min_voltage_between_spikes"],
+                atol=1e-1,
+            )
+            assert np.allclose(
+                traces_results[0]["AP_duration"],
+                traces_results[1]["AP_duration"],
+                atol=1e-1,
+            )
+            assert np.allclose(
+                traces_results[0]["peak_indices"],
+                traces_results[1]["peak_indices"],
+                atol=5,
+            )
+            assert np.allclose(
+                traces_results[0]["peak_time"], traces_results[1]["peak_time"], atol=1
+            )
+            assert np.allclose(
+                traces_results[0]["peak_voltage"],
+                traces_results[1]["peak_voltage"],
+                atol=2,
+            )
 
         ca_responses = {k: v for k, v in responses.items() if k.endswith(".cai")}
         for c_key, c_value in ca_responses.items():
-            calcium_response= c_value.response
+            calcium_response = c_value.response
             calcium_response_gt = np.loadtxt(f"tests/calcium_responses/{c_key}.dat")
             assert np.allclose(calcium_response, calcium_response_gt, atol=1e-6)

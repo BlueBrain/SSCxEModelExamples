@@ -21,6 +21,7 @@ def remove_keys_from_dict(dict_var: dict, keys: List[str]) -> dict:
 
     return dict_var
 
+
 def test_feature_extraction():
     """Regression test to make sure future changes won't affect the results."""
     etype = "cADpyr"
@@ -41,7 +42,7 @@ def test_feature_extraction():
 
     with open(f"{etype}/{test_cell}/features.json", "r") as json_file:
         results = json.load(json_file)
-    
+
     with open(f"tests/data/{test_cell}-ground-truth.json", "r") as json_file:
         ground_truth = json.load(json_file)
 
