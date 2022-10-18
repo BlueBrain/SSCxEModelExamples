@@ -7,6 +7,7 @@ import pickle
 import subprocess
 import json
 
+import efel
 import numpy as np
 import pytest
 
@@ -154,11 +155,41 @@ class TestOptimisationNotebook:
 
         voltage_responses = {k: v for k, v in responses.items() if k.endswith(".v")}
 
-        for v_key, v_value in voltage_responses.items():
-            voltage_response = v_value.response
-            voltage_response_gt = np.loadtxt(f"tests/voltage_responses/{v_key}.dat")
-            assert np.allclose(voltage_response, voltage_response_gt, atol=1e-2)  # NEURON version difference
-            # plots are visually uneffected by this 1e-2 difference on some trace values.
+        # use the step voltage to make sure there are spikes, thus features can be extracted
+        step_voltage_responses = {k: v for k, v in voltage_responses.items() if k.startswith("L5TPCa.Step")}
+
+        for v_key, v_value in step_voltage_responses.items():
+            result = v_value.response
+            gt = np.loadtxt(f"tests/voltage_responses/{v_key}.dat")
+            # use eFEL features to compare voltages since NEURON sampling rate varies
+            result_trace = {}
+            result_trace["T"] = result.time.values
+            result_trace["V"] = result.voltage.values
+            result_trace["stim_start"] = [0]
+            result_trace["stim_end"] = [len(result) - 1]
+
+            gt_trace = {}
+            gt_trace["T"] = gt[:, 0]
+            gt_trace["V"] = gt[:, 1]
+            gt_trace["stim_start"] = [0]
+            gt_trace["stim_end"] = [len(gt) - 1]
+
+            traces = [result_trace, gt_trace]
+
+            traces_results = efel.getFeatureValues(traces,
+                                           ['minimum_voltage', 'maximum_voltage', 'Spikecount',
+                                            'min_voltage_between_spikes', 'AP_duration',
+                                            'peak_indices', 'peak_time', 'peak_voltage'])
+
+
+            assert np.allclose(traces_results[0]["minimum_voltage"], traces_results[1]["minimum_voltage"], atol=1e-2)
+            assert np.allclose(traces_results[0]["maximum_voltage"], traces_results[1]["maximum_voltage"])
+            assert np.allclose(traces_results[0]["Spikecount"], traces_results[1]["Spikecount"])
+            assert np.allclose(traces_results[0]["min_voltage_between_spikes"], traces_results[1]["min_voltage_between_spikes"], atol=1e-1)
+            assert np.allclose(traces_results[0]["AP_duration"], traces_results[1]["AP_duration"], atol=1e-1)
+            assert np.allclose(traces_results[0]["peak_indices"], traces_results[1]["peak_indices"], atol=5)
+            assert np.allclose(traces_results[0]["peak_time"], traces_results[1]["peak_time"], atol=1)
+            assert np.allclose(traces_results[0]["peak_voltage"], traces_results[1]["peak_voltage"], atol=2)
 
         ca_responses = {k: v for k, v in responses.items() if k.endswith(".cai")}
         for c_key, c_value in ca_responses.items():
