@@ -1,1 +1,2 @@
-validation/input/morphologies/*.asc export-ignore
+validation/input/morphologies/*.asc linguist-vendored
+/**/*.asc linguist-vendored
