@@ -30,15 +30,7 @@ jobs:
         pytest -sx tests
 
   optimisation:
-    strategy:
-      matrix:
-        container:
-        - 'debian:7'
-        - 'centos:5'
-        - 'centos:6'
-        - 'centos:latest'
     runs-on: ubuntu-latest
-    container: ${{ matrix.container }}
 
     steps:
     - uses: actions/checkout@v3
