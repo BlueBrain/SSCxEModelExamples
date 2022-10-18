@@ -36,4 +36,4 @@ def test_select_output():
     gt_df = pd.read_csv("tests/ground_truth/mecombo_emodel.tsv", sep="\t")
     res_df = pd.read_csv("tests/output_select/mecombo_emodel.tsv", sep="\t")
 
-    pd.testing.assert_frame_equal(res_df, gt_df.head(1))
+    pd.testing.assert_frame_equal(res_df, gt_df)
