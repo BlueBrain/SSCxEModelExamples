@@ -2,10 +2,6 @@ import numpy
 import seaborn as sns
 import pandas as pd
 
-import logging
-logger = logging.getLogger(__name__)
-
-
 from . import plottools as pt
 
 
@@ -94,7 +90,7 @@ def get_params(
 
     '''plot the individual parameter values'''
     results = []
-    for i, param in enumerate(params):
+    for param in params:
         if fitness_cut_off > sum(param.fitness.values):
             results.append(param)
 
