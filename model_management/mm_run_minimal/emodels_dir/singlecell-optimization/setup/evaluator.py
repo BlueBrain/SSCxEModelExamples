@@ -770,7 +770,7 @@ class MultiEvaluator(bpopt.evaluators.Evaluator):
 
 
 def create(etype, stochkv_det=None, usethreshold=False,
-            runopt=False, altmorph=None, etypetest=None,
+            runopt=False, altmorph=None,
             stage=None, past_params=[], do_simplify_morph=False):
     """Setup"""
 
