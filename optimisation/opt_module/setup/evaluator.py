@@ -582,12 +582,12 @@ class eFELFeatureExtra(eFELFeature):
     def get_bpo_feature(self, responses):
         """Return internal feature which is directly passed as a response"""
 
-        if (self.prefix + "." + self.efel_feature_name) not in responses:
+        if f"{self.prefix}.{self.efel_feature_name}" not in responses:
             return None
             # raise Exception(
             #     'Internal BluePyOpt feature %s not set '% self.efel_feature_name)
         else:
-            return responses[self.prefix + "." + self.efel_feature_name]
+            return responses[f"{self.prefix}.{self.efel_feature_name}"]
 
     def get_bpo_score(self, responses):
         """Return internal score which is directly passed as a response"""
@@ -629,7 +629,7 @@ class eFELFeatureExtra(eFELFeature):
         if feature_values is None:
             import pickle
 
-            pickle.dump(efel_trace, open("./" + self.name + ".pkl", "wb"))
+            pickle.dump(efel_trace, open(f"./{self.name}.pkl", "wb"))
 
         return feature_values
 
@@ -1009,11 +1009,11 @@ def create(
             protocols_dict["Main"].fitness_calculator = fitness_calculator
 
             protocols_dict["Main"].rmp_efeature = efeatures[
-                morphname + ".RMP.soma.v.voltage_base"
+                f"{morphname}.RMP.soma.v.voltage_base"
             ]
 
             protocols_dict["Main"].rin_efeature = efeatures[
-                morphname + ".Rin.soma.v.ohmic_input_resistance_vb_ssse"
+                f"{morphname}.Rin.soma.v.ohmic_input_resistance_vb_ssse"
             ]
 
             protocols_dict["Main"].rin_efeature.stimulus_current = protocols_dict[
@@ -1021,10 +1021,11 @@ def create(
             ].rinhold_protocol.rin_protocol_template.step_amplitude
 
             protocols_dict["RinHoldcurrent"].voltagebase_efeature = efeatures[
-                morphname + ".Rin.soma.v.voltage_base"
+                f"{morphname}.Rin.soma.v.voltage_base"
             ]
+
             protocols_dict["ThresholdDetection"].holding_voltage = efeatures[
-                morphname + ".Rin.soma.v.voltage_base"
+                f"{morphname}.Rin.soma.v.voltage_base"
             ].exp_mean
 
             fitness_protocols = {"main_protocol": protocols_dict["Main"]}

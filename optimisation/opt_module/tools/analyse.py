@@ -133,7 +133,7 @@ class Analyse(object):
                 for past in range(1, pasts + 1):  # loop over all previous stages
                     past_filename = get_filename(self.etype, self.seed, past)
                     past_path = os.path.join(
-                        self.checkpoints_dir, past_filename + "_hof.json"
+                        self.checkpoints_dir, f"{past_filename}_hof.json"
                     )
                     past_param = json.load(
                         open(past_path), object_pairs_hook=OrderedDict

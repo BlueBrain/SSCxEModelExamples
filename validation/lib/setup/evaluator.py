@@ -701,11 +701,11 @@ def create(
             protocols_dict["Main"].fitness_calculator = fitness_calculator
 
             protocols_dict["Main"].rmp_efeature = efeatures[
-                morphname + ".RMP.soma.v.voltage_base"
+                f"{morphname}.RMP.soma.v.voltage_base"
             ]
 
             protocols_dict["Main"].rin_efeature = efeatures[
-                morphname + ".Rin.soma.v.ohmic_input_resistance_vb_ssse"
+                f"{morphname}.Rin.soma.v.ohmic_input_resistance_vb_ssse"
             ]
 
             protocols_dict["Main"].rin_efeature.stimulus_current = protocols_dict[
@@ -713,10 +713,11 @@ def create(
             ].rinhold_protocol.rin_protocol_template.step_amplitude
 
             protocols_dict["RinHoldcurrent"].voltagebase_efeature = efeatures[
-                morphname + ".Rin.soma.v.voltage_base"
+                f"{morphname}.Rin.soma.v.voltage_base"
             ]
+
             protocols_dict["ThresholdDetection"].holding_voltage = efeatures[
-                morphname + ".Rin.soma.v.voltage_base"
+                f"{morphname}.Rin.soma.v.voltage_base"
             ].exp_mean
 
             fitness_protocols = {"main_protocol": protocols_dict["Main"]}

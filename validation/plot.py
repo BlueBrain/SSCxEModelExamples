@@ -508,7 +508,7 @@ def plot_results(
         lg = ax.legend(loc=(0.62, 0.55), fontsize=legend_fontsize, labelspacing=0.2)
         lg.get_frame().set_lw(0.1)
 
-    figpath = os.path.join("output", figname + ".pdf")
+    figpath = os.path.join("output", f"{figname}.pdf")
     fig.savefig(figpath, dpi=300)
 
 

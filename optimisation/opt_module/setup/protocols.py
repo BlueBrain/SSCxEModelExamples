@@ -266,7 +266,7 @@ class RatSSCxRinHoldcurrentProtocol(ephys.protocols.Protocol):
         # Return response
         responses = self.rin_protocol.run(cell_model, param_values, sim)
 
-        responses[self.prefix + "bpo_holding_current"] = holdi
+        responses[f"{self.prefix}bpo_holding_current"] = holdi
 
         cell_model.holding_current = holdi
 
@@ -382,7 +382,7 @@ class RatSSCxRinHoldcurrentProtocol(ephys.protocols.Protocol):
         feature = ephys.efeatures.eFELFeature(
             name="Holding.voltage_base",
             efel_feature_name="voltage_base",
-            recording_names={"": self.prefix + "Rin.soma.v"},
+            recording_names={"": f"{self.prefix}Rin.soma.v"},
             stim_start=protocol.stim_start,
             stim_end=protocol.stim_end,
             exp_mean=0,
@@ -395,9 +395,10 @@ class RatSSCxRinHoldcurrentProtocol(ephys.protocols.Protocol):
             import pylab
 
             pylab.plot(
-                response[self.prefix + "Rin.soma.v"]["time"],
-                response[self.prefix + "Rin.soma.v"]["voltage"],
+                response[f"{self.prefix}Rin.soma.v"]["time"],
+                response[f"{self.prefix}Rin.soma.v"]["voltage"],
             )
+
             pylab.pause(0.1)
 
         return voltage_base
@@ -429,7 +430,7 @@ class RatSSCxThresholdDetectionProtocol(ephys.protocols.Protocol):
         if prefix is None:
             self.prefix = ""
         else:
-            self.prefix = prefix + "."
+            self.prefix = f"{prefix}."
 
     def subprotocols(self):
         """Return subprotocols"""
@@ -460,7 +461,7 @@ class RatSSCxThresholdDetectionProtocol(ephys.protocols.Protocol):
 
         cell_model.threshold_current = threshold_current
 
-        responses[self.prefix + "bpo_threshold_current"] = threshold_current
+        responses[f"{self.prefix}bpo_threshold_current"] = threshold_current
 
         if live_plot:
             import pylab
@@ -546,7 +547,7 @@ class RatSSCxThresholdDetectionProtocol(ephys.protocols.Protocol):
         feature = ephys.efeatures.eFELFeature(
             name="ThresholdDetection.Spikecount",
             efel_feature_name="Spikecount",
-            recording_names={"": self.prefix + "ThresholdDetection.soma.v"},
+            recording_names={"": f"{self.prefix}ThresholdDetection.soma.v"},
             stim_start=protocol.stim_start,
             stim_end=protocol.stim_end,
             exp_mean=1,
@@ -559,9 +560,10 @@ class RatSSCxThresholdDetectionProtocol(ephys.protocols.Protocol):
             import pylab
 
             pylab.plot(
-                response[self.prefix + "ThresholdDetection.soma.v"]["time"],
-                response[self.prefix + "ThresholdDetection.soma.v"]["voltage"],
+                response[f"{self.prefix}ThresholdDetection.soma.v"]["time"],
+                response[f"{self.prefix}ThresholdDetection.soma.v"]["voltage"],
             )
+
             pylab.pause(0.1)
 
         return spike_count >= 1
