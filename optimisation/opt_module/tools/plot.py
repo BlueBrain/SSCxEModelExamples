@@ -5,11 +5,13 @@ import pandas as pd
 from . import plottools as pt
 
 
-def diversity(checkpoint, evaluator, color="b", figs={}, reportname=""):
+def diversity(checkpoint, evaluator, color="b", figs=None, reportname=""):
     """plot the whole history, the hall of fame, and the best individual
     from a unumpyickled checkpoint
     """
 
+    if figs is None:
+        figs = {}
     param_names = evaluator.param_names
     n_params = len(param_names)
     print(f"n_params: {n_params}")

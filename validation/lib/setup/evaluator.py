@@ -588,11 +588,13 @@ def create(
     runopt=False,
     altmorph=None,
     stage=None,
-    past_params=[],
+    past_params=None,
     do_simplify_morph=False,
 ):
     """Setup"""
 
+    if past_params is None:
+        past_params = []
     cell_evals = []
 
     with open(

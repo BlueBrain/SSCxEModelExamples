@@ -53,17 +53,19 @@ class Analyse(object):
         githash,
         seed="1",
         rank=0,
-        etype=None,  # use this to evaluate model
+        etype=None,
         hoc=False,
         oldhoc=False,
         main_path=None,
         recipes_path="config/recipes/recipes.json",
-        grouping=["etype", "githash", "seed", "rank", "altmorph"],
+        grouping=None,
         altmorph=None,
         stage=None,
         parameters=False,
     ):
 
+        if grouping is None:
+            grouping = ["etype", "githash", "seed", "rank", "altmorph"]
         self.githash = githash
         self.seed = seed
         self.rank = rank

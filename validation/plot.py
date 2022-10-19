@@ -64,12 +64,16 @@ def plot_results(
     fig,
     figname="Attenuation",
     results_paths=None,
-    plotwhat=["EPSP", "bAP"],
-    fitwhat=["EPSP", "bAP", "EPSP_data", "bAP_data"],
+    plotwhat=None,
+    fitwhat=None,
     use_diams=True,
     legend_fontsize=6,
 ):
 
+    if plotwhat is None:
+        plotwhat = ["EPSP", "bAP"]
+    if fitwhat is None:
+        fitwhat = ["EPSP", "bAP", "EPSP_data", "bAP_data"]
     all_points = {
         "basal": {
             "distance": [],

@@ -97,9 +97,11 @@ def define_mechanisms(params_filename):
     return mechanisms_list
 
 
-def define_parameters(params_filename, stage=None, past_params=[]):
+def define_parameters(params_filename, stage=None, past_params=None):
     """Define parameters"""
 
+    if past_params is None:
+        past_params = []
     parameters = []
 
     # Fixed section parameters
@@ -498,10 +500,12 @@ def define_morphology(morphology_filename, do_set_nseg=1e9, do_simplify_morph=Fa
 
 
 def create(
-    recipe, etype, morph_path, stage=None, past_params=[], do_simplify_morph=False
+    recipe, etype, morph_path, stage=None, past_params=None, do_simplify_morph=False
 ):
     """Create cell template"""
 
+    if past_params is None:
+        past_params = []
     cell = ephys.models.CellModel(
         etype,
         morph=define_morphology(
