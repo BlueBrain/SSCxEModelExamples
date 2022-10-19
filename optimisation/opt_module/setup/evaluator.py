@@ -852,12 +852,8 @@ class MultiEvaluator(bpopt.evaluators.Evaluator):
 
     def objective_list(self, objective_dict):
         """Convert objective_dict in objective_list"""
-        objective_list = []
         objective_names = [objective.name for objective in self.objectives]
-        for objective_name in objective_names:
-            objective_list.append(objective_dict[objective_name])
-
-        return objective_list
+        return [objective_dict[objective_name] for objective_name in objective_names]
 
     def evaluate_with_dicts(self, param_dict=None):
         """Run evaluation with dict as input and output"""
