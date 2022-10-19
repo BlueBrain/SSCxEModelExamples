@@ -727,11 +727,7 @@ def EPSP(evaluator, emodels_path, points):
 
     for seclist_name, secdict in points.items():
 
-        if seclist_name == "apical":
-            syn_weight = 1.13
-        if seclist_name == "basal":
-            syn_weight = 1.13
-        if seclist_name == "somatic":
+        if seclist_name in {"apical", "basal", "somatic"}:
             syn_weight = 1.13
 
         for i, name in enumerate(secdict["name"]):
