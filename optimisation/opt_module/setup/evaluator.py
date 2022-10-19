@@ -832,11 +832,7 @@ class MultiEvaluator(bpopt.evaluators.Evaluator):
 
     def param_dict(self, param_array):
         """Convert param_array in param_dict"""
-        param_dict = {}
-        for param_name, param_value in zip(self.param_names, param_array):
-            param_dict[param_name] = param_value
-
-        return param_dict
+        return dict(zip(self.param_names, param_array))
 
     def objective_dict(self, objective_array):
         """Convert objective_array in objective_dict"""
