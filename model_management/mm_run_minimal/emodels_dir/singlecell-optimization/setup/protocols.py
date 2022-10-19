@@ -199,7 +199,7 @@ class RatSSCxRinHoldcurrentProtocol(ephys.protocols.Protocol):
         self.holdi_precision = holdi_precision
         self.holdi_max_depth = holdi_max_depth
 
-        if prefix == None:
+        if prefix is None:
             self.prefix = ""
         else:
             self.prefix = prefix + "."
@@ -389,7 +389,7 @@ class RatSSCxThresholdDetectionProtocol(ephys.protocols.Protocol):
         self.short_steps = 20
         self.holding_voltage = holding_voltage
 
-        if prefix == None:
+        if prefix is None:
             self.prefix = ""
         else:
             self.prefix = prefix + "."

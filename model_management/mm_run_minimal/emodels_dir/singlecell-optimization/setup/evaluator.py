@@ -587,7 +587,7 @@ class eFELFeatureExtra(eFELFeature):
     def get_bpo_score(self, responses):
         """Return internal score which is directly passed as a response."""
         feature_value = self.get_bpo_feature(responses)
-        if feature_value == None:
+        if feature_value is None:
             score = 250.0
         else:
             score = abs(feature_value - self.exp_mean) / self.exp_std
@@ -953,7 +953,7 @@ def create(
             if apical_point_isec is not None:
                 logger.debug("Apical point at apical[%d]", apical_point_isec)
 
-        if stage == None:
+        if stage is None:
             stage_ = stage
         else:
             stage_ = abs(stage)

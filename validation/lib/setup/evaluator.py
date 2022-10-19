@@ -668,7 +668,7 @@ def create(
             if apical_point_isec is not None:
                 logger.debug("Apical point at apical[%d]", apical_point_isec)
 
-        if stage == None:
+        if stage is None:
             stage_ = stage
         else:
             stage_ = abs(stage)

@@ -51,7 +51,6 @@ def adjust_spines(ax, spines, color="k", d_out=10, d_down=False):
             ax.tick_params(axis="y", colors=color)
 
     if "bottom" in spines:
-        pass
         ax.xaxis.set_ticks_position("bottom")
         # ax.axes.get_xaxis().set_visible(True)
 
@@ -76,7 +75,7 @@ def grid_spec(
     height_ratios=None,
 ):
 
-    if box == None:
+    if box is None:
         box = {"left": 0.0, "bottom": 0.0, "top": 1.0, "right": 1.0}
 
     if width_ratios is None:
@@ -181,9 +180,9 @@ def make_figure(
 
     if figname not in figs.keys():
 
-        if (orientation == "landscape") and (figsize_mm == None):
+        if orientation == "landscape" and figsize_mm is None:
             figsize_mm = (297, 210)
-        elif (orientation == "page") and (figsize_mm == None):
+        elif orientation == "page" and figsize_mm is None:
             figsize_mm = (210, 297)
 
         figsize = (figsize_mm[0] / 25.4, figsize_mm[1] / 25.4)
