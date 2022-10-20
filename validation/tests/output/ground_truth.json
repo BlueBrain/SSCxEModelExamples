@@ -2,7 +2,7 @@
   "0": {
     "uid": 0,
     "exception": null,
-    "morph_path": "/gpfs/bbp.cscs.ch/project/proj59/release_2017-10/output-2017-10-30/08_CloneMorphologies-asc/dend-vd111219_idF_axon-C060110A5_-_Scale_x1.000_y1.050_z1.000_-_Clone_0.asc",
+    "morph_path": "/project_directory/release_2017-10/output-2017-10-30/08_CloneMorphologies-asc/dend-vd111219_idF_axon-C060110A5_-_Scale_x1.000_y1.050_z1.000_-_Clone_0.asc",
     "points": {
       "apical": {
         "name": ["apic[48]_09545454545454546", "apic[48]_07727272727272728", "apic[48]_03181818181818182", "apic[46]_07857142857142857", "apic[46]_03571428571428571", "apic[38]_05", "apic[26]_09285714285714286", "apic[26]_05", "apic[26]_03571428571428571", "apic[22]_05", "apic[10]_05"],
