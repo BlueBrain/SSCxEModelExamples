@@ -1,12 +1,20 @@
-SSCX EModel Examples
------------------------
+# SSCX EModel Examples
 
 |build| |black|
 
-Example code for users to reproduce the results of the sscx emodels paper.
 
-Stages
----------
+Example code for users to reproduce the results of the sscx emodels paper.
+ 
+ADD citation
+
+# Installation
+
+To install dependencies for runing the notebooks, run
+    pip install -r requirements.txt
+
+
+# Stages
+
 1. Extraction
 2. Optimisation
 3. Validation
