@@ -1,8 +1,10 @@
+from __future__ import annotations
 from itertools import product
 import json
 from pathlib import Path
 from pprint import pprint
 import re
+from types import MappingProxyType
 
 from bluepyefe.extract import (
     _read_extract,
@@ -14,23 +16,10 @@ from bluepyefe.extract import (
 from bluepyefe.plotting import plot_all_recordings_efeatures
 
 
-IDhyperpol_features_tmid = [
-    "sag_amplitude",
-    "sag_ratio1",
-    "minimum_voltage",
-    "steady_state_voltage_stimend",
-]
-sAHP_features_tmid = [
-    "Spikecount",
-    "AP_amplitude",
-    "inv_first_ISI",
-    "AP_height",
-    "inv_time_to_first_spike",
-    "decay_time_constant_after_stim",
-    "AHP_depth_abs",
-]
 
-timings = {
+def get_protocol_timing_information() -> MappingProxyType:
+    """Return the timing info for protocols."""
+    timings = MappingProxyType({
     "IDhyperpol": {
         "dt": 0.00025,
         "ton": 100,
@@ -49,12 +38,30 @@ timings = {
         "tend": 2740,
     },
     "IV": {"dt": 0.00025, "ton": 20.0, "toff": 1020, "tend": 1200},
-}
+    })
+    return timings
 
+def translate_legacy_targets(experiments: dict) -> list:
+    """Translates the targets from legacy format to bluepyefe2 format."""
+    idhyperpol_features_tmid = [
+        "sag_amplitude",
+        "sag_ratio1",
+        "minimum_voltage",
+        "steady_state_voltage_stimend",
+    ]
+    sahp_features_tmid = [
+        "Spikecount",
+        "AP_amplitude",
+        "inv_first_ISI",
+        "AP_height",
+        "inv_time_to_first_spike",
+        "decay_time_constant_after_stim",
+        "AHP_depth_abs",
+    ]
 
-def translate_legacy_targets(experiments):
 
     targets = []
+    timings = get_protocol_timing_information()
 
     for protocol in experiments:
         for efeature in experiments[protocol]["efeatures"]:
@@ -70,7 +77,7 @@ def translate_legacy_targets(experiments):
                     }
                 )
 
-                if protocol == "IDhyperpol" and efeature in IDhyperpol_features_tmid:
+                if protocol == "IDhyperpol" and efeature in idhyperpol_features_tmid:
                     targets[-1].update(
                         {
                             "efel_settings": {
@@ -80,7 +87,7 @@ def translate_legacy_targets(experiments):
                             }
                         }
                     )
-                elif protocol == "sAHP" and efeature in sAHP_features_tmid:
+                elif protocol == "sAHP" and efeature in sahp_features_tmid:
                     targets[-1].update(
                         {
                             "efel_settings": {
@@ -99,6 +106,7 @@ def get_config(cells_dir, cell_ids, experiments):
     if isinstance(cells_dir, str):
         cells_dir = Path(cells_dir)
 
+    timings = get_protocol_timing_information()
     files_metadata = {}
     for cell in cell_ids:
         for p in (cells_dir / cell).glob("*.ibw"):
