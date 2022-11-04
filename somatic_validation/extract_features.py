@@ -1,3 +1,4 @@
+from itertools import product
 from pathlib import Path
 import re
 import json
@@ -47,7 +48,7 @@ def translate_legacy_targets(experiments):
 
     for protocol in experiments:
         for efeature in experiments[protocol]["efeatures"]:
-            for amp, tol in zip(
+            for amp, tol in product(
                 experiments[protocol]["targets"], experiments[protocol]["tolerances"]
             ):
                 targets.append(
@@ -224,9 +225,7 @@ def main():
     with open("experiments.json", "r") as f:
         experiments = json.load(f)
 
-    files_metadata, targets = get_config(
-        cells_dir, cell_ids, experiments
-    )
+    files_metadata, targets = get_config(cells_dir, cell_ids, experiments)
     etype = "L5PC"
     protocols_rheobase = ["IDthresh", "IDRest"]
     extract_efeatures(etype, files_metadata, targets, protocols_rheobase)
