@@ -151,12 +151,7 @@ def get_config(cells_dir: str | Path, cell_ids: tuple, experiments: dict):
 
     print(f"Cells used {len(files_metadata)}/{len(cell_ids)}")
 
-    pprint(experiments)
-
-    targets = translate_legacy_targets(experiments)
-    pprint(targets)
-
-    return files_metadata, targets
+    return files_metadata
 
 
 def extract_efeatures(etype, files_metadata, targets, protocols_rheobase, plot=True, per_cell=False) -> None:
@@ -234,7 +229,11 @@ def main():
     with open("experiments.json", "r") as f:
         experiments = json.load(f)
 
-    files_metadata, targets = get_config(cells_dir, cell_ids, experiments)
+    pprint(experiments)
+    targets = translate_legacy_targets(experiments)
+    pprint(targets)
+
+    files_metadata = get_config(cells_dir, cell_ids, experiments)
     etype = "L5PC"
     protocols_rheobase = ["IDthresh", "IDRest"]
     extract_efeatures(etype, files_metadata, targets, protocols_rheobase, plot=True, per_cell=True)
