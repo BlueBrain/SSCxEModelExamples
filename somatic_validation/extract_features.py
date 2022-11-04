@@ -1,7 +1,17 @@
 from itertools import product
-from pathlib import Path
-import re
 import json
+from pathlib import Path
+from pprint import pprint
+import re
+
+from bluepyefe.extract import (
+    _read_extract,
+    compute_rheobase,
+    group_efeatures,
+    create_feature_protocol_files,
+    extract_efeatures_per_cell,
+)
+from bluepyefe.plotting import plot_all_recordings_efeatures
 
 
 IDhyperpol_features_tmid = [
