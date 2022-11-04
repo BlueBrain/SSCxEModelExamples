@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 from pprint import pprint
 import re
+from typing import Mapping
 from types import MappingProxyType
 
 from bluepyefe.extract import (
@@ -17,49 +18,54 @@ from bluepyefe.extract import (
 from bluepyefe.plotting import plot_all_recordings_efeatures
 
 
-
 def get_protocol_timing_information() -> MappingProxyType:
     """Return the timing info for protocols."""
-    timings = MappingProxyType({
-    "IDhyperpol": {
-        "dt": 0.00025,
-        "ton": 100,
-        "tmid": 700,
-        "tmid2": 2700.0,
-        "toff": 2900.0,
-        "tend": 3000.0,
-    },
-    "APThreshold": {"ton": 10.0, "toff": 2000},
-    "sAHP": {
-        "dt": 0.0005,
-        "ton": 20.0,
-        "tmid": 520,
-        "tmid2": 720,
-        "toff": 2720,
-        "tend": 2740,
-    },
-    "IV": {"dt": 0.00025, "ton": 20.0, "toff": 1020, "tend": 1200},
-    })
+    timings = MappingProxyType(
+        {
+            "IDhyperpol": {
+                "dt": 0.00025,
+                "ton": 100,
+                "tmid": 700,
+                "tmid2": 2700.0,
+                "toff": 2900.0,
+                "tend": 3000.0,
+            },
+            "APThreshold": {"ton": 10.0, "toff": 2000},
+            "sAHP": {
+                "dt": 0.0005,
+                "ton": 20.0,
+                "tmid": 520,
+                "tmid2": 720,
+                "toff": 2720,
+                "tend": 2740,
+            },
+            "IV": {"dt": 0.00025, "ton": 20.0, "toff": 1020, "tend": 1200},
+        }
+    )
     return timings
 
-def translate_legacy_targets(experiments: dict) -> list:
-    """Translates the targets from legacy format to bluepyefe2 format."""
-    idhyperpol_features_tmid = frozenset([
-        "sag_amplitude",
-        "sag_ratio1",
-        "minimum_voltage",
-        "steady_state_voltage_stimend",
-    ])
-    sahp_features_tmid = frozenset([
-        "Spikecount",
-        "AP_amplitude",
-        "inv_first_ISI",
-        "AP_height",
-        "inv_time_to_first_spike",
-        "decay_time_constant_after_stim",
-        "AHP_depth_abs",
-    ])
 
+def translate_legacy_targets(experiments: Mapping) -> list:
+    """Translates the targets from legacy format to bluepyefe2 format."""
+    idhyperpol_features_tmid = frozenset(
+        [
+            "sag_amplitude",
+            "sag_ratio1",
+            "minimum_voltage",
+            "steady_state_voltage_stimend",
+        ]
+    )
+    sahp_features_tmid = frozenset(
+        [
+            "Spikecount",
+            "AP_amplitude",
+            "inv_first_ISI",
+            "AP_height",
+            "inv_time_to_first_spike",
+            "decay_time_constant_after_stim",
+            "AHP_depth_abs",
+        ]
+    )
 
     targets = []
     timings = get_protocol_timing_information()
@@ -102,8 +108,10 @@ def translate_legacy_targets(experiments: dict) -> list:
     return targets
 
 
-def get_files_metadata(cells_dir: str | Path, cell_ids: tuple, experiments: dict):
-
+def get_files_metadata(
+    cells_dir: str | Path, cell_ids: tuple, experiments: Mapping
+) -> Mapping:
+    """Return the metadata for the files to be extracted."""
     if isinstance(cells_dir, str):
         cells_dir = Path(cells_dir)
 
@@ -154,7 +162,10 @@ def get_files_metadata(cells_dir: str | Path, cell_ids: tuple, experiments: dict
     return files_metadata
 
 
-def extract_efeatures(etype, files_metadata, targets, protocols_rheobase, plot=True, per_cell=False) -> None:
+def extract_efeatures(
+    etype, files_metadata, targets, protocols_rheobase, plot=True, per_cell=False
+) -> None:
+    """Extract efeatures from the files."""
 
     efel_settings = {
         "Threshold": -30.0,
@@ -190,7 +201,7 @@ def extract_efeatures(etype, files_metadata, targets, protocols_rheobase, plot=T
         if prot.name == "IDhyperpol":
             protocols[i].mode = "min"
 
-    efeatures, protocol_definitions, current = create_feature_protocol_files(
+    _, _, _ = create_feature_protocol_files(
         cells,
         protocols,
         output_directory=f"./{etype}",
@@ -214,7 +225,6 @@ def extract_efeatures(etype, files_metadata, targets, protocols_rheobase, plot=T
 
 
 def main():
-
     cells_dir = Path("..") / "feature_extraction" / "input-traces"
 
     cell_ids = (
@@ -227,16 +237,20 @@ def main():
     )
 
     with open("experiments.json", "r") as f:
-        experiments = json.load(f)
+        experiments = MappingProxyType(json.load(f))
 
+    print("Input experiments:")
     pprint(experiments)
     targets = translate_legacy_targets(experiments)
+    print("Translated targets:")
     pprint(targets)
 
     files_metadata = get_files_metadata(cells_dir, cell_ids, experiments)
     etype = "L5PC"
     protocols_rheobase = ["IDthresh", "IDRest"]
-    extract_efeatures(etype, files_metadata, targets, protocols_rheobase, plot=True, per_cell=True)
+    extract_efeatures(
+        etype, files_metadata, targets, protocols_rheobase, plot=True, per_cell=True
+    )
 
 
 if __name__ == "__main__":
