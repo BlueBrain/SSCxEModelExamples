@@ -102,7 +102,7 @@ def translate_legacy_targets(experiments: dict) -> list:
     return targets
 
 
-def get_config(cells_dir: str | Path, cell_ids: tuple, experiments: dict):
+def get_files_metadata(cells_dir: str | Path, cell_ids: tuple, experiments: dict):
 
     if isinstance(cells_dir, str):
         cells_dir = Path(cells_dir)
@@ -233,7 +233,7 @@ def main():
     targets = translate_legacy_targets(experiments)
     pprint(targets)
 
-    files_metadata = get_config(cells_dir, cell_ids, experiments)
+    files_metadata = get_files_metadata(cells_dir, cell_ids, experiments)
     etype = "L5PC"
     protocols_rheobase = ["IDthresh", "IDRest"]
     extract_efeatures(etype, files_metadata, targets, protocols_rheobase, plot=True, per_cell=True)
