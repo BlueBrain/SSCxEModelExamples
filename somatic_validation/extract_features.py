@@ -1,4 +1,5 @@
 from __future__ import annotations
+from collections import frozenset
 from itertools import product
 import json
 from pathlib import Path
@@ -43,13 +44,13 @@ def get_protocol_timing_information() -> MappingProxyType:
 
 def translate_legacy_targets(experiments: dict) -> list:
     """Translates the targets from legacy format to bluepyefe2 format."""
-    idhyperpol_features_tmid = [
+    idhyperpol_features_tmid = frozenset([
         "sag_amplitude",
         "sag_ratio1",
         "minimum_voltage",
         "steady_state_voltage_stimend",
-    ]
-    sahp_features_tmid = [
+    ])
+    sahp_features_tmid = frozenset([
         "Spikecount",
         "AP_amplitude",
         "inv_first_ISI",
@@ -57,7 +58,7 @@ def translate_legacy_targets(experiments: dict) -> list:
         "inv_time_to_first_spike",
         "decay_time_constant_after_stim",
         "AHP_depth_abs",
-    ]
+    ])
 
 
     targets = []
@@ -101,7 +102,7 @@ def translate_legacy_targets(experiments: dict) -> list:
     return targets
 
 
-def get_config(cells_dir, cell_ids, experiments):
+def get_config(cells_dir: str | Path, cell_ids: tuple, experiments: dict):
 
     if isinstance(cells_dir, str):
         cells_dir = Path(cells_dir)
@@ -221,14 +222,14 @@ def main():
 
     cells_dir = Path("..") / "feature_extraction" / "input-traces"
 
-    cell_ids = [
+    cell_ids = (
         "C060109A1-SR-C1",
         "C060109A2-SR-C1",
         "C060109A3-SR-C1",
         "C070109A4-C1",
         "C080501A5-SR-C1",
         "C080501B2-SR-C1",
-    ]
+    )
 
     with open("experiments.json", "r") as f:
         experiments = json.load(f)
