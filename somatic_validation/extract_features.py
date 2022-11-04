@@ -1,5 +1,4 @@
 from __future__ import annotations
-from collections import frozenset
 from itertools import product
 import json
 from pathlib import Path
@@ -109,16 +108,16 @@ def translate_legacy_targets(experiments: Mapping) -> list:
 
 
 def get_files_metadata(
-    cells_dir: str | Path, cell_ids: tuple, experiments: Mapping
+    traces_dir: str | Path, cell_ids: tuple, experiments: Mapping
 ) -> Mapping:
     """Return the metadata for the files to be extracted."""
-    if isinstance(cells_dir, str):
-        cells_dir = Path(cells_dir)
+    if isinstance(traces_dir, str):
+        traces_dir = Path(traces_dir)
 
     timings = get_protocol_timing_information()
     files_metadata = {}
     for cell in cell_ids:
-        for p in (cells_dir / cell).glob("*.ibw"):
+        for p in (traces_dir / cell).glob("*.ibw"):
             p = str(p)
             if "A_" in p or "AA_" in p or "B_" in p or "temp" in p:
                 continue
@@ -225,7 +224,7 @@ def extract_efeatures(
 
 
 def main():
-    cells_dir = Path("..") / "feature_extraction" / "input-traces"
+    traces_dir = Path("..") / "feature_extraction" / "input-traces"
 
     cell_ids = (
         "C060109A1-SR-C1",
@@ -245,7 +244,7 @@ def main():
     print("Translated targets:")
     pprint(targets)
 
-    files_metadata = get_files_metadata(cells_dir, cell_ids, experiments)
+    files_metadata = get_files_metadata(traces_dir, cell_ids, experiments)
     etype = "L5PC"
     protocols_rheobase = ["IDthresh", "IDRest"]
     extract_efeatures(
