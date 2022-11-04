@@ -142,26 +142,15 @@ def get_config(cells_dir, cell_ids, experiments):
 
     print(f"Cells used {len(files_metadata)}/{len(cell_ids)}")
 
-    import pprint
-
-    pprint.pprint(experiments)
+    pprint(experiments)
 
     targets = translate_legacy_targets(experiments)
-    pprint.pprint(targets)
+    pprint(targets)
 
     return files_metadata, targets
 
 
-def extract_efeatures(etype, files_metadata, targets, protocols_rheobase):
-
-    from bluepyefe.extract import (
-        _read_extract,
-        compute_rheobase,
-        group_efeatures,
-        create_feature_protocol_files,
-        extract_efeatures_per_cell,
-    )
-    from bluepyefe.plotting import plot_all_recordings_efeatures
+def extract_efeatures(etype, files_metadata, targets, protocols_rheobase, plot=True, per_cell=False) -> None:
 
     efel_settings = {
         "Threshold": -30.0,
@@ -205,18 +194,19 @@ def extract_efeatures(etype, files_metadata, targets, protocols_rheobase):
         write_files=True,
     )
 
-    print("extracting features for per cell...")
-    extract_efeatures_per_cell(
-        files_metadata=files_metadata,
-        cells=cells,
-        output_directory=f"./{etype}",
-        targets=targets,
-        protocol_mode="mean",
-        threshold_nvalue_save=3,
-        write_files=True,
-    )
-
-    plot_all_recordings_efeatures(cells, protocols, output_dir=f"./{etype}")
+    if per_cell:
+        print("extracting features for per cell...")
+        extract_efeatures_per_cell(
+            files_metadata=files_metadata,
+            cells=cells,
+            output_directory=f"./{etype}",
+            targets=targets,
+            protocol_mode="mean",
+            threshold_nvalue_save=3,
+            write_files=True,
+        )
+    if plot:
+        plot_all_recordings_efeatures(cells, protocols, output_dir=f"./{etype}")
 
 
 def main():
@@ -238,7 +228,7 @@ def main():
     files_metadata, targets = get_config(cells_dir, cell_ids, experiments)
     etype = "L5PC"
     protocols_rheobase = ["IDthresh", "IDRest"]
-    extract_efeatures(etype, files_metadata, targets, protocols_rheobase)
+    extract_efeatures(etype, files_metadata, targets, protocols_rheobase, plot=True, per_cell=True)
 
 
 if __name__ == "__main__":
