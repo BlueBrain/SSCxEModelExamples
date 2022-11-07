@@ -4,11 +4,22 @@ from types import MappingProxyType
 import json
 from pathlib import Path
 
+import pandas as pd
+
 from ..extract_features import (
     translate_legacy_targets,
     get_files_metadata,
     extract_efeatures,
 )
+
+
+def features_df(features_config: dict, protocol: str) -> pd.DataFrame:
+    """Returns the dataframe containing features for the given protocol."""
+    df = pd.DataFrame(features_config[protocol]["soma"])
+    df["mean"] = df["val"].apply(lambda x: x[0])
+    df["variance"] = df["val"].apply(lambda x: x[1])
+    df = df.drop(["val", "efeature_name"], axis=1)
+    return df
 
 
 def test_extract_efeatures():
@@ -43,4 +54,7 @@ def test_extract_efeatures():
     with open("tests/data/gt_features_from_all_cells.json", "r") as json_file:
         ground_truth = json.load(json_file)
 
-    assert results == ground_truth
+    for protocol in results:
+        results_df = features_df(results, protocol)
+        ground_truth_df = features_df(ground_truth, protocol)
+        assert results_df.equals(ground_truth_df)
