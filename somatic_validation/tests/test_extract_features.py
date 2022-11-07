@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 import pandas as pd
+from pandas.testing import assert_frame_equal
 
 from ..extract_features import (
     translate_legacy_targets,
@@ -57,4 +58,4 @@ def test_extract_efeatures():
     for protocol in results:
         results_df = features_df(results, protocol)
         ground_truth_df = features_df(ground_truth, protocol)
-        assert results_df.equals(ground_truth_df)
+        assert_frame_equal(results_df, ground_truth_df)
