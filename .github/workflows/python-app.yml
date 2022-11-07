@@ -90,12 +90,12 @@ jobs:
       with:
         python-version: "3.9"
 
-    name: Test somatic validation
-    run: |
-      pip install -r test-requirements.txt
-      cd somatic_validation
-      pip install -r requirements
-      pytest -sx tests
+    - name: Test somatic validation
+      run: |
+        pip install -r test-requirements.txt
+        cd somatic_validation
+        pip install -r requirements.txt
+        pytest -sx tests
 
   code-style:
     runs-on: ubuntu-latest
