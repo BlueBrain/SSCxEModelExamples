@@ -1,2 +1,2 @@
-git+https://github.com/BlueBrain/BluePyEfe@BPE2
+bluepyefe >= 2.1.24
 pandas
