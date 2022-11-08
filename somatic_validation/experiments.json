@@ -1,0 +1,121 @@
+{
+    "IDRest": {
+        "location": "soma.v",
+        "tolerances": [
+            20.0
+        ],
+        "targets": [
+            120
+        ],
+        "efeatures": [
+            "Spikecount",
+            "AP_amplitude",
+            "ISI_values"
+        ]
+    },
+    "IDthresh": {
+        "location": "soma.v",
+        "tolerances": [
+            20.0
+        ],
+        "targets": [
+            120
+        ],
+        "efeatures": [
+            "Spikecount",
+            "AP_amplitude",
+            "ISI_values"
+        ]
+    },
+    "IDhyperpol": {
+        "location": "soma.v",
+        "tolerances": [
+            20.0
+        ],
+        "targets": [
+            150,
+            170,
+            200,
+            220,
+            250,
+            270,
+            300,
+            350
+        ],
+        "efeatures": [
+            "Spikecount",
+            "AP_amplitude",
+            "ISI_values",
+            "AP_height",
+            "ISI_log_slope",
+            "sag_amplitude",
+            "sag_ratio1",
+            "minimum_voltage",
+            "steady_state_voltage_stimend"
+        ]
+    },
+    "sAHP": {
+        "location": "soma.v",
+        "tolerances": [
+            20.0
+        ],
+        "targets": [
+            150,
+            170,
+            200,
+            220,
+            250,
+            270,
+            300,
+            350
+        ],
+        "efeatures": [
+            "Spikecount",
+            "AP_amplitude",
+            "inv_first_ISI",
+            "AP_height",
+            "inv_time_to_first_spike",
+            "decay_time_constant_after_stim",
+            "AHP_depth_abs",
+            "sag_amplitude",
+            "sag_ratio1",
+            "steady_state_voltage",
+            "minimum_voltage",
+            "steady_state_voltage_stimend"
+        ]
+    },
+    "APThreshold": {
+        "location": "soma.v",
+        "tolerances": [
+            20.0
+        ],
+        "targets": [
+            100,
+            130,
+            150,
+            170,
+            200,
+            220,
+            250,
+            270,
+            300,
+            330,
+            360,
+            390,
+            400,
+            430,
+            460,
+            500,
+            530
+        ],
+        "efeatures": [
+            "Spikecount",
+            "AP_amplitude",
+            "inv_time_to_first_spike",
+            "ISI_log_slope",
+            "ISI_CV",
+            "AP1_amp",
+            "APlast_amp"
+        ]
+    }
+}

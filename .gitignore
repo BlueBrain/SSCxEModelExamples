@@ -16,4 +16,6 @@ model_management/mm_run_minimal/output_select
 model_management/mm_run_minimal/tests/tmp
 model_management/mm_run_minimal/tests/output
 model_management/mm_run_minimal/tests/output_select
+somatic_validation/L5PC
+somatic_validation/test_L5PC
 *.DS_Store
