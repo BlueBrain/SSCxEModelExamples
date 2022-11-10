@@ -22,28 +22,33 @@ Copyright (c) 2016, EPFL/Blue Brain Project
 # pylint: disable=W0511
 
 import logging
+
 logger = logging.getLogger(__name__)
 
 
 class Stimulus(object):
 
     """Stimulus protocol"""
+
     pass
+
 
 class NrnHDPulse(Stimulus):
 
     """Square pulse current clamp injection"""
 
-    def __init__(self,
-                 step_amplitude=None,
-                 step_delay=None,
-                 step_duration=None,
-                 total_duration=None,
-                 depol=None,
-                 duration_of_depol1=None,
-                 duration_of_depol2=None,
-                 #hold=None
-                 location=None):
+    def __init__(
+        self,
+        step_amplitude=None,
+        step_delay=None,
+        step_duration=None,
+        total_duration=None,
+        depol=None,
+        duration_of_depol1=None,
+        duration_of_depol2=None,
+        # hold=None
+        location=None,
+    ):
         """Constructor
 
         Args:
@@ -62,28 +67,27 @@ class NrnHDPulse(Stimulus):
         self.step_duration = step_duration
         self.location = location
         self.total_duration = total_duration
-        self.depol=depol
-        self.duration_of_depol1=duration_of_depol1
-        self.duration_of_depol2=duration_of_depol2
-        #self.hold=None
+        self.depol = depol
+        self.duration_of_depol1 = duration_of_depol1
+        self.duration_of_depol2 = duration_of_depol2
+        # self.hold=None
         self.iclamp = None
         self.persistent = []  # TODO move this into higher abstract classes
-
 
     def instantiate(self, sim=None, icell=None):
         """Run stimulus"""
 
         icomp = self.location.instantiate(sim=sim, icell=icell)
         logger.debug(
-            'Adding square step stimulus to %s with delay %f, '
-            'duration %f, and amplitude %f',
+            "Adding square step stimulus to %s with delay %f, "
+            "duration %f, and amplitude %f",
             str(self.location),
             self.step_delay,
             self.step_duration,
-            self.step_amplitude)
-        
-        
-         # create vector to store the times at which stim amp changes
+            self.step_amplitude,
+        )
+
+        # create vector to store the times at which stim amp changes
         times = sim.neuron.h.Vector()
         # create vector to store to which stim amps over time
         amps = sim.neuron.h.Vector()
@@ -106,27 +110,25 @@ class NrnHDPulse(Stimulus):
 
         # after ramp, current is set 0.0
         times.append(self.step_delay + self.duration_of_depol1)
-        amps.append(self.step_amplitude-self.depol)
+        amps.append(self.step_amplitude - self.depol)
 
         times.append(self.step_delay + self.step_duration - self.duration_of_depol2)
-        amps.append(self.step_amplitude-self.depol)
-        
+        amps.append(self.step_amplitude - self.depol)
+
         times.append(self.step_delay + self.step_duration - self.duration_of_depol2)
         amps.append(self.depol)
-        
+
         times.append(self.step_delay + self.step_duration)
         amps.append(self.depol)
-        
+
         times.append(self.step_delay + self.step_duration)
         amps.append(0.0)
-        
+
         times.append(self.total_duration)
         amps.append(0.0)
 
         # create a current clamp
-        self.iclamp = sim.neuron.h.IClamp(
-            icomp.x,
-            sec=icomp.sec)
+        self.iclamp = sim.neuron.h.IClamp(icomp.x, sec=icomp.sec)
         self.iclamp.dur = self.total_duration
 
         # play the above current amplitudes into the current clamp
@@ -136,12 +138,9 @@ class NrnHDPulse(Stimulus):
         self.persistent.append(times)
         self.persistent.append(amps)
 
-
-
     def destroy(self, sim=None):
         """Destroy stimulus"""
         self.persistent = []
-
 
         self.iclamp = None
 
@@ -156,4 +155,5 @@ class NrnHDPulse(Stimulus):
             self.depol,
             self.duration_of_depol1,
             self.duration_of_depol2,
-            self.location)
+            self.location,
+        )
