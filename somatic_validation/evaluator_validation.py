@@ -3,6 +3,7 @@ import os
 import json
 
 from model import create as create_cell
+from stimuli import NrnHDPulse
 
 import bluepyopt.ephys as ephys
 
@@ -52,7 +53,7 @@ def define_protocols(path_protocols):
                     total_duration=stimulus_definition['tend']))
             else: 
 
-                    stimuli.append(ephys.stimuli.NrnHDPulse(
+                    stimuli.append(NrnHDPulse(
                     step_amplitude=stimulus_definition['amp2'],
                     step_delay=stimulus_definition['ton'],
                     step_duration=stimulus_definition['toff']-stimulus_definition['ton'],
