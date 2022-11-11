@@ -29,8 +29,7 @@ def define_protocols(path_protocols):
         recordings = [somav_recording]
         stimuli = []
 
-        breakpoint()
-        for stimulus_definition in protocol_definition["stimuli"]:
+        for stimulus_definition in protocol_definition["step"]:
 
             if protocol_name in ["IDthresh_200", "IDRest_200", "IV_-100.0"]:
                 stimuli.append(
