@@ -30,6 +30,7 @@ def get_protocol_timing_information() -> MappingProxyType:
                 "tend": 3000.0,
             },
             "APThreshold": {"ton": 10.0, "toff": 2000},
+            "IDthresh": {"ton": 700.0, "toff": 2700},
             "sAHP": {
                 "dt": 0.0005,
                 "ton": 20.0,
