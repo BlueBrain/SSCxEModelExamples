@@ -29,52 +29,41 @@ def define_protocols(path_protocols):
         recordings = [somav_recording]
         stimuli = []
 
-        for stimulus_definition in protocol_definition["step"]:
+        step_stimulus_definition = protocol_definition["step"]
+        holding_stimulus_definition = protocol_definition["holding"]
 
-            if protocol_name in ["IDthresh_200", "IDRest_200", "IV_-100.0"]:
-                stimuli.append(
-                    ephys.stimuli.NrnSquarePulse(
-                        step_amplitude=stimulus_definition["amp"],
-                        step_delay=stimulus_definition["delay"],
-                        step_duration=stimulus_definition["duration"],
-                        location=soma_loc,
-                        total_duration=stimulus_definition["totduration"],
-                    )
+        if "IDthresh" in protocol_name:
+            stimuli.append(
+                ephys.stimuli.NrnSquarePulse(
+                    step_amplitude=step_stimulus_definition["amp"],
+                    step_delay=step_stimulus_definition["delay"],
+                    step_duration=step_stimulus_definition["duration"],
+                    location=soma_loc,
+                    total_duration=step_stimulus_definition["totduration"],
                 )
-            elif protocol_name in [
-                "APThreshold_200",
-                "APThreshold_170",
-                "APThreshold_220",
-                "APThreshold_250",
-                "APThreshold_300",
-                "APThreshold_150",
-                "APThreshold_400",
-                "APThreshold_430",
-                "APThreshold_330",
-                "APThreshold_390",
-            ]:
-
-                # fmt: off
-                stimuli.append(ephys.stimuli.NrnRampPulse(
-                ramp_amplitude_start=stimulus_definition['hypamp'],
-                ramp_delay=stimulus_definition['ton'],
-                ramp_amplitude_end=stimulus_definition['amp'],
-                ramp_duration=stimulus_definition['toff']-stimulus_definition['ton'],
-                location=soma_loc,
-                total_duration=stimulus_definition['tend']))
-                # fmt: on
-            else:
-                # fmt: off
-                stimuli.append(NrnHDPulse(
-                step_amplitude=stimulus_definition['amp2'],
-                step_delay=stimulus_definition['ton'],
-                step_duration=stimulus_definition['toff']-stimulus_definition['ton'],
-                duration_of_depol1=stimulus_definition['tmid']-stimulus_definition['ton'],
-                duration_of_depol2=stimulus_definition['toff']-stimulus_definition['tmid2'],
-                depol=stimulus_definition['amp'],
-                location=soma_loc,
-                total_duration=stimulus_definition['tend']))
-                # fmt: on
+            )
+        elif "APThreshold" in protocol_name:
+            # fmt: off
+            stimuli.append(ephys.stimuli.NrnRampPulse(
+            ramp_amplitude_start=holding_stimulus_definition['amp'],
+            ramp_delay=step_stimulus_definition['delay'],
+            ramp_amplitude_end=step_stimulus_definition['amp'],
+            ramp_duration=step_stimulus_definition['duration'],
+            location=soma_loc,
+            total_duration=step_stimulus_definition['totduration']))
+            # fmt: on
+        elif "IDhyperpol" in protocol_name or "sAHP" in protocol_name:
+            # fmt: off
+            stimuli.append(NrnHDPulse(
+            step_amplitude=step_stimulus_definition['long_amp'],
+            step_delay=step_stimulus_definition['delay'],
+            step_duration=step_stimulus_definition['duration'],
+            duration_of_depol1=step_stimulus_definition['tmid']-step_stimulus_definition['delay'],
+            duration_of_depol2=step_stimulus_definition['toff']-step_stimulus_definition['tmid2'],
+            depol=step_stimulus_definition['amp'],
+            location=soma_loc,
+            total_duration=step_stimulus_definition['totduration']))
+            # fmt: on
 
         protocols[protocol_name] = ephys.protocols.SweepProtocol(
             protocol_name, stimuli, recordings
@@ -91,7 +80,9 @@ def define_fitness_calculator(protocols, path_features):
     objectives = []
     for protocol_name, locations in feature_definitions.items():
         for location, features in locations.items():
-            for efel_feature_name, meanstd in features.items():
+            for feature in features:
+                efel_feature_name = feature["feature"]
+                meanstd = feature["val"]
                 feature_name = "%s.%s.%s" % (protocol_name, location, efel_feature_name)
                 recording_names = {"": "%s.%s.v" % (protocol_name, location)}
                 stimulus = protocols[protocol_name].stimuli[0]
