@@ -87,19 +87,7 @@ def define_fitness_calculator(protocols, path_features):
                 recording_names = {"": "%s.%s.v" % (protocol_name, location)}
                 stimulus = protocols[protocol_name].stimuli[0]
 
-                if protocol_name in [
-                    "APThreshold_100",
-                    "APThreshold_170",
-                    "APThreshold_220",
-                    "APThreshold_250",
-                    "APThreshold_200",
-                    "APThreshold_300",
-                    "APThreshold_150",
-                    "APThreshold_400",
-                    "APThreshold_330",
-                    "APThreshold_430",
-                    "APThreshold_390",
-                ]:
+                if "APThreshold" in protocol_name:
                     stim_start = stimulus.ramp_delay
                 else:
                     stim_start = stimulus.step_delay
@@ -109,38 +97,14 @@ def define_fitness_calculator(protocols, path_features):
                 elif "dend" in location:
                     threshold = -55
 
-                if protocol_name in [
-                    "APThreshold_100",
-                    "APThreshold_170",
-                    "APThreshold_220",
-                    "APThreshold_250",
-                    "APThreshold_200",
-                    "APThreshold_300",
-                    "APThreshold_150",
-                    "APThreshold_400",
-                    "APThreshold_430",
-                    "APThreshold_330",
-                    "APThreshold_390",
-                ]:
+                if "APThreshold" in protocol_name:
                     stim_end = stimulus.ramp_delay + stimulus.ramp_duration
                 else:
                     stim_end = stimulus.step_delay + stimulus.step_duration
 
                 if protocol_name == "bAP":
                     stim_end = stimulus.total_duration
-                elif protocol_name in [
-                    "APThreshold_100",
-                    "APThreshold_170",
-                    "APThreshold_200",
-                    "APThreshold_250",
-                    "APThreshold_220",
-                    "APThreshold_300",
-                    "APThreshold_150",
-                    "APThreshold_400",
-                    "APThreshold_430",
-                    "APThreshold_330",
-                    "APThreshold_390",
-                ]:
+                elif "APThreshold" in protocol_name:
                     stim_end = stimulus.ramp_delay + stimulus.ramp_duration
                 else:
                     stim_end = stimulus.step_delay + stimulus.step_duration
