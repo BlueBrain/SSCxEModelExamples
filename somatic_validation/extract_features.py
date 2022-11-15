@@ -249,7 +249,7 @@ def main():
     etype = "L5TPC"
     protocols_rheobase = ["IDthresh", "IDRest"]
     extract_efeatures(
-        etype, files_metadata, targets, protocols_rheobase, plot=True, per_cell=True
+        etype, files_metadata, targets, protocols_rheobase, plot=False, per_cell=False
     )
 
 
