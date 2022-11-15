@@ -124,3 +124,5 @@ responses = evaluator.run_protocols(
     protocols=fitness_protocols.values(),
     param_values=dict(zip(cell_params, opt_pickle["hof"][0])),
 )
+
+objectives = evaluator.fitness_calculator.calculate_scores(responses)
