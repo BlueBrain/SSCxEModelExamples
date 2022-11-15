@@ -18,4 +18,5 @@ model_management/mm_run_minimal/tests/output
 model_management/mm_run_minimal/tests/output_select
 somatic_validation/L5TPC/*.pdf
 somatic_validation/test_L5TPC
+somatic_validation/protocols_corrected.json
 *.DS_Store
