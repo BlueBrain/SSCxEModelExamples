@@ -25,15 +25,11 @@ def write_corrected_protocols(model_thresh, thresh_hypamp, prot_path, output_pat
         for stimulus_definition in protocol_definition["stimuli"]:
 
             if "APThreshold" in protocol_name:
-                # stimulus_definition['amp']=model_hold
-                old_thr = stimulus_definition["amp"]
                 stimulus_definition["amp"] = (
                     model_thresh * int(protocol_name[-3:]) / 100
                 )
 
             if "IDhyperpol" in protocol_name:
-                old_thr = stimulus_definition["amp2"]
-                print(stimulus_definition["amp2"])
                 stimulus_definition["amp2"] = (
                     model_thresh * int(protocol_name[-3:]) / 100
                 )
@@ -42,7 +38,6 @@ def write_corrected_protocols(model_thresh, thresh_hypamp, prot_path, output_pat
                 stimulus_definition["amp"] = (old_depol / thresh[0]) * model_thresh
 
             if "sAHP" in protocol_name:
-                old_thr = stimulus_definition["amp2"]
                 stimulus_definition["amp2"] = (
                     model_thresh * int(protocol_name[-3:]) / 100
                 )
