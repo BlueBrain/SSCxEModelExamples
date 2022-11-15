@@ -71,61 +71,61 @@ def write_corrected_protocols(prot_path, output_path):
     with open(output_path, "w") as fp:
         json.dump(prots, fp, indent=4)
 
-opt_model_params_path = (
-    script_dir.parent / "optimisation" / "opt_module" / "config" / "params" / "pyr.json"
-)
 
-protocols_path = script_dir / "L5TPC" / "protocols.json"
+if __name__ == "__main__":
 
-features_path = script_dir / "L5TPC" / "features.json"
+    opt_model_params_path = (
+        script_dir.parent / "optimisation" / "opt_module" / "config" / "params" / "pyr.json"
+    )
 
-model_threshold = get_model_threshold()
-opt_threshold = get_opt_threshold()
+    protocols_path = script_dir / "L5TPC" / "protocols.json"
 
-corrected_protocols_path = script_dir / "protocols_corrected.json"
+    features_path = script_dir / "L5TPC" / "features.json"
 
-write_corrected_protocols(model_threshold, opt_threshold, protocols_path, corrected_protocols_path)
+    corrected_protocols_path = script_dir / "protocols_corrected.json"
 
-
-opt_pickle_path = (
-    script_dir.parent
-    / "optimisation"
-    / "opt_module"
-    / "checkpoints"
-    / "run.a6e707a"
-    / "cADpyr_L5TPC_1.pkl"
-)
-
-with open(opt_pickle_path, "rb") as f:
-    opt_pickle = pickle.load(f, encoding="latin1")
-
-nevals = opt_pickle["logbook"].select("nevals")
-opt_pickle = {
-    "nevals": np.cumsum(nevals),
-    "logbook": opt_pickle["logbook"],
-    "hof": opt_pickle["halloffame"],
-}
-
-morphology_path = str(
-    script_dir.parent / "optimisation" / "opt_module" / "morphologies" / "C060114A5.asc"
-)
+    write_corrected_protocols(protocols_path, corrected_protocols_path)
 
 
-corrected_protocols_path = str(corrected_protocols_path)
+    opt_pickle_path = (
+        script_dir.parent
+        / "optimisation"
+        / "opt_module"
+        / "checkpoints"
+        / "run.a6e707a"
+        / "cADpyr_L5TPC_1.pkl"
+    )
 
-fitness_protocols = evaluator.define_protocols(corrected_protocols_path)
+    with open(opt_pickle_path, "rb") as f:
+        opt_pickle = pickle.load(f, encoding="latin1")
 
-evaluator = evaluator.create(
-    morphology_path, opt_model_params_path, features_path, corrected_protocols_path
-)
+    nevals = opt_pickle["logbook"].select("nevals")
+    opt_pickle = {
+        "nevals": np.cumsum(nevals),
+        "logbook": opt_pickle["logbook"],
+        "hof": opt_pickle["halloffame"],
+    }
 
-cell = model.create(morphology_path, opt_model_params_path)
-cell_params = [param.name for param in cell.params.values() if not param.frozen]
+    morphology_path = str(
+        script_dir.parent / "optimisation" / "opt_module" / "morphologies" / "C060114A5.asc"
+    )
 
 
-responses = evaluator.run_protocols(
-    protocols=fitness_protocols.values(),
-    param_values=dict(zip(cell_params, opt_pickle["hof"][0])),
-)
+    corrected_protocols_path = str(corrected_protocols_path)
 
-objectives = evaluator.fitness_calculator.calculate_scores(responses)
+    fitness_protocols = evaluator.define_protocols(corrected_protocols_path)
+
+    evaluator = evaluator.create(
+        morphology_path, opt_model_params_path, features_path, corrected_protocols_path
+    )
+
+    cell = model.create(morphology_path, opt_model_params_path)
+    cell_params = [param.name for param in cell.params.values() if not param.frozen]
+
+
+    responses = evaluator.run_protocols(
+        protocols=fitness_protocols.values(),
+        param_values=dict(zip(cell_params, opt_pickle["hof"][0])),
+    )
+
+    objectives = evaluator.fitness_calculator.calculate_scores(responses)
