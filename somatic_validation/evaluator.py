@@ -102,13 +102,6 @@ def define_fitness_calculator(protocols, path_features):
                 else:
                     stim_end = stimulus.step_delay + stimulus.step_duration
 
-                if protocol_name == "bAP":
-                    stim_end = stimulus.total_duration
-                elif "APThreshold" in protocol_name:
-                    stim_end = stimulus.ramp_delay + stimulus.ramp_duration
-                else:
-                    stim_end = stimulus.step_delay + stimulus.step_duration
-
                 features_sAHP = [
                     "AHP_depth_abs",
                     "sag_amplitude",
