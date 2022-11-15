@@ -1,13 +1,10 @@
 import os
 import collections
-import math
-import numpy
 import json
-import random
+import logging
 
 import bluepyopt.ephys as ephys
-
-import logging
+from bluepyopt.ephys.morphologies import NrnFileMorphology
 
 logger = logging.getLogger(__name__)
 
@@ -244,9 +241,6 @@ def define_parameters(path_params):
     return parameters
 
 
-from bluepyopt.ephys.morphologies import NrnFileMorphology
-
-
 class NrnFileMorphologyCustom(NrnFileMorphology):
     def __init__(
         self,
@@ -256,8 +250,6 @@ class NrnFileMorphologyCustom(NrnFileMorphology):
         comment="",
         replace_axon_hoc=None,
     ):
-
-        name = os.path.basename(morphology_path)
         super(NrnFileMorphologyCustom, self).__init__(
             morphology_path, do_replace_axon, do_set_nseg, comment, replace_axon_hoc
         )
