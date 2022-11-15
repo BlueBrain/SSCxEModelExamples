@@ -1,0 +1,313 @@
+{
+  "IDthresh_120": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.17279326462974914,
+      "duration": 3000.0,
+      "totduration": 3000.0
+    },
+    "step": {
+      "delay": 700.0000000000001,
+      "amp": 0.33064856488331457,
+      "thresh_perc": 118.52973449795697,
+      "duration": 2000.0,
+      "totduration": 3000.0
+    }
+  },
+  "IDhyperpol_150": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.27812498807907104,
+      "duration": 3000.0,
+      "totduration": 3000.0
+    },
+    "step": {
+      "delay": 100.0,
+      "tmid": 700.0000000000001,
+      "tmid2": 2700.0,
+      "toff": 2900.0,
+      "amp": 0.2754687499254942,
+      "long_amp": -0.217522824592155,
+      "thresh_perc": 146.89265156215356,
+      "duration": 2000.0,
+      "totduration": 3000.0
+    }
+  },
+  "IDhyperpol_170": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.27812498807907104,
+      "duration": 3000.0,
+      "totduration": 3000.0
+    },
+    "step": {
+      "delay": 100.0,
+      "tmid": 700.0000000000001,
+      "tmid2": 2700.0,
+      "toff": 2900.0,
+      "amp": 0.2754687499254942,
+      "long_amp": -0.217522824592155,
+      "thresh_perc": 152.79755692516204,
+      "duration": 2000.0,
+      "totduration": 3000.0
+    }
+  },
+  "IDhyperpol_200": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.20281250774860382,
+      "duration": 3000.0,
+      "totduration": 3000.0
+    },
+    "step": {
+      "delay": 100.0,
+      "tmid": 700.0000000000001,
+      "tmid2": 2700.0,
+      "toff": 2900.0,
+      "amp": 0.370312487706542,
+      "long_amp": -0.19964287102126005,
+      "thresh_perc": 195.85686425954597,
+      "duration": 2000.0,
+      "totduration": 3000.0
+    }
+  },
+  "IDhyperpol_220": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.2784374952316284,
+      "duration": 3000.0,
+      "totduration": 3000.0
+    },
+    "step": {
+      "delay": 100.0,
+      "tmid": 700.0000000000001,
+      "tmid2": 2700.0,
+      "toff": 2900.0,
+      "amp": 0.370312487706542,
+      "long_amp": -0.2175228806586257,
+      "thresh_perc": 203.7639816240646,
+      "duration": 2000.0,
+      "totduration": 3000.0
+    }
+  },
+  "IDhyperpol_250": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.20281250774860382,
+      "duration": 3000.0,
+      "totduration": 3000.0
+    },
+    "step": {
+      "delay": 100.0,
+      "tmid": 700.0000000000001,
+      "tmid2": 2700.0,
+      "toff": 2900.0,
+      "amp": 0.4609375111758709,
+      "long_amp": -0.19964287102126005,
+      "thresh_perc": 244.63276219735545,
+      "duration": 2000.0,
+      "totduration": 3000.0
+    }
+  },
+  "IDhyperpol_270": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.2784374952316284,
+      "duration": 3000.0,
+      "totduration": 3000.0
+    },
+    "step": {
+      "delay": 100.0,
+      "tmid": 700.0000000000001,
+      "tmid2": 2700.0,
+      "toff": 2900.0,
+      "amp": 0.4609375111758709,
+      "long_amp": -0.217228868086063,
+      "thresh_perc": 254.83213319618403,
+      "duration": 2000.0,
+      "totduration": 3000.0
+    }
+  },
+  "sAHP_150": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.002968749962747097,
+      "duration": 2740.0,
+      "totduration": 2740.0
+    },
+    "step": {
+      "delay": 20.0,
+      "tmid": 520.0,
+      "tmid2": 720.0,
+      "toff": 2720.0,
+      "amp": 0.397005214355886,
+      "long_amp": 0.0733139675986417,
+      "thresh_perc": 141.95234524042607,
+      "duration": 200.0,
+      "totduration": 2740.0
+    }
+  },
+  "sAHP_170": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.00572916679084301,
+      "duration": 2740.0,
+      "totduration": 2740.0
+    },
+    "step": {
+      "delay": 20.0,
+      "tmid": 520.0,
+      "tmid2": 720.0,
+      "toff": 2720.0,
+      "amp": 0.5503125271449486,
+      "long_amp": 0.0486370541961352,
+      "thresh_perc": 177.2331662245208,
+      "duration": 200.0,
+      "totduration": 2740.0
+    }
+  },
+  "sAHP_200": {
+    "holding": {
+      "delay": 0.0,
+      "amp": 0.053549109558974,
+      "duration": 2740.0,
+      "totduration": 2740.0
+    },
+    "step": {
+      "delay": 20.0,
+      "tmid": 520.0,
+      "tmid2": 720.0,
+      "toff": 2720.0,
+      "amp": 0.5635937550770385,
+      "long_amp": 0.14342428615318942,
+      "thresh_perc": 196.20489947038777,
+      "duration": 200.0,
+      "totduration": 2740.0
+    }
+  },
+  "sAHP_220": {
+    "holding": {
+      "delay": 0.0,
+      "amp": 0.09800781682133675,
+      "duration": 2740.0,
+      "totduration": 2740.0
+    },
+    "step": {
+      "delay": 20.0,
+      "tmid": 520.0,
+      "tmid2": 720.0,
+      "toff": 2720.0,
+      "amp": 0.6334765367209911,
+      "long_amp": 0.19591493811658198,
+      "thresh_perc": 211.08396596097865,
+      "duration": 200.0,
+      "totduration": 2740.0
+    }
+  },
+  "sAHP_250": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.003072916530072689,
+      "duration": 2740.0,
+      "totduration": 2740.0
+    },
+    "step": {
+      "delay": 20.0,
+      "tmid": 520.0,
+      "tmid2": 720.0,
+      "toff": 2720.0,
+      "amp": 0.6900000165527066,
+      "long_amp": 0.07315130887624802,
+      "thresh_perc": 246.95428704723682,
+      "duration": 200.0,
+      "totduration": 2740.0
+    }
+  },
+  "sAHP_270": {
+    "holding": {
+      "delay": 0.0,
+      "amp": 0.0,
+      "duration": 2740.0,
+      "totduration": 2740.0
+    },
+    "step": {
+      "delay": 20.0,
+      "tmid": 520.0,
+      "tmid2": 720.0,
+      "toff": 2720.0,
+      "amp": 0.7484375437100729,
+      "long_amp": 0.06663859988724628,
+      "thresh_perc": 251.90500073187707,
+      "duration": 200.0,
+      "totduration": 2740.0
+    }
+  },
+  "sAHP_300": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.002864583395421505,
+      "duration": 2740.0,
+      "totduration": 2740.0
+    },
+    "step": {
+      "delay": 20.0,
+      "tmid": 520.0,
+      "tmid2": 720.0,
+      "toff": 2720.0,
+      "amp": 0.8349999925121665,
+      "long_amp": 0.07219330951166379,
+      "thresh_perc": 298.7226313284347,
+      "duration": 200.0,
+      "totduration": 2740.0
+    }
+  },
+  "sAHP_350": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.00281249995653828,
+      "duration": 2740.0,
+      "totduration": 2740.0
+    },
+    "step": {
+      "delay": 20.0,
+      "tmid": 520.0,
+      "tmid2": 720.0,
+      "toff": 2720.0,
+      "amp": 0.9816666396024326,
+      "long_amp": 0.07263200671405234,
+      "thresh_perc": 351.28633959505373,
+      "duration": 200.0,
+      "totduration": 2740.0
+    }
+  },
+  "APThreshold_300": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.13689583304027717,
+      "duration": 2040.0,
+      "totduration": 2040.0
+    },
+    "step": {
+      "delay": 10.0,
+      "amp": 0.8398158749787491,
+      "thresh_perc": 301.0542408479202,
+      "duration": 1990.0,
+      "totduration": 2040.0
+    }
+  },
+  "APThreshold_330": {
+    "holding": {
+      "delay": 0.0,
+      "amp": -0.2096484382636845,
+      "duration": 2040.0,
+      "totduration": 2040.0
+    },
+    "step": {
+      "delay": 10.0,
+      "amp": 0.9125353303037897,
+      "thresh_perc": 327.12245540543654,
+      "duration": 1990.0,
+      "totduration": 2040.0
+    }
+  }
+}

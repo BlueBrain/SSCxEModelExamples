@@ -1,0 +1,2344 @@
+{
+  "IDthresh_120": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          4.846153846153846,
+          4.031532517277992
+        ],
+        "n": 65,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          76.88978303522023,
+          10.07600708063759
+        ],
+        "n": 65,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "ISI_values",
+        "val": [
+          373.0517086363768,
+          228.1680417404056
+        ],
+        "n": 37,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_values"
+      }
+    ]
+  },
+  "IDhyperpol_150": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          11.166666666666666,
+          1.950783318453271
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          71.44756485376479,
+          8.489339670333008
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "ISI_values",
+        "val": [
+          197.3420594219009,
+          29.011609148661687
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_values"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          15.45520775083648,
+          5.600356422715736
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "ISI_log_slope",
+        "val": [
+          0.030338844505712764,
+          0.08710471217540143
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_log_slope"
+      },
+      {
+        "feature": "sag_amplitude",
+        "val": [
+          3.5924945551551772,
+          0.918843522576746
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "sag_amplitude"
+      },
+      {
+        "feature": "sag_ratio1",
+        "val": [
+          0.3158346006040811,
+          0.08277122262218653
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "sag_ratio1"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -96.23833541870101,
+          2.7224979754739933
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -92.64584086354581,
+          2.4043602488993208
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "IDhyperpol_170": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          11.6,
+          1.8547236990991407
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          71.70491126292715,
+          9.278216563547929
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "ISI_values",
+        "val": [
+          188.85904273489137,
+          24.046594889945688
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_values"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          15.489443780097185,
+          6.134309891059208
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "ISI_log_slope",
+        "val": [
+          0.024053579553430893,
+          0.09416819912618661
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_log_slope"
+      },
+      {
+        "feature": "sag_amplitude",
+        "val": [
+          3.536693488057048,
+          0.9972189068814091
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "sag_amplitude"
+      },
+      {
+        "feature": "sag_ratio1",
+        "val": [
+          0.3023968581983298,
+          0.08448581435641085
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "sag_ratio1"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -96.60125213623024,
+          2.846777653519645
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -93.06455864817318,
+          2.4259411264095325
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "IDhyperpol_200": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          19.0,
+          1.8708286933869707
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          73.68098233379847,
+          4.827567958326323
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "ISI_values",
+        "val": [
+          110.25259803913131,
+          9.261639836183075
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_values"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          17.98105080738592,
+          4.740021914518854
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "ISI_log_slope",
+        "val": [
+          -0.024711020884598613,
+          0.025427102002229706
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_log_slope"
+      },
+      {
+        "feature": "sag_amplitude",
+        "val": [
+          3.913684745788398,
+          0.5697494226085084
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "sag_amplitude"
+      },
+      {
+        "feature": "sag_ratio1",
+        "val": [
+          0.37418199210354675,
+          0.0229090058587464
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "sag_ratio1"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -95.14656486511221,
+          0.5679495870328918
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -91.23288011932381,
+          0.7224665004225915
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "IDhyperpol_220": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          20.8,
+          1.9390719429665317
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          69.77782288462086,
+          9.704201893394291
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "ISI_values",
+        "val": [
+          101.69360224081862,
+          9.416671014580832
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_values"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          15.8968160482027,
+          5.706692124895934
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "ISI_log_slope",
+        "val": [
+          -0.018357540020999475,
+          0.0324983283715525
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_log_slope"
+      },
+      {
+        "feature": "sag_amplitude",
+        "val": [
+          3.8765043782547908,
+          0.9326804559390682
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "sag_amplitude"
+      },
+      {
+        "feature": "sag_ratio1",
+        "val": [
+          0.3232463769923613,
+          0.05178006479758471
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "sag_ratio1"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -96.97850067138639,
+          3.1671201650026655
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -93.10199629313159,
+          2.5810324979941575
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "IDhyperpol_250": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          26.0,
+          2.1213203435596424
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          72.7662975912634,
+          5.23550199077671
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "ISI_values",
+        "val": [
+          80.2027609427007,
+          6.925888692320376
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_values"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          17.656392589742214,
+          4.248637579660696
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "ISI_log_slope",
+        "val": [
+          -0.011063319262593362,
+          0.027131651677294963
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_log_slope"
+      },
+      {
+        "feature": "sag_amplitude",
+        "val": [
+          3.7218466828661896,
+          0.39034567495053685
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "sag_amplitude"
+      },
+      {
+        "feature": "sag_ratio1",
+        "val": [
+          0.3558913787442285,
+          0.03259972335024247
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "sag_ratio1"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -95.2203121185299,
+          0.7628116478947206
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -91.49846543566372,
+          1.0399597971780032
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "IDhyperpol_270": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          27.8,
+          2.6381811916545836
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          68.81513837859944,
+          10.070783132386971
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "ISI_values",
+        "val": [
+          75.46451178445518,
+          7.623906916142878
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_values"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          15.994923612714354,
+          4.971566282464219
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "ISI_log_slope",
+        "val": [
+          0.004810587314602572,
+          0.038774843477621536
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_log_slope"
+      },
+      {
+        "feature": "sag_amplitude",
+        "val": [
+          3.5591312021888966,
+          0.9220059579666162
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "sag_amplitude"
+      },
+      {
+        "feature": "sag_ratio1",
+        "val": [
+          0.29833929317744434,
+          0.06421929193882771
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "sag_ratio1"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -97.01700012207012,
+          3.020818441543856
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -93.45786891988121,
+          2.5700002232992656
+        ],
+        "n": 5,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 100,
+          "stim_end": 700
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "sAHP_150": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          3.0,
+          0.5773502691896257
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          76.78357678912487,
+          5.930507437259704
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "inv_first_ISI",
+        "val": [
+          20.458774042222274,
+          8.316000277482802
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_first_ISI"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          21.215364612862462,
+          4.869815163801264
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "inv_time_to_first_spike",
+        "val": [
+          66.49668151835367,
+          21.461440693883944
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_time_to_first_spike"
+      },
+      {
+        "feature": "decay_time_constant_after_stim",
+        "val": [
+          4.425115658647435,
+          2.5072057280630173
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "decay_time_constant_after_stim"
+      },
+      {
+        "feature": "AHP_depth_abs",
+        "val": [
+          -63.98507017559314,
+          4.755557421679069
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AHP_depth_abs"
+      },
+      {
+        "feature": "steady_state_voltage",
+        "val": [
+          -77.0720616586583,
+          1.9313956162411634
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -85.56145731608063,
+          2.2347152557619614
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -71.93136412443964,
+          2.3292565977070527
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "sAHP_170": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          4.333333333333333,
+          1.247219128924647
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          77.96052107637821,
+          4.896676065960779
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "inv_first_ISI",
+        "val": [
+          37.476931088078345,
+          11.350559197087973
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_first_ISI"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          23.623958267492128,
+          3.5451208004975006
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "inv_time_to_first_spike",
+        "val": [
+          113.81886087691522,
+          44.79477304119769
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_time_to_first_spike"
+      },
+      {
+        "feature": "decay_time_constant_after_stim",
+        "val": [
+          4.010768832676187,
+          1.3542036443893937
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "decay_time_constant_after_stim"
+      },
+      {
+        "feature": "AHP_depth_abs",
+        "val": [
+          -62.83899294535177,
+          0.8687888307567644
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AHP_depth_abs"
+      },
+      {
+        "feature": "steady_state_voltage",
+        "val": [
+          -77.29474394641132,
+          0.9359029310891956
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -83.99791463216138,
+          1.1281250338181532
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -72.19816278245837,
+          0.842756599216411
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "sAHP_200": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          3.857142857142857,
+          1.4568627181693672
+        ],
+        "n": 7,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          76.17404882872678,
+          6.403201333883389
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "inv_first_ISI",
+        "val": [
+          32.56026405136684,
+          18.84830481718472
+        ],
+        "n": 7,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_first_ISI"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          18.898780090083047,
+          6.2631621946923
+        ],
+        "n": 7,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "inv_time_to_first_spike",
+        "val": [
+          97.7543170372222,
+          45.03175770802523
+        ],
+        "n": 7,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_time_to_first_spike"
+      },
+      {
+        "feature": "decay_time_constant_after_stim",
+        "val": [
+          29.5159478204793,
+          49.40228504715508
+        ],
+        "n": 7,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "decay_time_constant_after_stim"
+      },
+      {
+        "feature": "AHP_depth_abs",
+        "val": [
+          -51.991934494743724,
+          24.55030299760341
+        ],
+        "n": 7,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AHP_depth_abs"
+      },
+      {
+        "feature": "steady_state_voltage",
+        "val": [
+          -71.51009173209536,
+          13.513632134746684
+        ],
+        "n": 7,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -91.09374999999987,
+          13.200136591465036
+        ],
+        "n": 7,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -63.19562198737328,
+          21.94284373247948
+        ],
+        "n": 7,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "sAHP_220": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          3.5,
+          1.5
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          77.18635374790323,
+          5.340264922477843
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "inv_first_ISI",
+        "val": [
+          29.861782805549936,
+          19.396674111908403
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_first_ISI"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          18.459375070125603,
+          7.303265208158595
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "inv_time_to_first_spike",
+        "val": [
+          86.31412447148998,
+          52.98722757683404
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_time_to_first_spike"
+      },
+      {
+        "feature": "decay_time_constant_after_stim",
+        "val": [
+          38.60922572631468,
+          61.798187102058876
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "decay_time_constant_after_stim"
+      },
+      {
+        "feature": "AHP_depth_abs",
+        "val": [
+          -44.16791704495622,
+          29.668938511652183
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AHP_depth_abs"
+      },
+      {
+        "feature": "steady_state_voltage",
+        "val": [
+          -68.24025621114733,
+          17.100789852295666
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -94.73281097412097,
+          16.307046569018876
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -57.25483042747588,
+          27.476486598056965
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "sAHP_250": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          5.166666666666667,
+          1.0671873729054748
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          76.06644398159894,
+          7.330487223865051
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "inv_first_ISI",
+        "val": [
+          56.4332887985018,
+          18.900320270373577
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_first_ISI"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          19.881766339502462,
+          4.565246551130571
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "inv_time_to_first_spike",
+        "val": [
+          147.66728369555625,
+          21.196850406829945
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_time_to_first_spike"
+      },
+      {
+        "feature": "decay_time_constant_after_stim",
+        "val": [
+          3.5915289828974157,
+          0.7298308063805928
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "decay_time_constant_after_stim"
+      },
+      {
+        "feature": "AHP_depth_abs",
+        "val": [
+          -60.71501735051112,
+          4.562671420747919
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AHP_depth_abs"
+      },
+      {
+        "feature": "steady_state_voltage",
+        "val": [
+          -77.14604186944025,
+          2.147790030749807
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -85.83125050862621,
+          2.362724278753105
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -72.15004817020865,
+          2.328218708995348
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "sAHP_270": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          5.0,
+          0.816496580927726
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          70.64937548949094,
+          6.269113296488746
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "inv_first_ISI",
+        "val": [
+          61.96286472147133,
+          15.866237930534014
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_first_ISI"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          16.525139288257524,
+          3.027399736494823
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "inv_time_to_first_spike",
+        "val": [
+          132.16440422231778,
+          15.622422688974618
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_time_to_first_spike"
+      },
+      {
+        "feature": "decay_time_constant_after_stim",
+        "val": [
+          3.8066488495001725,
+          0.29250364982571553
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "decay_time_constant_after_stim"
+      },
+      {
+        "feature": "AHP_depth_abs",
+        "val": [
+          -57.92802092233845,
+          4.246060396051625
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AHP_depth_abs"
+      },
+      {
+        "feature": "steady_state_voltage",
+        "val": [
+          -76.40606885006376,
+          2.7146087942914763
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -86.97291564941395,
+          2.8034858175593826
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -71.10572058030226,
+          2.8900062261993162
+        ],
+        "n": 3,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "sAHP_300": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          6.0,
+          1.2909944487358056
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          75.26091777950268,
+          7.062771053889788
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "inv_first_ISI",
+        "val": [
+          68.67499298112466,
+          18.184811661654525
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_first_ISI"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          19.428788420912586,
+          4.586371085573283
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "inv_time_to_first_spike",
+        "val": [
+          179.22817922651646,
+          22.938709997481343
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_time_to_first_spike"
+      },
+      {
+        "feature": "decay_time_constant_after_stim",
+        "val": [
+          3.43316791442914,
+          1.1281296121158817
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "decay_time_constant_after_stim"
+      },
+      {
+        "feature": "AHP_depth_abs",
+        "val": [
+          -59.68111340204522,
+          4.503627842373928
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AHP_depth_abs"
+      },
+      {
+        "feature": "steady_state_voltage",
+        "val": [
+          -77.43950887107079,
+          1.9920566880456756
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -85.9531249999999,
+          2.4952588117994967
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -72.30496868227739,
+          2.230951699597753
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "sAHP_350": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          7.0,
+          1.2909944487358056
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          73.5292482215777,
+          7.696345473340526
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "inv_first_ISI",
+        "val": [
+          90.7491965797542,
+          22.78516347089802
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_first_ISI"
+      },
+      {
+        "feature": "AP_height",
+        "val": [
+          18.07072082513333,
+          4.9490397010353995
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AP_height"
+      },
+      {
+        "feature": "inv_time_to_first_spike",
+        "val": [
+          203.45117844903962,
+          26.969281870328
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "inv_time_to_first_spike"
+      },
+      {
+        "feature": "decay_time_constant_after_stim",
+        "val": [
+          3.5566452578195817,
+          0.8750255302965161
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "decay_time_constant_after_stim"
+      },
+      {
+        "feature": "AHP_depth_abs",
+        "val": [
+          -58.952643884926715,
+          4.919887060218213
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true,
+          "stim_start": 520,
+          "stim_end": 720
+        },
+        "efeature_name": "AHP_depth_abs"
+      },
+      {
+        "feature": "steady_state_voltage",
+        "val": [
+          -77.5820246991339,
+          2.0868903233629577
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage"
+      },
+      {
+        "feature": "minimum_voltage",
+        "val": [
+          -86.66458511322033,
+          3.62206099791725
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "minimum_voltage"
+      },
+      {
+        "feature": "steady_state_voltage_stimend",
+        "val": [
+          -72.63201655494005,
+          2.5853863431031505
+        ],
+        "n": 6,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "steady_state_voltage_stimend"
+      }
+    ]
+  },
+  "APThreshold_300": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          14.066666666666666,
+          0.679869268479038
+        ],
+        "n": 15,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          74.54381150452183,
+          8.860530417679442
+        ],
+        "n": 15,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "inv_time_to_first_spike",
+        "val": [
+          1.2655841690073295,
+          0.05827851715423733
+        ],
+        "n": 15,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "inv_time_to_first_spike"
+      },
+      {
+        "feature": "ISI_log_slope",
+        "val": [
+          -0.33624023698421934,
+          0.019628106833562867
+        ],
+        "n": 15,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_log_slope"
+      },
+      {
+        "feature": "ISI_CV",
+        "val": [
+          0.27784080612590734,
+          0.018562448102774985
+        ],
+        "n": 15,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_CV"
+      },
+      {
+        "feature": "AP1_amp",
+        "val": [
+          77.68916701712725,
+          8.294940438838996
+        ],
+        "n": 15,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP1_amp"
+      },
+      {
+        "feature": "APlast_amp",
+        "val": [
+          71.94541562153849,
+          9.781843478457613
+        ],
+        "n": 15,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "APlast_amp"
+      }
+    ]
+  },
+  "APThreshold_330": {
+    "soma": [
+      {
+        "feature": "Spikecount",
+        "val": [
+          18.25,
+          3.112474899497183
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "Spikecount"
+      },
+      {
+        "feature": "AP_amplitude",
+        "val": [
+          81.12494516870976,
+          0.7247374946107965
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP_amplitude"
+      },
+      {
+        "feature": "inv_time_to_first_spike",
+        "val": [
+          1.2631796195320608,
+          0.02657796644468571
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "inv_time_to_first_spike"
+      },
+      {
+        "feature": "ISI_log_slope",
+        "val": [
+          -0.33734870293757535,
+          0.022615738016835283
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_log_slope"
+      },
+      {
+        "feature": "ISI_CV",
+        "val": [
+          0.2997528935553672,
+          0.034548750635202546
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "ISI_CV"
+      },
+      {
+        "feature": "AP1_amp",
+        "val": [
+          86.12187289437836,
+          0.9459250534172913
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "AP1_amp"
+      },
+      {
+        "feature": "APlast_amp",
+        "val": [
+          77.66249942535875,
+          1.669309928063182
+        ],
+        "n": 4,
+        "efel_settings": {
+          "Threshold": -30.0,
+          "interp_step": 0.1,
+          "strict_stiminterval": true
+        },
+        "efeature_name": "APlast_amp"
+      }
+    ]
+  }
+}
