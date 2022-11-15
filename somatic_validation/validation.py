@@ -39,8 +39,12 @@ def get_model_threshold() -> float:
     return thresholds["cADpyr_L5TPC1"][0]["thresh"]
 
 
-def write_corrected_protocols(model_thresh, opt_thresh, prot_path, output_path):
+def write_corrected_protocols(prot_path, output_path):
     """Rescales the amplitudes of protocols Writes the output to file."""
+    model_thresh = get_model_threshold()
+    opt_thresh = get_opt_threshold()
+    scale_factor = model_thresh / opt_thresh
+
     with open(prot_path, "r") as file:
         prots = json.load(file)
 
@@ -54,16 +58,15 @@ def write_corrected_protocols(model_thresh, opt_thresh, prot_path, output_path):
             protocol_definition["step"]["long_amp"] = (
                 model_thresh * int(protocol_name[-3:]) / 100
             )
-            print(protocol_definition["step"]["long_amp"])
             old_depol = protocol_definition["step"]["amp"]
-            protocol_definition["step"]["amp"] = (old_depol / opt_thresh) * model_thresh
+            protocol_definition["step"]["amp"] = old_depol * scale_factor
 
         if "sAHP" in protocol_name:
             protocol_definition["step"]["long_amp"] = (
                 model_thresh * int(protocol_name[-3:]) / 100
             )
             old_depol = protocol_definition["step"]["amp"]
-            protocol_definition["step"]["amp"] = (old_depol / opt_thresh) * model_thresh
+            protocol_definition["step"]["amp"] = old_depol * scale_factor
 
     with open(output_path, "w") as fp:
         json.dump(prots, fp, indent=4)
