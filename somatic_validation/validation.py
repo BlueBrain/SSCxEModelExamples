@@ -13,6 +13,23 @@ import model
 script_dir = Path(__file__).parent
 
 
+def get_model_threshold() -> float:
+    """Get model threshold from optimisation output."""
+    opt_model_features_path = (
+        script_dir.parent
+        / "optimisation"
+        / "opt_module"
+        / "config"
+        / "features"
+        / "cADpyr_L5TPC.json"
+    )
+
+    with open(opt_model_features_path, "r") as f:
+        opt_model_features = json.load(f)
+
+    return opt_model_features["Threshold"]["soma.v"][0]["val"][0]
+
+
 def write_corrected_protocols(model_thresh, thresh_hypamp, prot_path, output_path):
     thresh = thresh_hypamp["Threshold"]["soma.v"][0]["val"]
 
@@ -47,30 +64,13 @@ def write_corrected_protocols(model_thresh, thresh_hypamp, prot_path, output_pat
     with open(output_path, "w") as fp:
         json.dump(prots_th, fp, indent=4)
 
-
-opt_model_features_path = (
-    script_dir.parent
-    / "optimisation"
-    / "opt_module"
-    / "config"
-    / "features"
-    / "cADpyr_L5TPC.json"
-)
-
-with open(opt_model_features_path, "r") as f:
-    opt_model_features = json.load(f)
-
-
-holding_current = opt_model_features["RinHoldCurrent"]["soma.v"][0]["val"][0]
-threshold_current = opt_model_features["Threshold"]["soma.v"][0]["val"][0]
-
 opt_model_params_path = (
     script_dir.parent / "optimisation" / "opt_module" / "config" / "params" / "pyr.json"
 )
 
-protocols_path = script_dir / "L5PC" / "protocols.json"
+protocols_path = script_dir / "L5TPC" / "protocols.json"
 
-features_path = script_dir / "L5PC" / "features.json"
+features_path = script_dir / "L5TPC" / "features.json"
 
 # corrected_protocols_path = script_dir / "protocols_corrected.json"
 
