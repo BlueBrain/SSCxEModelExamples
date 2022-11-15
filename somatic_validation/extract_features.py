@@ -246,7 +246,7 @@ def main():
     pprint(targets)
 
     files_metadata = get_files_metadata(traces_dir, cell_ids, experiments)
-    etype = "L5PC"
+    etype = "L5TPC"
     protocols_rheobase = ["IDthresh", "IDRest"]
     extract_efeatures(
         etype, files_metadata, targets, protocols_rheobase, plot=True, per_cell=True
