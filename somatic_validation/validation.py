@@ -13,8 +13,8 @@ import model
 script_dir = Path(__file__).parent
 
 
-def get_model_threshold() -> float:
-    """Get model threshold from optimisation output."""
+def get_opt_threshold() -> float:
+    """Get threshold from optimisation output."""
     opt_model_features_path = (
         script_dir.parent
         / "optimisation"
@@ -30,39 +30,43 @@ def get_model_threshold() -> float:
     return opt_model_features["Threshold"]["soma.v"][0]["val"][0]
 
 
-def write_corrected_protocols(model_thresh, thresh_hypamp, prot_path, output_path):
-    thresh = thresh_hypamp["Threshold"]["soma.v"][0]["val"]
+def get_model_threshold() -> float:
+    """Returns the model threshold contained in a static file."""
+    threshold_fpath = script_dir / "thresholds" / "models_thresh_all_pyr.json"
+    with open(threshold_fpath, "r") as f:
+        thresholds = json.load(f)
 
+    return thresholds["cADpyr_L5TPC1"][0]["thresh"]
+
+
+def write_corrected_protocols(model_thresh, opt_thresh, prot_path, output_path):
+    """Rescales the amplitudes of protocols Writes the output to file."""
     with open(prot_path, "r") as file:
         prots = json.load(file)
-    prots_th = prots.copy()
 
-    # change holding
-    for protocol_name, protocol_definition in prots_th.items():
-        for stimulus_definition in protocol_definition["stimuli"]:
+    for protocol_name, protocol_definition in prots.items():
+        if "APThreshold" in protocol_name:
+            protocol_definition["step"]["amp"] = (
+                model_thresh * int(protocol_name[-3:]) / 100
+            )
 
-            if "APThreshold" in protocol_name:
-                stimulus_definition["amp"] = (
-                    model_thresh * int(protocol_name[-3:]) / 100
-                )
+        if "IDhyperpol" in protocol_name:
+            protocol_definition["step"]["long_amp"] = (
+                model_thresh * int(protocol_name[-3:]) / 100
+            )
+            print(protocol_definition["step"]["long_amp"])
+            old_depol = protocol_definition["step"]["amp"]
+            protocol_definition["step"]["amp"] = (old_depol / opt_thresh) * model_thresh
 
-            if "IDhyperpol" in protocol_name:
-                stimulus_definition["amp2"] = (
-                    model_thresh * int(protocol_name[-3:]) / 100
-                )
-                print(stimulus_definition["amp2"])
-                old_depol = stimulus_definition["amp"]
-                stimulus_definition["amp"] = (old_depol / thresh[0]) * model_thresh
-
-            if "sAHP" in protocol_name:
-                stimulus_definition["amp2"] = (
-                    model_thresh * int(protocol_name[-3:]) / 100
-                )
-                old_depol = stimulus_definition["amp"]
-                stimulus_definition["amp"] = (old_depol / thresh[0]) * model_thresh
+        if "sAHP" in protocol_name:
+            protocol_definition["step"]["long_amp"] = (
+                model_thresh * int(protocol_name[-3:]) / 100
+            )
+            old_depol = protocol_definition["step"]["amp"]
+            protocol_definition["step"]["amp"] = (old_depol / opt_thresh) * model_thresh
 
     with open(output_path, "w") as fp:
-        json.dump(prots_th, fp, indent=4)
+        json.dump(prots, fp, indent=4)
 
 opt_model_params_path = (
     script_dir.parent / "optimisation" / "opt_module" / "config" / "params" / "pyr.json"
@@ -72,9 +76,12 @@ protocols_path = script_dir / "L5TPC" / "protocols.json"
 
 features_path = script_dir / "L5TPC" / "features.json"
 
-# corrected_protocols_path = script_dir / "protocols_corrected.json"
+model_threshold = get_model_threshold()
+opt_threshold = get_opt_threshold()
 
-# write_corrected_protocols(
+corrected_protocols_path = script_dir / "protocols_corrected.json"
+
+write_corrected_protocols(model_threshold, opt_threshold, protocols_path, corrected_protocols_path)
 
 
 opt_pickle_path = (
@@ -101,13 +108,12 @@ morphology_path = str(
 )
 
 
-# TODO rescale the protocols using corrected_prot function
+corrected_protocols_path = str(corrected_protocols_path)
 
-
-fitness_protocols = evaluator.define_protocols(protocols_path)
+fitness_protocols = evaluator.define_protocols(corrected_protocols_path)
 
 evaluator = evaluator.create(
-    morphology_path, opt_model_params_path, features_path, protocols_path
+    morphology_path, opt_model_params_path, features_path, corrected_protocols_path
 )
 
 cell = model.create(morphology_path, opt_model_params_path)
@@ -118,6 +124,3 @@ responses = evaluator.run_protocols(
     protocols=fitness_protocols.values(),
     param_values=dict(zip(cell_params, opt_pickle["hof"][0])),
 )
-
-
-breakpoint()
