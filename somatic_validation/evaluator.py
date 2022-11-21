@@ -52,18 +52,28 @@ def define_protocols(path_protocols):
             location=soma_loc,
             total_duration=step_stimulus_definition['totduration']))
             # fmt: on
-        elif "IDhyperpol" in protocol_name or "sAHP" in protocol_name:
+        elif "IDhyperpol" in protocol_name:
             # fmt: off
             stimuli.append(NrnHDPulse(
-            step_amplitude=step_stimulus_definition['long_amp'],
+            step_amplitude=step_stimulus_definition['amp'],
             step_delay=step_stimulus_definition['delay'],
             step_duration=step_stimulus_definition['duration'],
-            duration_of_depol1=step_stimulus_definition['tmid']-step_stimulus_definition['delay'],
-            duration_of_depol2=step_stimulus_definition['toff']-step_stimulus_definition['tmid2'],
-            depol=step_stimulus_definition['amp'],
+            duration_of_depol1=step_stimulus_definition['tmid']-step_stimulus_definition['delay'], # 500
+            duration_of_depol2=step_stimulus_definition['toff']-step_stimulus_definition['tmid2'], #2000
+            depol=step_stimulus_definition['long_amp'],
             location=soma_loc,
             total_duration=step_stimulus_definition['totduration']))
             # fmt: on
+        elif "sAHP" in protocol_name:
+            stimuli.append(NrnHDPulse(
+            step_amplitude=step_stimulus_definition['amp'],
+            step_delay=step_stimulus_definition['delay'],
+            step_duration=step_stimulus_definition['duration'],
+            duration_of_depol1=step_stimulus_definition['tmid']-step_stimulus_definition['delay'], # 500
+            duration_of_depol2=2520, #step_stimulus_definition['toff']-step_stimulus_definition['tmid2'], #2000
+            depol=step_stimulus_definition['long_amp'],
+            location=soma_loc,
+            total_duration=step_stimulus_definition['totduration']))
 
         protocols[protocol_name] = ephys.protocols.SweepProtocol(
             protocol_name, stimuli, recordings
