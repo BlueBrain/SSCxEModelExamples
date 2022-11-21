@@ -52,25 +52,6 @@
       "totduration": 3000.0
     }
   },
-  "IDhyperpol_200": {
-    "holding": {
-      "delay": 0.0,
-      "amp": -0.20281250774860382,
-      "duration": 3000.0,
-      "totduration": 3000.0
-    },
-    "step": {
-      "delay": 100.0,
-      "tmid": 700.0000000000001,
-      "tmid2": 2700.0,
-      "toff": 2900.0,
-      "amp": 0.370312487706542,
-      "long_amp": -0.19964287102126005,
-      "thresh_perc": 195.85686425954597,
-      "duration": 2000.0,
-      "totduration": 3000.0
-    }
-  },
   "IDhyperpol_220": {
     "holding": {
       "delay": 0.0,
