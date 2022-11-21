@@ -59,8 +59,8 @@ def define_protocols(path_protocols):
             step_delay=step_stimulus_definition['delay'],
             step_duration=step_stimulus_definition['toff']-step_stimulus_definition['delay'],
             # step_duration=step_stimulus_definition['duration'],
-            duration_of_depol1=step_stimulus_definition['tmid']-step_stimulus_definition['delay'], # 500
-            duration_of_depol2=step_stimulus_definition['toff']-step_stimulus_definition['tmid2'], #2000
+            duration_of_depol1=step_stimulus_definition['tmid']-step_stimulus_definition['delay'],
+            duration_of_depol2=step_stimulus_definition['toff']-step_stimulus_definition['tmid2'],
             depol=step_stimulus_definition['long_amp'],
             location=soma_loc,
             total_duration=step_stimulus_definition['totduration']))
@@ -71,8 +71,8 @@ def define_protocols(path_protocols):
             step_delay=step_stimulus_definition['delay'],
             step_duration=step_stimulus_definition['toff']-step_stimulus_definition['delay'],
             # step_duration=step_stimulus_definition['duration'],
-            duration_of_depol1=step_stimulus_definition['tmid']-step_stimulus_definition['delay'], # 500
-            duration_of_depol2=2520, #step_stimulus_definition['toff']-step_stimulus_definition['tmid2'], #2000
+            duration_of_depol1=step_stimulus_definition['tmid']-step_stimulus_definition['delay'],
+            duration_of_depol2=step_stimulus_definition['toff']-step_stimulus_definition['tmid2'],
             depol=step_stimulus_definition['long_amp'],
             location=soma_loc,
             total_duration=step_stimulus_definition['totduration']))
