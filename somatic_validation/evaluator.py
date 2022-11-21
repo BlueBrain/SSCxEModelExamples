@@ -57,7 +57,8 @@ def define_protocols(path_protocols):
             stimuli.append(NrnHDPulse(
             step_amplitude=step_stimulus_definition['amp'],
             step_delay=step_stimulus_definition['delay'],
-            step_duration=step_stimulus_definition['duration'],
+            step_duration=step_stimulus_definition['toff']-step_stimulus_definition['delay'],
+            # step_duration=step_stimulus_definition['duration'],
             duration_of_depol1=step_stimulus_definition['tmid']-step_stimulus_definition['delay'], # 500
             duration_of_depol2=step_stimulus_definition['toff']-step_stimulus_definition['tmid2'], #2000
             depol=step_stimulus_definition['long_amp'],
@@ -68,7 +69,8 @@ def define_protocols(path_protocols):
             stimuli.append(NrnHDPulse(
             step_amplitude=step_stimulus_definition['amp'],
             step_delay=step_stimulus_definition['delay'],
-            step_duration=step_stimulus_definition['duration'],
+            step_duration=step_stimulus_definition['toff']-step_stimulus_definition['delay'],
+            # step_duration=step_stimulus_definition['duration'],
             duration_of_depol1=step_stimulus_definition['tmid']-step_stimulus_definition['delay'], # 500
             duration_of_depol2=2520, #step_stimulus_definition['toff']-step_stimulus_definition['tmid2'], #2000
             depol=step_stimulus_definition['long_amp'],
