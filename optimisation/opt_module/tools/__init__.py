@@ -1,20 +1,21 @@
 """
-Copyright (c) 2016, EPFL/Blue Brain Project
+Copyright (c) 2022 EPFL-BBP, All rights reserved.
 
- This file is part of BluePyOpt <https://github.com/BlueBrain/BluePyOpt>
+THIS SOFTWARE IS PROVIDED BY THE BLUE BRAIN PROJECT ``AS IS''
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE BLUE BRAIN PROJECT
+BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
- This library is free software; you can redistribute it and/or modify it under
- the terms of the GNU Lesser General Public License version 3.0 as published
- by the Free Software Foundation.
-
- This library is distributed in the hope that it will be useful, but WITHOUT
- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
- details.
-
- You should have received a copy of the GNU Lesser General Public License
- along with this library; if not, write to the Free Software Foundation, Inc.,
- 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
+To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/4.0/legalcode or send a letter to Creative Commons, 171
+Second Street, Suite 300, San Francisco, California, 94105, USA.
 """
 
 from .analyse import *
