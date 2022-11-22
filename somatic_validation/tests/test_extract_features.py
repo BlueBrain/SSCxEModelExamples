@@ -43,7 +43,7 @@ def test_extract_efeatures():
     targets = translate_legacy_targets(experiments)
 
     files_metadata = get_files_metadata(traces_dir, cell_ids, experiments)
-    etype = "test_L5PC"
+    etype = "test_L5TPC"
     protocols_rheobase = ["IDthresh", "IDRest"]
     extract_efeatures(
         etype, files_metadata, targets, protocols_rheobase, plot=False, per_cell=False

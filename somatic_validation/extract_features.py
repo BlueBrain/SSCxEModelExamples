@@ -30,6 +30,7 @@ def get_protocol_timing_information() -> MappingProxyType:
                 "tend": 3000.0,
             },
             "APThreshold": {"ton": 10.0, "toff": 2000},
+            "IDthresh": {"ton": 700.0, "toff": 2700},
             "sAHP": {
                 "dt": 0.0005,
                 "ton": 20.0,
@@ -245,10 +246,10 @@ def main():
     pprint(targets)
 
     files_metadata = get_files_metadata(traces_dir, cell_ids, experiments)
-    etype = "L5PC"
+    etype = "L5TPC"
     protocols_rheobase = ["IDthresh", "IDRest"]
     extract_efeatures(
-        etype, files_metadata, targets, protocols_rheobase, plot=True, per_cell=True
+        etype, files_metadata, targets, protocols_rheobase, plot=False, per_cell=False
     )
 
 
