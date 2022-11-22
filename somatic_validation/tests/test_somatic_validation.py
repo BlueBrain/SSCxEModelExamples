@@ -1,7 +1,5 @@
 """Test to reproduce somatic validation results."""
 
-import model
-import evaluator
 from pathlib import Path
 import pickle
 import sys
@@ -14,6 +12,9 @@ from pandas.testing import assert_series_equal
 script_dir = Path(__file__).parent
 
 sys.path.append(str(script_dir.parent))
+
+import model
+import evaluator
 
 
 def test_somatic_validation():
@@ -65,12 +66,9 @@ def test_somatic_validation():
     objectives = evaluator_instance.fitness_calculator.calculate_scores(responses)
     objectives = pd.Series(objectives)
 
-    # save objectives Series as json
-    objectives.to_json("tests/data/gt_objectives.json")
-
     # read gt_objectives Series from json
     gt_objectives = pd.read_json(
-        Path("tests") / "data" / " gt_objectives.json", typ="series"
+        Path(".") / "tests" / "data" / "gt_objectives.json", typ="series"
     )
 
     assert_series_equal(objectives, gt_objectives)
