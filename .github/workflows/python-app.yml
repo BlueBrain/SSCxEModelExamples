@@ -94,7 +94,8 @@ jobs:
       run: |
         pip install -r test-requirements.txt
         cd somatic_validation
-        pip install -r requirements.txt
+        pip install -r somatic-val-requirements.txt
+        nrnivmodl mechanisms
         pytest -sx tests
 
   code-style:
