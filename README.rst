@@ -8,7 +8,7 @@ Introduction
 
 The detailed neuronal model is one of the central tools in neuroscience. Here we present a demo of the single neuron e-model creation, validation, and generalization described in "A universal workflow for creation, validation, and generalization of detailed neuronal models" (Reva, Rossert et al) paper. The demo is built on the example of L5PC of the SSCx in juvenile rat. 
 
-Single cell e-model pipline
+Single cell e-model pipeline
 ---------
 1. E-feature extraction
 2. E-model optimization
