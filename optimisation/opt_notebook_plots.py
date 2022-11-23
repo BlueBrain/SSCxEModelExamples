@@ -1,4 +1,4 @@
-"""Contains the plotting functions used by the optimisation notebook."""
+"""Contains the plotting functions used by the optimization notebook."""
 
 import collections
 import matplotlib.pyplot as plt

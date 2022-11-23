@@ -54,11 +54,11 @@ The mechanisms are:
 
 The parameters include other etypes that we are not showing in this notebook. *Suggestion: we may delete them.*
 
-## Optimisation dependencies
+## optimization dependencies
 
-1. cADpyr_L5TPC_1.pkl file from the optimisation results.
+1. cADpyr_L5TPC_1.pkl file from the optimization results.
 
-The file is located at optimisation/opt_module/checkpoints/run.a6e707a/cADpyr_L5TPC_1.pkl.
+The file is located at optimization/opt_module/checkpoints/run.a6e707a/cADpyr_L5TPC_1.pkl.
 
 2. The emodel directory as well as the mechanisms below.
 - CaDynamics_DC0.mod
@@ -77,8 +77,8 @@ The file is located at optimisation/opt_module/checkpoints/run.a6e707a/cADpyr_L5
 - StochKv2.mod
 - StochKv3.mod
 
-3. The morphology file used in the optimisation is the following.
-optimisation/opt_module/morphologies/C060114A5.asc
+3. The morphology file used in the optimization is the following.
+optimization/opt_module/morphologies/C060114A5.asc
 
 
 ## Validation dependencies

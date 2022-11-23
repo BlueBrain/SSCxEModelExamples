@@ -29,7 +29,7 @@ jobs:
         cd feature_extraction
         pytest -sx tests
 
-  optimisation:
+  optimization:
     runs-on: ubuntu-latest
 
     steps:
@@ -38,11 +38,11 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.9"
-    - name: Test optimisation
+    - name: Test optimization
       run: |
         pip install -r requirements.txt
         pip install -r test-requirements.txt
-        cd optimisation
+        cd optimization
         nrnivmodl opt_module/mechanisms
         pytest -sx tests
 
