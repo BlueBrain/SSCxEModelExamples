@@ -34,7 +34,7 @@ Two types of validation were performed for the optimized L5PC e-model.
 Generalization
 ______________
 
-The generalization of the canonical L5PC e-model to a number of morphologies is done with the model-managmetn tool. To run a generalization use ``model-management.ipynb`` in ``/model_management/mm_run_minimal``. The morphologies used in the step can be found in ``/model_management/mm_run_minimal/morphologies/``.
+The generalization of the canonical L5PC e-model to a number of morphologies is done with the model-management tool. To run a generalization use ``model-management.ipynb`` in ``/model_management/mm_run_minimal``. The morphologies used in the step can be found in ``/model_management/mm_run_minimal/morphologies/``.
 
 
 Usage
