@@ -8,7 +8,7 @@ Introduction
 
 The detailed neuronal model is one of the central tools in neuroscience. Here we present a demo of the single neuron e-model creation, validation, and generalization described in "A universal workflow for creation, validation, and generalization of detailed neuronal models" (Reva, Rossert et al) paper. The demo is built on the example of L5PC of the SSCx in juvenile rat. 
 
-Single cell e-model pipline
+Single cell e-model pipeline
 ---------
 1. E-feature extraction
 2. E-model optimization
@@ -34,7 +34,7 @@ Two types of validation were performed for the optimized L5PC e-model.
 Generalization
 ______________
 
-The generalization of the canonical L5PC e-model to a number of morphologies is done with the model-managmetn tool. To run a generalization use ``model-management.ipynb`` in ``/model_management/mm_run_minimal``. The morphologies used in the step can be found in ``/model_management/mm_run_minimal/morphologies/``.
+The generalization of the canonical L5PC e-model to a number of morphologies is done with the model-management tool. To run a generalization use ``model-management.ipynb`` in ``/model_management/mm_run_minimal``. The morphologies used in the step can be found in ``/model_management/mm_run_minimal/morphologies/``.
 
 
 Usage
