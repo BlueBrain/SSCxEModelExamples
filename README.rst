@@ -17,9 +17,9 @@ Single cell e-model pipeline
 
 E-feature extraction
 ________
-`feature_extraction <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/feature_extraction>`_ folder contains data and codes that allow the extraction of electrical features (e-features) from the voltage traces.
+The `feature_extraction <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/feature_extraction>`_ folder contains data and codes that allow the extraction of electrical features (e-features) from the voltage traces.
 
-E-features are extracted for six L5PCs, their traces are located in `feature_extraction/input-traces <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/feature_extraction/input-traces>`_.
+E-features are extracted for six L5PCs, their traces are located in the `feature_extraction/input-traces <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/feature_extraction/input-traces>`_ folder.
 
 The `requirements.txt <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/requirements.txt>`_ at the main directory needs to be installed to run the `feature-extraction.ipynb <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/feature_extraction/feature-extraction.ipynb>`_.
 
@@ -30,7 +30,7 @@ Run the following command to install the dependencies::
 E-model optimization
 ________
 
-`optimization <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/optimization>`_ folder contains tools and codes necessary to run and display the result of the canonical e-model optimization.
+The `optimization <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/optimization>`_ folder contains tools and codes necessary to run and display the result of the canonical e-model optimization.
 
 Install the `requirements.txt <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/requirements.txt>`_ at the main directory and run `Minimal_cADpyr_L5TPC_Optimization.ipynb <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/optimization/Minimal_cADpyr_L5TPC_Optimization.ipynb>`_ to visualize the results of the optimization.
 
@@ -38,7 +38,7 @@ Prior to launching the notebook, one needs to compile e-model' mechanisms by run
 
     sh compile_mechanisms.sh
 
-`optimization/opt_module <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/optimization/opt_module>`_ contains tools and data necessary for the optimization such as morphology, mechanisms, checkpoints, and config files.
+The `optimization/opt_module <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/optimization/opt_module>`_ folder contains tools and data necessary for the optimization such as morphology, mechanisms, checkpoints, and config files.
 
 E-model validations
 _________
@@ -46,7 +46,7 @@ Two types of validation were performed for the optimized L5PC e-model.
 
 The visualization of the bAP/EPSP validations can be found in `validation.ipynb <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/validation/validation.ipynb>`_ notebook.
 
-The morphologies for these validations are located in `input/morphologies <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/validation/input/morphologies>`_.
+The morphologies for these validations are located in the `input/morphologies <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/validation/input/morphologies>`_ folder.
 
 To run bAP/EPSP validations use:: 
 
@@ -64,7 +64,7 @@ Note that this is the only step that does not use the ``requirements.txt`` in th
 
   nrnivmodl mechanisms 
   
-First, e-features for the validations have to be extracted from the chosen patch clamp protocol. To extract e-features use `feature-extraction.ipynb <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/somatic_validation/feature-extraction.ipynb>`_, the results of this extraction can be found in `somatic_validation/L5TPC <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/somatic_validation/L5TPC>`_. To run and visualize results of the somatic validation run `somatic-validation.ipynb <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/somatic_validation/somatic-validation.ipynb>`_.
+First, e-features for the validations have to be extracted from the chosen patch clamp protocol. To extract e-features use `feature-extraction.ipynb <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/somatic_validation/feature-extraction.ipynb>`_, the results of this extraction can be found in the `somatic_validation/L5TPC <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/somatic_validation/L5TPC>`_ folder. To run and visualize results of the somatic validation run `somatic-validation.ipynb <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/somatic_validation/somatic-validation.ipynb>`_.
 
 Generalization
 ______________
@@ -75,7 +75,7 @@ The generalization of the canonical L5PC e-model to a number of morphologies is 
 
 To run a generalization use the `model-management.ipynb <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/model_management/mm_run_minimal/model-management.ipynb>`_ notebook in `/model_management/mm_run_minimal <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/model_management/mm_run_minimal>`_ directory.
 
-The morphologies used in the step can be found in `/model_management/mm_run_minimal/morphologies/ <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/model_management/mm_run_minimal/morphologies>`_.
+The morphologies used in the step can be found in the `/model_management/mm_run_minimal/morphologies/ <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/model_management/mm_run_minimal/morphologies>`_ folder.
 
 
 Testing
