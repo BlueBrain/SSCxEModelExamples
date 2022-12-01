@@ -1,4 +1,4 @@
-Creation, validation and generalization of an L5PC canonical e-model
+Creation, validation and generalization of a canonical electrical model for layer 5 pyramidal cell
 -----------------------
 
 |build| |black|
