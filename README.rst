@@ -1,4 +1,4 @@
-An example of the creation, validation and generalization of L5PC canonical e-model. 
+Creation, validation and generalization of an L5PC canonical e-model
 -----------------------
 
 |build| |black|
