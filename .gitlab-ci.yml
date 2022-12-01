@@ -11,13 +11,13 @@ feature-extraction-docker:
   - cd feature_extraction
   - pytest -sx tests
 
-optimisation-docker:
+optimization-docker:
   before_script:
   - !reference [.docker, load-python-39]
   script:
   - pip install -r requirements.txt
   - pip install -r test-requirements.txt
-  - cd optimisation
+  - cd optimization
   - nrnivmodl opt_module/mechanisms
   - pytest -sx tests
 

@@ -43,12 +43,12 @@ def test_somatic_validation():
     features_path = Path(".") / "L5TPC" / "features.json"
 
     opt_model_params_path = (
-        Path("..") / "optimisation" / "opt_module" / "config" / "params" / "pyr.json"
+        Path("..") / "optimization" / "opt_module" / "config" / "params" / "pyr.json"
     )
 
     opt_pickle_path = (
         Path("..")
-        / "optimisation"
+        / "optimization"
         / "opt_module"
         / "checkpoints"
         / "run.a6e707a"
@@ -66,7 +66,7 @@ def test_somatic_validation():
     }
 
     morphology_path = str(
-        Path("..") / "optimisation" / "opt_module" / "morphologies" / "C060114A5.asc"
+        Path("..") / "optimization" / "opt_module" / "morphologies" / "C060114A5.asc"
     )
 
     fitness_protocols = evaluator.define_protocols(protocols_path)

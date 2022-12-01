@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Run simple cell optimisation"""
+"""Run simple cell optimization"""
 
 """
 Copyright (c) 2022 EPFL-BBP, All rights reserved.

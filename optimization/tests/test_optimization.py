@@ -56,7 +56,7 @@ def get_responses(cell_evaluator, top_individual):
     return responses
 
 
-class TestOptimisationNotebook:
+class TestOptimizationNotebook:
     @classmethod
     def setup_class(cls):
         """setup any state specific to the execution of the given class (which
