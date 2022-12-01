@@ -1,22 +1,18 @@
-Creation, validation and generalization of a canonical electrical model for layer 5 pyramidal cell
------------------------
+Creation, validation and generalization of a canonical electrical model
+=======================================================================
 
 |build| |black|
 
 Introduction
 ---------
 
-The detailed neuronal model is one of the central tools in neuroscience. Here we present a demo of the single neuron e-model creation, validation, and generalization described in "A universal workflow for creation, validation, and generalization of detailed neuronal models" (Reva, Rossert et al). The demo is built on the example of L5PC of the SSCx in juvenile rat. 
+The biophysically detailed electrical neuron model (e-model) is one of the central tools in neuroscience. Here we present a demo of the single neuron e-model creation, validation, and generalization described in "A universal workflow for creation, validation, and generalization of detailed neuronal models" (Reva, Rossert et al). This demo is built on the example of L5PC of the SSCx in juvenile rat. 
 
-Single cell e-model pipeline
+Pipeline
 ---------
-1. E-feature extraction
-2. E-model optimization
-3. E-model validation
-4. Generalization
 
-E-feature extraction
-________
+1. E-feature extraction
+~~~~~~~~~~~~~~~~~~~~~~~
 The `feature_extraction <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/feature_extraction>`_ folder contains data and codes that allow the extraction of electrical features (e-features) from the voltage traces.
 
 E-features are extracted for six L5PCs, their traces are located in the `feature_extraction/input-traces <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/feature_extraction/input-traces>`_ folder.
@@ -27,8 +23,8 @@ Run the following command to install the dependencies::
 
     pip install -r requirements.txt
 
-E-model optimization
-________
+2. Optimization
+~~~~~~~~~~~~~~~
 
 The `optimization <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/optimization>`_ folder contains tools and codes necessary to run and display the result of the canonical e-model optimization.
 
@@ -40,8 +36,8 @@ Prior to launching the notebook, one needs to compile e-model' mechanisms by run
 
 The `optimization/opt_module <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/optimization/opt_module>`_ folder contains tools and data necessary for the optimization such as morphology, mechanisms, checkpoints, and config files.
 
-E-model validations
-_________
+3. Validation
+~~~~~~~~~~~~~
 Two types of validation were performed for the optimized L5PC e-model.
 
 The visualization of the bAP/EPSP validations can be found in `validation.ipynb <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/validation/validation.ipynb>`_ notebook.
@@ -66,8 +62,8 @@ Note that this is the only step that does not use the ``requirements.txt`` in th
   
 First, e-features for the validations have to be extracted from the chosen patch clamp protocol. To extract e-features use `feature-extraction.ipynb <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/somatic_validation/feature-extraction.ipynb>`_, the results of this extraction can be found in the `somatic_validation/L5TPC <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/somatic_validation/L5TPC>`_ folder. To run and visualize results of the somatic validation run `somatic-validation.ipynb <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/somatic_validation/somatic-validation.ipynb>`_.
 
-Generalization
-______________
+4. Generalization
+~~~~~~~~~~~~~~
 
 Once again the `requirements.txt <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/requirements.txt>`_ at the main directory needs to be installed.
 
