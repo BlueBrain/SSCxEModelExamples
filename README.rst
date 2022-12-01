@@ -10,6 +10,20 @@ The biophysically detailed electrical neuron model (e-model) is one of the centr
 
 This demo is built on the example of L5PC of the SSCx in juvenile rat. 
 
+Citation
+--------
+When you using methods or code from this repository for your research, we ask you to cite the following publication:
+
+A universal workflow for creation, validation, and generalization of detailed neuronal models" (Reva, Rossert et al).
+
+.. code-block:: 
+
+    @ARTICLE{bluepyopt,
+	AUTHOR={Reva, Rossert},   
+	TITLE={A universal workflow for creation, validation, and generalization of detailed neuronal models},
+	}
+
+
 Pipeline
 ---------
 
@@ -100,8 +114,15 @@ Install `somatic-val-requirements.txt <https://github.com/BlueBrain/SSCxEModelEx
 Reference
 ---------
 
+Funding
+-------
+This project/research was supported by funding to the Blue Brain Project, a research center of the École polytechnique fédérale de Lausanne (EPFL), from the Swiss government’s ETH Board of the Swiss Federal Institutes of Technology.
+
 License
 -------
+
+This work is licensed under `Creative Commons Attribution-NonCommercial (CC BY-NC) 4.0 <https://creativecommons.org/licenses/by-nc/4.0/>`_ 
+
 
 .. |build| image:: https://github.com/BlueBrain/SSCxEModelExamples/actions/workflows/python-app.yml/badge.svg
                 :target: https://github.com/BlueBrain/SSCxEModelExamples/actions/workflows/python-app.yml
