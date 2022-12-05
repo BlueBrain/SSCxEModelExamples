@@ -38,3 +38,11 @@ somatic-validation: install-somatic-validation-requirements somatic-validation-t
 check-code-style:
 	pip install black
 	black --check .
+
+# for somatic_validation mechanisms it's ok to use requirements.txt since we only need NEURON
+run-compile-all-mechanisms:
+	cd optimization; nrnivmodl opt_module/mechanisms
+	cd validation; nrnivmodl mechanisms
+	cd somatic_validation; nrnivmodl mechanisms
+
+compile-all-mechanisms: install-requirements run-compile-all-mechanisms
