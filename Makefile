@@ -1,6 +1,6 @@
 # turn .github/workflows/python-app.yml into a make file
 
-tests: feature-extraction optimization model-management validation somatic-validation
+tests: test-feature-extraction test-optimization test-model-management test-validation test-somatic-validation
 
 install-requirements:
 	pip install -r requirements.txt
@@ -10,30 +10,30 @@ install-somatic-validation-requirements:
 	pip install -r test-requirements.txt
 	cd somatic_validation; pip install -r somatic-val-requirements.txt
 
-feature-extraction-tests:
+run-feature-extraction-tests:
 	cd feature_extraction; pytest -sx tests
 
-optimization-tests:
+run-optimization-tests:
 	cd optimization; nrnivmodl opt_module/mechanisms
 	cd optimization; pytest -sx tests
 
 # optimization modules need to be compiled before running model management tests
-model-management-tests:
+run-model-management-tests:
 	cd model_management/mm_run_minimal; pytest -sx tests
 
-validation-tests:
+run-validation-tests:
 	cd validation; nrnivmodl mechanisms
 	cd validation; pytest -sx tests
 
-somatic-validation-tests:
+run-somatic-validation-tests:
 	cd somatic_validation; nrnivmodl mechanisms
 	cd somatic_validation; pytest -sx tests
 
-feature-extraction: install-requirements feature-extraction-tests
-optimization: install-requirements optimization-tests
-model-management: install-requirements model-management-tests
-validation: install-requirements validation-tests
-somatic-validation: install-somatic-validation-requirements somatic-validation-tests
+test-feature-extraction: install-requirements run-feature-extraction-tests
+test-optimization: install-requirements run-optimization-tests
+test-model-management: install-requirements run-model-management-tests
+test-validation: install-requirements run-validation-tests
+test-somatic-validation: install-somatic-validation-requirements run-somatic-validation-tests
 
 check-code-style:
 	pip install black
