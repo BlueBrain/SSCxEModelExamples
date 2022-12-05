@@ -24,10 +24,7 @@ jobs:
         python-version: "3.9"
     - name: Test feature extraction
       run: |
-        pip install -r requirements.txt
-        pip install -r test-requirements.txt
-        cd feature_extraction
-        pytest -sx tests
+        make feature-extraction
 
   optimization:
     runs-on: ubuntu-latest
@@ -40,11 +37,7 @@ jobs:
         python-version: "3.9"
     - name: Test optimization
       run: |
-        pip install -r requirements.txt
-        pip install -r test-requirements.txt
-        cd optimization
-        nrnivmodl opt_module/mechanisms
-        pytest -sx tests
+        make optimization
 
   model-management:
     runs-on: ubuntu-latest
@@ -57,10 +50,7 @@ jobs:
         python-version: "3.9"
     - name: Test model management
       run: |
-        pip install -r requirements.txt
-        pip install -r test-requirements.txt
-        cd model_management/mm_run_minimal
-        pytest -sx tests
+        make model-management
 
   validation:
     runs-on: ubuntu-latest
@@ -74,11 +64,7 @@ jobs:
 
     - name: Test validation
       run: |
-        pip install -r requirements.txt
-        pip install -r test-requirements.txt
-        cd validation
-        nrnivmodl mechanisms
-        pytest -sx tests
+        make validation
 
   somatic-validation:
     runs-on: ubuntu-latest
@@ -92,11 +78,7 @@ jobs:
 
     - name: Test somatic validation
       run: |
-        pip install -r test-requirements.txt
-        cd somatic_validation
-        pip install -r somatic-val-requirements.txt
-        nrnivmodl mechanisms
-        pytest -sx tests
+        make somatic-validation
 
   code-style:
     runs-on: ubuntu-latest
@@ -108,5 +90,4 @@ jobs:
         python-version: "3.9"
     - name: Check code style
       run: |
-        pip install black
-        black --check .
+        make check-code-style
