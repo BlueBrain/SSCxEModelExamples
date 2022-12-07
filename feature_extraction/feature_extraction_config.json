@@ -48,7 +48,6 @@
         "spikerate_tau_jj",
         "spikerate_drop",
         "spikerate_tau_log",
-        "spikerate_tau_fit",
         "spikerate_tau_slope"
       ],
       "IDrest": [
