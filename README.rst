@@ -95,14 +95,16 @@ Testing
 Each step is of the pipeline contains tests.
 Before running the notebooks, we recommend running the tests to make sure you will get the expected results.
 
-To run the tests, in addition to the `requirements.txt <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/requirements.txt>`_ you need to install `test-requirements.txt <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/test-requirements.txt>`_ and then you can run the tests using ``pytest``::
+To run the tests, simply execute the following command::
 
-    pip install -r requirements.txt
-    pip install -r test-requirements.txt
-    pytest
+	make tests
 
-The github workflow located at `.github/workflows/python-app.yml <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/.github/workflows/python-app.yml>`_ contains the complete sequence of commands needed to run the tests.
+Compiling all mechanisms
+------------------------
 
+Instead of manually compiling the mechanisms for each step of the pipeline, the following command can be used for compiling all mechanisms before running the notebooks::
+
+	make compile-all-mechanisms
 
 Requirements
 ------------
