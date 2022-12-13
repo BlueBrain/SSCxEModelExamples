@@ -113,9 +113,6 @@ The `requirements.txt <https://github.com/BlueBrain/SSCxEModelExamples/blob/main
 Install `somatic-val-requirements.txt <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/somatic_validation/somatic-val-requirements.txt>`_ before running the somatic validation notebooks or tests.
 
 
-Reference
----------
-
 Funding
 -------
 This project/research was supported by funding to the Blue Brain Project, a research center of the École polytechnique fédérale de Lausanne (EPFL), from the Swiss government’s ETH Board of the Swiss Federal Institutes of Technology.
@@ -125,6 +122,7 @@ License
 
 This work is licensed under `Creative Commons Attribution-NonCommercial (CC BY-NC) 4.0 <https://creativecommons.org/licenses/by-nc/4.0/>`_ 
 
+For MOD files for which the original source is available on ModelDB, any specific licenses on mentioned on ModelDB, or the generic License of ModelDB apply.
 
 .. |build| image:: https://github.com/BlueBrain/SSCxEModelExamples/actions/workflows/python-app.yml/badge.svg
                 :target: https://github.com/BlueBrain/SSCxEModelExamples/actions/workflows/python-app.yml
