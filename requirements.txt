@@ -1,8 +1,8 @@
 bluepyefe>=0.4,<2.0
 efel==3.1.96
 scipy
-bluepyopt>=1.13
-numpy
+bluepyopt>=1.13,<=1.13.12
+numpy<1.24
 NEURON>=7.8.0,<8.0.0
 matplotlib
 seaborn
