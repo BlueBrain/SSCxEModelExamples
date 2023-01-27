@@ -127,7 +127,7 @@ This project/research was supported by funding to the Blue Brain Project, a rese
 License
 -------
 
-This work is licensed under `Creative Commons Attribution-NonCommercial (CC BY-NC) 4.0 <https://creativecommons.org/licenses/by-nc/4.0/>`_ 
+This work is licensed under `Creative Commons (CC BY) 4.0 <https://creativecommons.org/licenses/by/4.0/>`_ 
 
 For MOD files for which the original source is available on ModelDB, any specific licenses on mentioned on ModelDB, or the generic License of ModelDB apply.
 
