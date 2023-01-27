@@ -1,5 +1,5 @@
 bluepyefe >= 2.1.24
 pandas
 seaborn
-bluepyopt>=1.13
+bluepyopt>=1.13<=1.13.107
 NEURON>=7.8.0
