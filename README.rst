@@ -34,6 +34,10 @@ A universal workflow for creation, validation, and generalization of detailed ne
 Pipeline
 ---------
 
+.. image:: figures/pipeline.png
+
+Figure illustrating all steps of the pipeline in detail.
+
 1. E-feature extraction
 ~~~~~~~~~~~~~~~~~~~~~~~
 
