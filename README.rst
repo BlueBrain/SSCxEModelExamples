@@ -36,7 +36,7 @@ Pipeline
 
 .. image:: figures/pipeline.png
 
-Figure illustrating all steps of the pipeline in detail.
+Figure illustrating all steps of the pipeline in detail. The pipeline consists of four steps: (1) feature extraction, (2) optimization, (3) validation, and (4) generalization.
 
 1. E-feature extraction
 ~~~~~~~~~~~~~~~~~~~~~~~
