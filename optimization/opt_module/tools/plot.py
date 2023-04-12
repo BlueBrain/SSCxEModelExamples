@@ -68,7 +68,6 @@ def diversity(checkpoint, evaluator, color="b", figs=None, reportname=""):
     best_params = checkpoint["halloffame"][0]
 
     for i, name in enumerate(param_names):
-
         ax = axs[i]
 
         p1 = numpy.array(all_params)[:, i].tolist()
@@ -121,7 +120,6 @@ def diversity(checkpoint, evaluator, color="b", figs=None, reportname=""):
 
 
 def get_params(params, fitness_cut_off=1e9):
-
     """plot the individual parameter values"""
     results = []
     for param in params:

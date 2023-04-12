@@ -134,7 +134,6 @@ class NrnSomaDistanceCompLocation(ephys.locations.NrnSomaDistanceCompLocation):
         comment="",
         do_simplify_morph=False,
     ):
-
         super(NrnSomaDistanceCompLocation, self).__init__(
             name, soma_distance, seclist_name, comment
         )
@@ -151,7 +150,6 @@ class NrnSomaDistanceCompLocationApical(ephys.locations.NrnSomaDistanceCompLocat
         apical_point_isec=None,
         do_simplify_morph=False,
     ):
-
         super(NrnSomaDistanceCompLocationApical, self).__init__(
             name, soma_distance, seclist_name, comment
         )
@@ -181,7 +179,6 @@ def define_protocols(
     protocols_dict = {}
 
     for protocol_name, protocol_definition in protocol_definitions.items():
-
         if ("stage" in protocol_definition) and (stage is not None) and (stage > 0):
             if stage not in protocol_definition["stage"]:
                 continue  # protocol not used in this stage
@@ -290,7 +287,6 @@ def define_protocols(
                 )
 
     if "Main" in protocol_definitions.keys():
-
         protocols_dict["RinHoldcurrent"] = protocols.RatSSCxRinHoldcurrentProtocol(
             "RinHoldCurrent",
             rin_protocol_template=protocols_dict["Rin"],
@@ -468,7 +464,6 @@ def define_fitness_calculator(
     for protocol_name, locations in feature_definitions.items():
         for recording_name, feature_configs in locations.items():
             for feature_config in feature_configs:
-
                 if ("stage" in feature_config) and (stage is not None) and (stage > 0):
                     if stage not in feature_config["stage"]:
                         continue  # feature not used in this stage
@@ -502,7 +497,6 @@ def define_fitness_calculator(
                     strict_stim = True
 
                 if hasattr(protocol, "stim_start"):
-
                     stim_start = protocol.stim_start
 
                     if "threshold" in feature_config:
@@ -636,7 +630,6 @@ def create(
         morphs = altmorph
 
     for morphval in morphs:
-
         if len(morphval) == 3:
             morphname, morph, apical_point_isec0 = morphval
         else:
@@ -690,7 +683,6 @@ def create(
         )
 
         if "Main" in protocols_dict.keys():
-
             fitness_calculator, efeatures = define_fitness_calculator(
                 protocols_dict["Main"],
                 recipe["features"],
@@ -724,7 +716,6 @@ def create(
             fitness_protocols = {"main_protocol": protocols_dict["Main"]}
 
         else:
-
             fitness_calculator, efeatures = define_fitness_calculator(
                 protocols_dict, recipe["features"], morphname, stage
             )

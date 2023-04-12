@@ -143,7 +143,6 @@ def calculate(
 
     arg_list = []
     for uid, morph in enumerate(morphs):
-
         if morph in apical_points_isecs:
             apical_point_isec = int(apical_points_isecs[morph])
         else:
@@ -190,7 +189,6 @@ def calculate(
 
     # Every time a result comes in, save it
     for result in results:
-
         uid = result["uid"]
         results_full[uid] = result
         uids_received += 1
@@ -289,7 +287,6 @@ def interpolated_neuron_coordinates(hsection):
 
 
 def xyz(section, location=0.5):
-
     x, y, z = interpolated_neuron_coordinates(section)
     d = diams(section)
 
@@ -302,19 +299,16 @@ def xyz(section, location=0.5):
 
 
 def diam(section, location=0.5):
-
     d = diams(section)
     return d[int(numpy.floor((len(d) - 1) * location))]
 
 
 def diams(section):
-
     d = [seg.diam for seg in section.allseg()]
     return numpy.array(d)
 
 
 def path_distance(section_a, section_b, location=0.5, location_b=None):
-
     neuron.h.distance(0, location, sec=section_a)
     return neuron.h.distance(1, location_b, sec=section_b)
 
@@ -348,7 +342,6 @@ def euclid_section_distance(
 
 
 def get_points_random(evaluator, apical_point_isec):
-
     max_dist_apical = 900.0
     div_max = 100.0  # recording points per div um from soma to apical point
     n_basal = 10  # number of points on basal dendrites to record
@@ -387,7 +380,6 @@ def get_points_random(evaluator, apical_point_isec):
     curr_length = div_max
     section = icell.apic[apical_point_isec]
     while True:
-
         name = str(section.name()).split(".")[-1]
 
         if "soma[0]" == name:
@@ -410,7 +402,6 @@ def get_points_random(evaluator, apical_point_isec):
             # only use if not too far away from soma and
             # if sufficiently far away from last recording poing
             if (pathdistance <= max_dist_apical) and (curr_length >= div):
-
                 print(
                     "Using %s(%f) fromn last point %f and pathdistance from soma %f"
                     % (name, x, curr_length, pathdistance)
@@ -463,7 +454,6 @@ def get_points_random(evaluator, apical_point_isec):
         pathdistance = path_distance(icell.soma[0], section, location=0.5, location_b=x)
 
         if pathdistance <= max_dist_apical:
-
             points[seclist_name]["path_distance"].append(pathdistance)
 
             points[seclist_name]["name"].append(name + "_" + re.sub("[.]", "", str(x)))
@@ -535,7 +525,6 @@ def get_points_random(evaluator, apical_point_isec):
 
 
 def all_att(evaluator, emodels_path, apical_point_isec):
-
     points = get_points_random(evaluator, apical_point_isec)
 
     print("All points gathered")
@@ -551,7 +540,6 @@ def all_att(evaluator, emodels_path, apical_point_isec):
 
 
 def bAP(evaluator, emodels_path, points):
-
     protocol_name = "bAP"
 
     cell_model = evaluator.cell_model
@@ -679,11 +667,9 @@ def bAP(evaluator, emodels_path, points):
 
     # extra recordings on dendrites for bAP
     for seclist_name, secdict in points.items():
-
         features[seclist_name] = []
 
         for i, name in enumerate(secdict["name"]):
-
             location = ephys.locations.NrnSeclistCompLocation(
                 name=name,
                 comp_x=secdict["x"][i],
@@ -739,19 +725,16 @@ def bAP(evaluator, emodels_path, points):
 
 
 def EPSP(evaluator, emodels_path, points):
-
     protocol_name = "EPSP"
 
     cell_model = evaluator.cell_model
     sim = evaluator.sim
 
     for seclist_name, secdict in points.items():
-
         if seclist_name in {"apical", "basal", "somatic"}:
             syn_weight = 1.13
 
         for i, name in enumerate(secdict["name"]):
-
             # Soma recordings
             soma_loc = ephys.locations.NrnSeclistCompLocation(
                 name="soma", seclist_name="somatic", sec_index=0, comp_x=0.5

@@ -34,7 +34,6 @@ from lib import plottools as pt
 
 
 def read_data(data_path):
-
     data = []
     distances = []
     csvreader = csv.reader(open(data_path, "r"))
@@ -46,7 +45,6 @@ def read_data(data_path):
 
 
 def fit(distances, values, max_dist=1000.0, plot_prop="_", ymult=1):
-
     x = numpy.arange(0, max_dist, 1)
 
     guess = [50]
@@ -89,7 +87,6 @@ def plot_results(
     use_diams=True,
     legend_fontsize=6,
 ):
-
     if plotwhat is None:
         plotwhat = ["EPSP", "bAP"]
     if fitwhat is None:
@@ -125,9 +122,7 @@ def plot_results(
     }
 
     if results_paths is not None:
-
         for results_path in results_paths:
-
             results = json.load(open(results_path))
 
             distance_type = "path_distance"
@@ -180,7 +175,6 @@ def plot_results(
 
     # bAP
     if "bAP" in plotwhat:
-
         ax = axs[iax]
         iax += 1
         max_dist = 900
@@ -383,13 +377,11 @@ def plot_results(
 
     # EPSP
     if "EPSP" in plotwhat:
-
         ax = axs[iax]
         iax += 1
         max_dist = 550.0
 
         if results_paths is not None:
-
             # apical
             diam = numpy.array(all_points["apical"]["diam"])
             distances = numpy.array(all_points["apical"][distance_type])
@@ -533,7 +525,6 @@ def plot_results(
 
 
 if __name__ == "__main__":
-
     figs = {}
     fontsizes = (6, 7)
     figsize_mm = (150, 120)

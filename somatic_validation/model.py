@@ -106,7 +106,6 @@ def define_parameters(path_params):
 
     distributions_definitions = definitions["distributions"]
     for distribution, definition in distributions_definitions.items():
-
         if "parameters" in definition:
             dist_param_names = definition["parameters"]
         else:
@@ -146,7 +145,6 @@ def define_parameters(path_params):
             param_name = param_config["name"]
 
             if isinstance(param_config["val"], (list, tuple)):
-
                 full_name = "%s.%s" % (param_name, sectionlist)
 
                 # check and define stage of this parameter,

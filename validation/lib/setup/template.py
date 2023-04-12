@@ -81,7 +81,6 @@ def define_mechanisms(params_filename):
 
     mechanisms_list = []
     for sectionlist, channels in mech_definitions.items():
-
         seclist_locs = multi_locations(sectionlist)
 
         for channel in channels["mech"]:
@@ -119,7 +118,6 @@ def define_parameters(params_filename, stage=None, past_params=None):
 
     distributions_definitions = definitions["distributions"]
     for distribution, definition in distributions_definitions.items():
-
         if "parameters" in definition:
             dist_param_names = definition["parameters"]
         else:
@@ -159,7 +157,6 @@ def define_parameters(params_filename, stage=None, past_params=None):
             param_name = param_config["name"]
 
             if isinstance(param_config["val"], (list, tuple)):
-
                 full_name = "%s.%s" % (param_name, sectionlist)
 
                 # check and define stage of this parameter,
@@ -288,7 +285,6 @@ class NrnFileMorphologyCustom(NrnFileMorphology):
         replace_axon_hoc=None,
         do_simplify_morph=False,
     ):
-
         super(NrnFileMorphologyCustom, self).__init__(
             morphology_path, do_replace_axon, do_set_nseg, comment, replace_axon_hoc
         )
