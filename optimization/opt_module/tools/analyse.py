@@ -47,7 +47,6 @@ def get_filename(etype, seed, stage):
 
 
 class Analyse(object):
-
     # build cell
     def __init__(
         self,
@@ -64,7 +63,6 @@ class Analyse(object):
         stage=None,
         parameters=False,
     ):
-
         if grouping is None:
             grouping = ["etype", "githash", "seed", "rank", "altmorph"]
         self.githash = githash
@@ -95,7 +93,6 @@ class Analyse(object):
 
         # load from checkpoint, get parameters
         if self.githash is not None:
-
             self.checkpoints_dir = "checkpoints/run.%s" % self.githash
 
             cp_filename = os.path.join(
@@ -120,7 +117,6 @@ class Analyse(object):
         print(self.parameters)
 
     def set_pasts(self):
-
         if (self.stage is not None) and (
             self.githash is not None
         ):  # just go on as before

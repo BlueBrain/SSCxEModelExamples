@@ -155,7 +155,6 @@ def get_files_metadata(
             v_path = p
 
             for prot in experiments:
-
                 if prot not in p:
                     continue
 

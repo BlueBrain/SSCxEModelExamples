@@ -155,7 +155,6 @@ class RatSSCxMainProtocol(ephys.protocols.Protocol):
                 if (rin_score <= self.rin_score_threshold) or (
                     not self.use_rmp_rin_thresholds
                 ):
-
                     responses.update(
                         self.thdetect_protocol.run(
                             cell_model,
@@ -168,7 +167,6 @@ class RatSSCxMainProtocol(ephys.protocols.Protocol):
                     )
 
                     if cell_model.threshold_current is not None:
-
                         continue_others = True
                         # check objectives if pre protocols are given
                         if len(self.pre_protocols) > 0:

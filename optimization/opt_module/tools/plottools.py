@@ -31,7 +31,6 @@ import numpy
 
 
 def adjust_spines(ax, spines, color="k", d_out=10, d_down=False):
-
     if d_down == False:
         d_down = d_out
 
@@ -53,7 +52,6 @@ def adjust_spines(ax, spines, color="k", d_out=10, d_down=False):
         ax.yaxis.set_ticks_position("left")
 
         if color != "k":
-
             ax.spines["left"].set_color(color)
             ax.yaxis.label.set_color(color)
             ax.tick_params(axis="y", colors=color)
@@ -66,7 +64,6 @@ def adjust_spines(ax, spines, color="k", d_out=10, d_down=False):
         ax.yaxis.set_ticks_position("right")
 
         if color != "k":
-
             ax.spines["right"].set_color(color)
             ax.yaxis.label.set_color(color)
             ax.tick_params(axis="y", colors=color)
@@ -95,7 +92,6 @@ def grid_spec(
     width_ratios=None,
     height_ratios=None,
 ):
-
     if box is None:
         box = {"left": 0.0, "bottom": 0.0, "top": 1.0, "right": 1.0}
 
@@ -122,14 +118,12 @@ def grid_spec(
 
 
 def set_global_panels(fig, xys, panels=False):
-
     if panels:
         font = FontProperties().copy()
         font.set_family("sans-serif")
         font.set_weight("bold")
 
         for il, label in enumerate(panels["labels"]):
-
             (x, y) = xys[il]
 
             if "x" in panels:
@@ -165,7 +159,6 @@ def set_global_panels(fig, xys, panels=False):
 
 
 def tiled_axs(frames=1, d_out=0, panels=False, projection=False, **kwargs):
-
     fig = kwargs["fig"]
     columns = kwargs["columns"]
 
@@ -198,9 +191,7 @@ def make_figure(
     figsize_mm=None,
     orientation="landscape",
 ):
-
     if figname not in figs.keys():
-
         if orientation == "landscape" and figsize_mm is None:
             figsize_mm = (297, 210)
         elif orientation == "page" and figsize_mm is None:

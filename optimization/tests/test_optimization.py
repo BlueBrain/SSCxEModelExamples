@@ -156,7 +156,6 @@ class TestOptimizationNotebook:
         )
 
         with cwd("opt_module"):
-
             analysis_obj = Analyse(
                 githash="a6e707a",
                 seed=seed,

@@ -36,7 +36,7 @@ test-validation: install-requirements run-validation-tests
 test-somatic-validation: install-somatic-validation-requirements run-somatic-validation-tests
 
 check-code-style:
-	pip install black
+	pip install --upgrade black
 	black --check .
 
 # for somatic_validation mechanisms it's ok to use requirements.txt since we only need NEURON
