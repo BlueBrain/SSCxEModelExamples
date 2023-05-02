@@ -1,4 +1,4 @@
-bluepyefe >= 2.1.24, < 2.2
+bluepyefe >= 2.2, < 2.2.33
 pandas
 seaborn
 bluepyopt>=1.13
