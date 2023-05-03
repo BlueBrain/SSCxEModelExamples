@@ -10,6 +10,15 @@ The biophysically detailed electrical neuron model (e-model) is one of the centr
 
 This demo is built on the example of L5PC of the SSCx in juvenile rat. 
 
+Structure of the codebase
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: diagram.svg
+	:width: 100%
+	:align: center
+
+The figure offers a visual representation of the codebase, showcasing its structure. Orange circles indicate the reproducible interactive Python notebooks (ipynb files), while blue circles represent the Python modules (py files). Pink circles correspond to the json files, which contain parameters for all cell types in the SSCx. Although the demonstration primarily focuses on the L5PC example, we still provide the configuration for all other cell types as a resource for the community.
+
 Citation
 --------
 When you using methods or code from this repository for your research, we ask you to cite the following publication:
