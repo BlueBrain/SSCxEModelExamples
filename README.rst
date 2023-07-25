@@ -19,7 +19,7 @@ Structure of the codebase
 
 The figure offers a visual representation of the codebase, showcasing its structure. Orange circles indicate the reproducible interactive Python notebooks (ipynb files), while blue circles represent the Python modules (py files). Pink circles correspond to the json files, which contain parameters for all cell types in the SSCx.
 
-Although the demonstration primarily focuses on the L5PC example, we still provide the `configuration for all other cell types <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/optimization/opt_module/config>`_  and the `morphologies  <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/validation/input/morphologies>`_ as resources for the community.
+Although the demonstration primarily focuses on the L5PC example, we still provide the `configuration for all other cell types <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/optimization/opt_module/config>`_, `morphologies  <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/validation/input/morphologies>`_ and the `mechanisms <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/optimization/opt_module/mechanisms>`_ as resources for the community.
 
 
 Citation
