@@ -1,0 +1,44 @@
+{
+    "title": "SSCxEModelExamples",
+    "license": "CC-BY-4.0 license",
+    "upload_type": "software",
+    "description": "Repository for reproducing the work described at the 'A universal workflow for creation, validation and generalization of detailed neuronal models' publication.",
+    "creators": [
+        {
+            "affiliation": "Blue Brain Project, EPFL",
+            "name": "Reva, Maria"
+        },
+        {
+            "affiliation": "Blue Brain Project, EPFL",
+            "name": "Rössert, Christian"
+        },
+        {
+            "affiliation": "Blue Brain Project, EPFL",
+            "name": "Arnaudon, Alexis"
+        },
+        {
+            "affiliation": "Blue Brain Project, EPFL",
+            "name": "Damart, Tanguy"
+        },
+        {
+            "affiliation": "Blue Brain Project, EPFL",
+            "name": "Mandge, Darshan"
+        },
+        {
+            "affiliation": "Blue Brain Project, EPFL",
+            "name": "Tuncel, Anıl"
+        },
+        {
+            "affiliation": "Blue Brain Project, EPFL",
+            "name": "Ramaswamy, Srikanth"
+        }
+        {
+            "affiliation": "Blue Brain Project, EPFL",
+            "name": "Markram, Henry"
+        },
+        {
+            "affiliation": "Blue Brain Project, EPFL",
+            "name": "Van Geit, Werner"
+        }
+    ]
+}
