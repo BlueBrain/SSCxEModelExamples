@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
       - name: Update diagram
-        uses: githubocto/repo-visualizer@main
+        uses: githubocto/repo-visualizer@0.7.1
         with:
           excluded_paths: ".gitignore,.gitattributes,.github,feature_extraction/input-traces,validation/input/morphologies"
           file_colors: '{"json": "#fda7df", "mod": "#e43131", "yml": "#8d31e4", "ini": "#badc58", "dat": "#f3d44e", "xml": "#905614", "md" : "#f2346e", "asc": "#74e2c9"}'
