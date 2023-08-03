@@ -6,39 +6,48 @@
     "creators": [
         {
             "affiliation": "Blue Brain Project, EPFL",
-            "name": "Reva, Maria"
+            "name": "Reva, Maria",
+            "orcid": "0000-0002-7901-1671"
         },
         {
             "affiliation": "Blue Brain Project, EPFL",
-            "name": "Rössert, Christian"
+            "name": "Rössert, Christian",
+            "orcid": "0000-0002-4839-2424"
         },
         {
             "affiliation": "Blue Brain Project, EPFL",
-            "name": "Arnaudon, Alexis"
+            "name": "Arnaudon, Alexis",
+            "orcid": "0000-0001-9486-1458"
         },
         {
             "affiliation": "Blue Brain Project, EPFL",
-            "name": "Damart, Tanguy"
+            "name": "Damart, Tanguy",
+            "orcid": "0000-0003-2175-7304"
         },
         {
             "affiliation": "Blue Brain Project, EPFL",
-            "name": "Mandge, Darshan"
+            "name": "Mandge, Darshan",
+            "orcid": "0000-0002-7104-4604"
         },
         {
             "affiliation": "Blue Brain Project, EPFL",
-            "name": "Tuncel, Anıl"
+            "name": "Tuncel, Anıl",
+            "orcid": "0000-0003-0317-2556"
         },
         {
             "affiliation": "Blue Brain Project, EPFL",
-            "name": "Ramaswamy, Srikanth"
-        }
-        {
-            "affiliation": "Blue Brain Project, EPFL",
-            "name": "Markram, Henry"
+            "name": "Ramaswamy, Srikanth",
+            "orcid": "0000-0001-6642-7136"
         },
         {
             "affiliation": "Blue Brain Project, EPFL",
-            "name": "Van Geit, Werner"
+            "name": "Markram, Henry",
+            "orcid": "0000-0001-6164-2590"
+        },
+        {
+            "affiliation": "Blue Brain Project, EPFL",
+            "name": "Van Geit, Werner",
+            "orcid": "0000-0002-2915-720X"
         }
     ]
 }
