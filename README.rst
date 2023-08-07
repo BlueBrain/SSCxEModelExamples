@@ -1,7 +1,13 @@
-Creation, validation and generalization of a canonical electrical model
-=======================================================================
+A universal workflow for creation, validation, and generalization of detailed neuronal models: demo
+===================================================================================================
 
-|build| |black|
++----------------+------------+
+| License        | |license|  |
++----------------+------------+
+| Build Status 	 | |build|    |
++----------------+------------+
+| Zenodo         | |zenodo|   |
++----------------+------------+
 
 Introduction
 ---------
@@ -150,5 +156,10 @@ For MOD files for which the original source is available on ModelDB, any specifi
 .. |build| image:: https://github.com/BlueBrain/SSCxEModelExamples/actions/workflows/python-app.yml/badge.svg
                 :target: https://github.com/BlueBrain/SSCxEModelExamples/actions/workflows/python-app.yml
                 :alt: Build Status
-.. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
-   :target: https://github.com/psf/black
+
+.. |license| image:: https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg
+	:target: https://github.com/BlueBrain/SSCxEModelExamples/blob/main/LICENSE.txt
+	:alt: license
+
+.. |zenodo| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.8220219.svg
+                :target: https://doi.org/10.5281/zenodo.8220219
