@@ -1,6 +1,6 @@
 {
     "title": "SSCxEModelExamples",
-    "license": "CC-BY-4.0 license",
+    "license": "CC-BY-4.0",
     "upload_type": "software",
     "description": "Repository for reproducing the work described at the 'A universal workflow for creation, validation and generalization of detailed neuronal models' publication.",
     "creators": [
