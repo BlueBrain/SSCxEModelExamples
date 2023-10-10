@@ -12,7 +12,7 @@ A universal workflow for creation, validation, and generalization of detailed ne
 Introduction
 ---------
 
-The biophysically detailed electrical neuron model (e-model) is one of the central tools in neuroscience. Here we present a demo of the single neuron e-model creation, validation, and generalization described in **"A universal workflow for creation, validation, and generalization of detailed neuronal models" (Reva, Rossert et al)**. 
+The biophysically detailed electrical neuron model (e-model) is one of the central tools in neuroscience. Here we present a demo of the single neuron e-model creation, validation, and generalization described in `A universal workflow for creation, validation, and generalization of detailed neuronal models (Reva, Rossert et al) <https://doi.org/10.1016/j.patter.2023.100855>`_. 
 
 This demo is built on the example of L5PC of the SSCx in juvenile rat. 
 
