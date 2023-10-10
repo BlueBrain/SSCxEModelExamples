@@ -6,7 +6,7 @@ A universal workflow for creation, validation, and generalization of detailed ne
 +----------------+------------+
 | Build Status 	 | |build|    |
 +----------------+------------+
-| Zenodo         | |zenodo|   |
+| Publication    | |doi|      |
 +----------------+------------+
 
 Introduction
@@ -161,5 +161,5 @@ For MOD files for which the original source is available on ModelDB, any specifi
 	:target: https://github.com/BlueBrain/SSCxEModelExamples/blob/main/LICENSE.txt
 	:alt: license
 
-.. |zenodo| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.8220219.svg
-                :target: https://doi.org/10.5281/zenodo.8220219
+.. |doi| image:: https://img.shields.io/badge/DOI-10.1016/j.patter.2023.100855-blue
+                :target: https://doi.org/10.1016/j.patter.2023.100855
