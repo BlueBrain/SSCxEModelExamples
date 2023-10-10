@@ -36,17 +36,15 @@ A universal workflow for creation, validation, and generalization of detailed ne
 
 .. code-block:: 
 
-    @ARTICLE{Reva2022.12.13.520234,
-	author = {Reva, Maria and R{\"o}ssert, Christian and Arnaudon, Alexis and Damart, Tanguy and Mandge, Darshan and Tuncel, An{\i}l and Ramaswamy, Srikanth and Markram, Henry and Van Geit, Werner},
-	title = {A universal workflow for creation, validation and generalization of detailed neuronal models},
-	elocation-id = {2022.12.13.520234},
-	year = {2022},
-	doi = {10.1101/2022.12.13.520234},
-	publisher = {Cold Spring Harbor Laboratory},
-	abstract = {Detailed single neuron modeling is widely used to study neuronal functions. While cellular and functional diversity across the mammalian cortex is vast, most of the available computational tools are dedicated to the reproduction of a small set of specific features characteristic of a single neuron. Here, we present a generalized automated workflow for the creation of robust electrical models and illustrate its performance by building cell models for the rat somatosensory cortex (SSCx). Each model is based on a 3D morphological reconstruction and a set of ionic mechanisms specific to the cell type. We use an evolutionary algorithm to optimize passive and active ionic parameters to match the electrophysiological features extracted from whole-cell patch-clamp recordings. To shed light on which parameters are constrained by experimental data and which could be degenerate, we perform a parameter sensitivity analysis. We also validate the optimized models against additional experimental stimuli and assess their generalizability on a population of morphologies with the same morphological type. With this workflow, we generate SSCx neuronal models producing the variability of neuronal responses. Due to its versatility, our workflow can be used to build robust biophysical models of any neuronal type.Competing Interest StatementThe authors have declared no competing interest.},
-	URL = {https://www.biorxiv.org/content/early/2022/12/13/2022.12.13.520234},
-	eprint = {https://www.biorxiv.org/content/early/2022/12/13/2022.12.13.520234.full.pdf},
-	journal = {bioRxiv}
+	@article{reva2023universal,
+		title={A universal workflow for creation, validation, and generalization of detailed neuronal models},
+		author={Reva, Maria and R{\"o}ssert, Christian and Arnaudon, Alexis and Damart, Tanguy and Mandge, Darshan and Tuncel, An{\i}l and Ramaswamy, Srikanth and Markram, Henry and Van Geit, Werner},
+		journal={Patterns},
+		publisher={Elsevier},
+		doi={10.1016/j.patter.2023.100855},
+		url={https://doi.org/10.1016/j.patter.2023.100855},
+		issn={2666-3899},
+		year={2023}
 	}
 
 Pipeline
