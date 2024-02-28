@@ -18,7 +18,6 @@ To view a copy of this license, visit https://creativecommons.org/licenses/by/4.
 Second Street, Suite 300, San Francisco, California, 94105, USA.
 """
 
-
 import contextlib
 import os
 

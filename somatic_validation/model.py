@@ -18,7 +18,6 @@ To view a copy of this license, visit https://creativecommons.org/licenses/by/4.
 Second Street, Suite 300, San Francisco, California, 94105, USA.
 """
 
-
 import os
 import collections
 import json
@@ -110,12 +109,12 @@ def define_parameters(path_params):
             dist_param_names = definition["parameters"]
         else:
             dist_param_names = None
-        distributions[
-            distribution
-        ] = ephys.parameterscalers.NrnSegmentSomaDistanceScaler(
-            name=distribution,
-            distribution=definition["fun"],
-            dist_param_names=dist_param_names,
+        distributions[distribution] = (
+            ephys.parameterscalers.NrnSegmentSomaDistanceScaler(
+                name=distribution,
+                distribution=definition["fun"],
+                dist_param_names=dist_param_names,
+            )
         )
 
     params_definitions = definitions["parameters"]

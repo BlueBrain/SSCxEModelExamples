@@ -18,7 +18,6 @@ To view a copy of this license, visit https://creativecommons.org/licenses/by/4.
 Second Street, Suite 300, San Francisco, California, 94105, USA.
 """
 
-
 """Protocols involved in fitting of RatSSCx neuron ephys parameters"""
 
 import numpy
@@ -34,7 +33,6 @@ logger = logging.getLogger(__name__)
 
 
 class RatSSCxMainProtocol(ephys.protocols.Protocol):
-
     """Main protocol to fit RatSSCx neuron ephys parameters.
 
     Pseudo code:
@@ -115,7 +113,6 @@ class RatSSCxMainProtocol(ephys.protocols.Protocol):
 
 
 class RatSSCxRinHoldcurrentProtocol(ephys.protocols.Protocol):
-
     """IDRest protocol to fit RatSSCx neuron ephys parameters"""
 
     def __init__(
@@ -156,7 +153,6 @@ class RatSSCxRinHoldcurrentProtocol(ephys.protocols.Protocol):
 
 
 class RatSSCxThresholdDetectionProtocol(ephys.protocols.Protocol):
-
     """IDRest protocol to fit RatSSCx neuron ephys parameters"""
 
     def __init__(
@@ -387,7 +383,6 @@ class RatSSCxThresholdDetectionProtocol(ephys.protocols.Protocol):
 
 
 class StepProtocol(ephys.protocols.SweepProtocol):
-
     """Protocol consisting of step and holding current"""
 
     def __init__(
@@ -411,9 +406,11 @@ class StepProtocol(ephys.protocols.SweepProtocol):
 
         super(StepProtocol, self).__init__(
             name,
-            stimuli=step_stimuli + [holding_stimulus]
-            if holding_stimulus is not None
-            else step_stimuli,
+            stimuli=(
+                step_stimuli + [holding_stimulus]
+                if holding_stimulus is not None
+                else step_stimuli
+            ),
             recordings=recordings,
             cvode_active=cvode_active,
         )
@@ -479,7 +476,6 @@ class StepProtocol(ephys.protocols.SweepProtocol):
 
 
 class StepThresholdProtocol(StepProtocol):
-
     """Step protocol based on threshold"""
 
     def __init__(

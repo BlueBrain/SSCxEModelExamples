@@ -826,7 +826,6 @@ def EPSP(evaluator, emodels_path, points):
 
 
 class NrnSynStim(ephys.stimuli.Stimulus):
-
     """Square pulse current clamp injection"""
 
     def __init__(
