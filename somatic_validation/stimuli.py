@@ -28,14 +28,12 @@ logger = logging.getLogger(__name__)
 
 
 class Stimulus(object):
-
     """Stimulus protocol"""
 
     pass
 
 
 class NrnHDPulse(Stimulus):
-
     """Square pulse current clamp injection"""
 
     def __init__(
