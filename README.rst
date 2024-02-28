@@ -12,9 +12,9 @@ A universal workflow for creation, validation, and generalization of detailed ne
 Introduction
 ---------
 
-The biophysically detailed electrical neuron model (e-model) is one of the central tools in neuroscience. Here we present a demo of the single neuron e-model creation, validation, and generalization described in `A universal workflow for creation, validation, and generalization of detailed neuronal models (Reva, Rossert et al) <https://doi.org/10.1016/j.patter.2023.100855>`_. 
+The biophysically detailed electrical neuron model (e-model) is one of the central tools in neuroscience. Here we present a demo of the single neuron e-model creation, validation, and generalization described in `A universal workflow for creation, validation, and generalization of detailed neuronal models (Reva, Rossert et al) <https://doi.org/10.1016/j.patter.2023.100855>`_.
 
-This demo is built on the example of L5PC of the SSCx in juvenile rat. 
+This demo is built on the example of L5PC of the SSCx in juvenile rat.
 
 Structure of the codebase
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -34,7 +34,7 @@ When you using methods or code from this repository for your research, we ask yo
 
 A universal workflow for creation, validation, and generalization of detailed neuronal models" (Reva, Rossert et al).
 
-.. code-block:: 
+.. code-block::
 
 	@article{reva2023universal,
 		title={A universal workflow for creation, validation, and generalization of detailed neuronal models},
@@ -86,7 +86,7 @@ The visualization of the bAP/EPSP validations can be found in `validation.ipynb 
 
 The morphologies for these validations are located in the `input/morphologies <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/validation/input/morphologies>`_ folder.
 
-To run bAP/EPSP validations use:: 
+To run bAP/EPSP validations use::
 
   python main.py att_conf.json
 
@@ -98,10 +98,10 @@ Somatic validations are located in the `somatic_validation <https://github.com/B
 
 Note that this is the only step that does not use the ``requirements.txt`` in the main directory.
 
-`somatic-val-requirements.txt <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/somatic_validation/somatic-val-requirements.txt>`_ needs to be installed and the mechanisms need to be compiled with the following command before running the notebooks:: 
+`somatic-val-requirements.txt <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/somatic_validation/somatic-val-requirements.txt>`_ needs to be installed and the mechanisms need to be compiled with the following command before running the notebooks::
 
-  nrnivmodl mechanisms 
-  
+  nrnivmodl mechanisms
+
 First, e-features for the validations have to be extracted from the chosen patch clamp protocol. To extract e-features use `feature-extraction.ipynb <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/somatic_validation/feature-extraction.ipynb>`_, the results of this extraction can be found in the `somatic_validation/L5TPC <https://github.com/BlueBrain/SSCxEModelExamples/tree/main/somatic_validation/L5TPC>`_ folder. To run and visualize results of the somatic validation run `somatic-validation.ipynb <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/somatic_validation/somatic-validation.ipynb>`_.
 
 4. Generalization
@@ -136,6 +136,7 @@ Instead of manually compiling the mechanisms for each step of the pipeline, the 
 Requirements
 ------------
 
+For the exact reproducibility of paper results, we recommend `NEURON>=7.8.0,<8.0.0` and repository code release version `1.0.1 <https://github.com/BlueBrain/SSCxEModelExamples/releases/tag/1.0.1>`. Users with other versions may encounter some small discrepancies in results.
 The `requirements.txt <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/requirements.txt>`_ at the main directory should be used for all steps except for the somatic validations.
 Install `somatic-val-requirements.txt <https://github.com/BlueBrain/SSCxEModelExamples/blob/main/somatic_validation/somatic-val-requirements.txt>`_ before running the somatic validation notebooks or tests.
 
@@ -147,7 +148,7 @@ This project/research was supported by funding to the Blue Brain Project, a rese
 License
 -------
 
-This work is licensed under `Creative Commons (CC BY) 4.0 <https://creativecommons.org/licenses/by/4.0/>`_ 
+This work is licensed under `Creative Commons (CC BY) 4.0 <https://creativecommons.org/licenses/by/4.0/>`_
 
 For MOD files for which the original source is available on ModelDB, any specific licenses on mentioned on ModelDB, or the generic License of ModelDB apply.
 
