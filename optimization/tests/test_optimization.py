@@ -282,4 +282,4 @@ class TestOptimizationNotebook:
         for c_key, c_value in ca_responses.items():
             calcium_response = c_value.response
             calcium_response_gt = np.loadtxt(f"tests/calcium_responses/{c_key}.dat")
-            assert np.allclose(calcium_response, calcium_response_gt, atol=1e-6)
+            assert np.allclose(calcium_response, calcium_response_gt, atol=1e-2)

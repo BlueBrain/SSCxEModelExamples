@@ -405,14 +405,16 @@ def define_protocols(
                 "type" in protocol_definition
                 and protocol_definition["type"] == "RatSSCxThresholdDetectionProtocol"
             ):
-                protocols_dict[
-                    "ThresholdDetection"
-                ] = protocols.RatSSCxThresholdDetectionProtocol(
-                    "IDRest",
-                    step_protocol_template=read_step_protocol(
-                        "Threshold", protocol_definition["step_template"], recordings
-                    ),
-                    prefix=prefix,
+                protocols_dict["ThresholdDetection"] = (
+                    protocols.RatSSCxThresholdDetectionProtocol(
+                        "IDRest",
+                        step_protocol_template=read_step_protocol(
+                            "Threshold",
+                            protocol_definition["step_template"],
+                            recordings,
+                        ),
+                        prefix=prefix,
+                    )
                 )
             else:
                 stimuli = []
@@ -488,7 +490,6 @@ class eFELFeatureLimit(eFELFeature):
 
 
 class eFELFeatureExtra(eFELFeature):
-
     """eFEL feature extra"""
 
     SERIALIZED_FIELDS = (
@@ -647,7 +648,6 @@ from bluepyopt.ephys.objectives import EFeatureObjective
 
 
 class SingletonWeightObjective(EFeatureObjective):
-
     """Single EPhys feature"""
 
     def __init__(self, name, feature, weight):
@@ -775,7 +775,6 @@ def define_fitness_calculator(
 
 
 class MultiEvaluator(bpopt.evaluators.Evaluator):
-
     """Multiple cell evaluator"""
 
     def __init__(
