@@ -152,6 +152,8 @@ This work is licensed under `Creative Commons (CC BY) 4.0 <https://creativecommo
 
 For MOD files for which the original source is available on ModelDB, any specific licenses on mentioned on ModelDB, or the generic License of ModelDB apply.
 
+Copyright (c) 2023-2024 Blue Brain Project/EPFL
+
 .. |build| image:: https://github.com/BlueBrain/SSCxEModelExamples/actions/workflows/python-app.yml/badge.svg
                 :target: https://github.com/BlueBrain/SSCxEModelExamples/actions/workflows/python-app.yml
                 :alt: Build Status
